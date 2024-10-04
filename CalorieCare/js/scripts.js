@@ -7,50 +7,98 @@
 // Use this file to add JavaScript to your project
 
 window.onload = () => {
-    let button = document.querySelector("#btn");
-
-    // Function for calculating BMI
-    button.addEventListener("click", calculateBMI);
+    // Event listener for BMI calculation
+    document.querySelector("#btn-bmi").addEventListener("click", calculateBMI);
+    // Event listener for BMR calculation
+    document.querySelector("#btn-bmr").addEventListener("click", calculateBMR);
+    // Event listener for TDEE calculation
+    document.querySelector("#btn-tdee").addEventListener("click", calculateTDEE);
 };
 
+// Function for calculating BMI
 function calculateBMI() {
+    let height = parseFloat(document.querySelector("#height-bmi").value);
+    let weight = parseFloat(document.querySelector("#weight-bmi").value);
+    let age = parseInt(document.querySelector("#age-bmi").value);
+    let gender = document.querySelector('input[name="gender-bmi"]:checked').value;
+    let result = document.querySelector("#result-bmi");
 
-    /* Getting input from user into height variable.
-    Input is string so typecasting is necessary. */
-    let height = parseInt(document
-        .querySelector("#height").value);
+    if (isNaN(height) || height <= 0) {
+        result.innerHTML = "กรุณาใส่ส่วนสูง!";
+    } else if (isNaN(weight) || weight <= 0) {
+        result.innerHTML = "กรุณาใส่น้ำหนัก!";
+    } else if (isNaN(age) || age <= 0) {
+        result.innerHTML = "กรุณาใส่อายุ!";
+    } else {
+        let bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+        if (bmi < 18.5) {
+            result.innerHTML = `น้ำหนักน้อยกว่ามาตรฐาน : <span>${bmi}</span>`;
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            result.innerHTML = `ปกติ (สุขภาพดี) : <span>${bmi}</span>`;
+        } else {
+            result.innerHTML = `น้ำหนักมากกว่ามาตรฐาน : <span>${bmi}</span>`;
+        }
+    }
+}
 
-    /* Getting input from user into weight variable. 
-    Input is string so typecasting is necessary.*/
-    let weight = parseInt(document
-        .querySelector("#weight").value);
+// Function for calculating BMR
+function calculateBMR() {
+    let height = parseFloat(document.querySelector("#height-bmr").value);
+    let weight = parseFloat(document.querySelector("#weight-bmr").value);
+    let age = parseInt(document.querySelector("#age-bmr").value);
+    let gender = document.querySelector('input[name="gender-bmr"]:checked').value;
+    let result = document.querySelector("#result-bmr");
 
-    let result = document.querySelector("#result");
+    if (isNaN(height) || height <= 0) {
+        result.innerHTML = "กรุณาใส่ส่วนสูง!";
+    } else if (isNaN(weight) || weight <= 0) {
+        result.innerHTML = "กรุณาใส่น้ำหนัก!";
+    } else if (isNaN(age) || age <= 0) {
+        result.innerHTML = "กรุณาใส่อายุ!";
+    } else {
+        let bmr;
+        if (gender === "male") {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+        result.innerHTML = `Your BMR is: <span>${bmr.toFixed(2)}</span> kcal/day`;
+    }
+}
 
-    // Checking the user providing a proper
-    // value or not
-    if (height === "" || isNaN(height))
-        result.innerHTML = "Provide a valid Height!";
+// Function for calculating TDEE
+function calculateTDEE() {
+    let height = parseFloat(document.querySelector("#height-tdee").value);
+    let weight = parseFloat(document.querySelector("#weight-tdee").value);
+    let age = parseInt(document.querySelector("#age-tdee").value);
+    let gender = document.querySelector('input[name="gender-tdee"]:checked').value;
+    let result = document.querySelector("#result-tdee");
 
-    else if (weight === "" || isNaN(weight))
-        result.innerHTML = "Provide a valid Weight!";
+    // Activity levels multiplier
+    const activityLevels = {
+        sedentary: 1.2,
+        light: 1.375,
+        moderate: 1.55,
+        active: 1.725,
+        veryActive: 1.9
+    };
 
-    // If both input is valid, calculate the bmi
-    else {
+    let activityLevel = document.querySelector('input[name="activity-level"]:checked').value;
 
-        // Fixing upto 2 decimal places
-        let bmi = (weight / ((height * height)
-            / 10000)).toFixed(2);
-
-        // Dividing as per the bmi conditions
-        if (bmi < 18.6) result.innerHTML =
-            `น้ำหนักน้อยกว่ามาตรฐาน : <span>${bmi}</span>`;
-
-        else if (bmi >= 18.6 && bmi < 24.9)
-            result.innerHTML =
-                `ปกติ (สุขภาพดี) : <span>${bmi}</span>`;
-
-        else result.innerHTML =
-            `น้ำหนักมากกว่ามาตรฐาน : <span>${bmi}</span>`;
+    if (isNaN(height) || height <= 0) {
+        result.innerHTML = "กรุณาใส่ส่วนสูง!";
+    } else if (isNaN(weight) || weight <= 0) {
+        result.innerHTML = "กรุณาใส่น้ำหนัก!";
+    } else if (isNaN(age) || age <= 0) {
+        result.innerHTML = "กรุณาใส่อายุ!";
+    } else {
+        let bmr;
+        if (gender === "male") {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+        let tdee = bmr * activityLevels[activityLevel];
+        result.innerHTML = `Your TDEE is: <span>${tdee.toFixed(2)}</span> kcal/day`;
     }
 }

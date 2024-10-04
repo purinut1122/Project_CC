@@ -58,35 +58,34 @@
             </div>
         </header>
 
+        <!-- BMI Section -->
         <header class="py-0">
             <div class="container px-4 px-lg-5 my-0">
                 <div class="text-start text-black">
                     <h3 class="display-6 fw-bolder ">เครื่องคำนวณหาค่าดัชนีมวลกาย (BMI)</h3>
-                    <p class="lead fw-normal text-black-50">การหาค่าดัชนีมวลกาย (Body Mass Index : BMI) 
-                        คือ เป็นมาตรการที่ใช้ประเมินภาวะอ้วนและผอมในผู้ใหญ่ 
-                        ตั้งแต่อายุ 20 ปีขึ้นไป สามารถทำได้โดยการชั่งน้ำหนักตัวเป็น
-                        กิโลกรัมและวัดส่วนสูงเป็นเซนติเมตร แล้วนำมาหาดัชมีมวลกาย 
+                    <p class="lead fw-normal text-black-50">การหาค่าดัชนีมวลกาย (Body Mass Index : BMI) คือ เป็นมาตรการที่ใช้ประเมินภาวะอ้วนและผอมในผู้ใหญ่ ตั้งแต่อายุ 20 ปีขึ้นไป สามารถทำได้โดยการชั่งน้ำหนักตัวเป็นกิโลกรัมและวัดส่วนสูงเป็นเซนติเมตร แล้วนำมาหาดัชมีมวลกาย 
                     </p>
                 
-                        <div class="container">
-                    
-                            <p>ส่วนสูง (cm.)</p>
-                    
-                            <input type="text" id="height" />
-                    
-                            <p>น้ำหนักตัว (kg.)</p>
-                    
-                            <input type="text" id="weight" />
-                    
-                            <button id="btn">Calculate</button>
-                    
-                            <div id="result"></div>
-                        </div>
+                    <div class="container">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-bmi" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-bmi" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-bmi" />
+                        <p>เพศ</p>
+                        <label><input type="radio" name="gender-bmi" value="male" checked> ชาย</label>
+                        <label><input type="radio" name="gender-bmi" value="female"> หญิง</label>
+                        <button id="btn-bmi">คำนวณ BMI</button>
+                        <div id="result-bmi"></div>
+                    </div>
 
                 </div>
 
             </div>
 
+        <!-- BMR Section -->
+        <header class="py-0">
             <div class="container px-4 px-lg-5 my-0">
                 <div class="text-start text-black">
                     <h3 class="display-6 fw-bolder ">เครื่องคำนวณการเผาผลาญพลังงาน (BMR)</h3>
@@ -96,11 +95,23 @@
                         ในร่างกายค่ะ
                     </p>
 
-
+                    <div class="container">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-bmr" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-bmr" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-bmr" />
+                        <p>เพศ</p>
+                        <label><input type="radio" name="gender-bmr" value="male" checked> ชาย</label>
+                        <label><input type="radio" name="gender-bmr" value="female"> หญิง</label>
+                        <button id="btn-bmr">คำนวณ BMR</button>
+                        <div id="result-bmr"></div>
+                    </div>
                 </div>
-
             </div>
 
+        <!-- TDEE Section -->
             <div class="container px-4 px-lg-5 my-0">
                 <div class="text-start text-black">
                     <h3 class="display-6 fw-bolder ">เครื่องคำนวณ (TDEE)</h3>
@@ -108,17 +119,34 @@
                         ทั้งหมดต่อวัน ค่า TDEE หาได้โดยการนำค่า BMR ไปคำนวณกับ
                         กิจกรรมที่ทำในแต่ละวัน อีกทั้งค่านี้ยังสามารถใช้ในการเพื่อเพิ่ม
                         มวลกล้ามเนื้อได้อีกด้วยนะคะ
-                        </p>
+                    </p>
+
+                    <div class="container">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-tdee" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-tdee" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-tdee" />
+                        <p>เพศ</p>
+                        <label><input type="radio" name="gender-tdee" value="male" checked> ชาย</label>
+                        <label><input type="radio" name="gender-tdee" value="female"> หญิง</label>
+                        <p>ระดับการออกกำลังกาย</p>
+                        <label><input type="radio" name="activity-level" value="sedentary" checked> นั่งทำงานทั้งวัน</label><br>
+                        <label><input type="radio" name="activity-level" value="light"> ออกกำลังกายเบาๆ (1-3 ครั้งต่อสัปดาห์)</label><br>
+                        <label><input type="radio" name="activity-level" value="moderate"> ออกกำลังกายปานกลาง (3-5 ครั้งต่อสัปดาห์)</label><br>
+                        <label><input type="radio" name="activity-level" value="active"> ออกกำลังกายหนัก (6-7 ครั้งต่อสัปดาห์)</label><br>
+                        <label><input type="radio" name="activity-level" value="veryActive"> ออกกำลังกายอย่างหนักมาก (ออกกำลังกายมากกว่า 1 ครั้งต่อวัน)</label><br>
+                        <button id="btn-tdee">คำนวณ TDEE</button>
+                        <div id="result-tdee"></div>
+                    </div>
                 </div>
-
             </div>
-
         </header>
 
-
-            <!-- Bootstrap core JS-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-            <!-- Core theme JS-->
-            <script src="js/scripts.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
 </body>
 </html>
