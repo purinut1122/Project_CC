@@ -1,139 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  
-  .calendar {
-     
-    max-width: 100%;
-      max-height: auto;
-      
-      
-      
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  
-  
-  .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: 0px;
-      background-color: #f2f2f2;
-      
-  }
-  
-  .day {
-    padding: 5px;
-    font-weight: bold;
-     
-  }
-  
-  .dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: 100px 100px 100px 100px 100px 100px;
-      
-  }
-  
-  .date {
-    padding: 5px;
-    cursor: pointer;
-      border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc; /* Add this line */
-    border-bottom: 1px solid #ccc; /* Add this line */
-      border-top: 1px solid #ccc;
-        display: flex; /* Add this line */
-    align-items: flex-start; /* Add this line */
-    justify-content: flex-start; /* Add this line */
-      position: relative; /* Add this line */
-  }
-  
-  .date:hover {
-    background-color: #f2f2f2;
-  }
-  
-  .current-month {
-    font-weight: bold;
-  }
-  
-  .event {
-    background-color: #f2f2f2;
-    color: black;
-    padding: 20px 5px 60px 5px;
-    border-radius: 3px;
-    font-size: 22px;
-    cursor: pointer;
-    align-content: center;
-  }
-  
-  .has-event::after {
-    content: '\2022'; /* Unicode for a bullet point */
-    color: #FF5733; /* Choose a color for the indicator */
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-  
-  .area {
-      width: 100%
-  }
-  
-  .modal {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transform: scale(1.1);
-      transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-  }
-  
-  .modal-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 1rem 1.5rem;
-      width: 24rem;
-      border-radius: 0.5rem;
-  }
-  
-  .close-button {
-      float: right;
-      width: 1.5rem;
-      line-height: 1.5rem;
-      text-align: center;
-      cursor: pointer;
-      border-radius: 0.25rem;
-      background-color: lightgray;
-  }
-  
-  .close-button:hover {
-      background-color: darkgray;
-  }
-  
-  .show-modal {
-      opacity: 1;
-      visibility: visible;
-      transform: scale(1.0);
-      transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-  }
-  
-  .hidden {
-    display: none;
-  }
+.header {
+  background-color: #b0c4b1;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+}
+.content {
+  padding: 20px;
+}
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.meal-section {
+  background-color: #e8f0e8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.add-food-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #90b499;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none; /* ลบเส้นใต้ */
+}
+.add-food-btn:hover {
+  background-color: #729576;
+}
+.date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin: 20px;
+}
+.date-container button {
+  background-color: #90b499;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.date-container span {
+  margin: 0 20px;
+  font-size: 18px;
+}
+
+

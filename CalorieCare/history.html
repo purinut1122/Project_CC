@@ -51,41 +51,62 @@
         </nav>
 
         <!-- Header-->
-        <div class="calendar">
-            <div class="header">
-              <button id="prevBtn">&lt;</button>
-              <h1 id="monthYear"></h1>
-              <button id="nextBtn">&gt;</button>
-            </div>
-            <div class="days">
-              <div class="day">Sun</div>
-              <div class="day">Mon</div>
-              <div class="day">Tue</div>
-              <div class="day">Wed</div>
-              <div class="day">Thu</div>
-              <div class="day">Fri</div>
-              <div class="day">Sat</div>
-            </div>
-            <div class="dates " id="dates">
-                <div class="date" data-day="1">1</div>
-                <div class="date" data-day="2">2</div>
-               <div class="date" data-day="3">3</div>
-                <div class="date" data-day="4">4</div>
-               <div class="date" data-day="5">5</div>
-                <div class="date" data-day="6">6</div>
-                </div>
+        <div class="header">
+          ประวัติการกิน (วันนี้)
+      </div>
+  
+      <div class="content">
+          <!-- Date Section -->
+          <div class="date-container">
+              <button>&lt;</button>
+              <span type="date">วันนี้, 4 ก.ย. 67</span>
+              <button>&gt;</button>
           </div>
-        
-          <!-- Modal for Event Details -->
-          <div class="modal event show-modal hidden" id="eventModal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2 id="eventDate"></h2>
-              <!-- ทำเป็นตาราง สามมื้อ และ สามารถเพื่อมื้อว่านได้-->
-              <textarea class="area" id="eventDescription"></textarea>
-              <button id="saveEventBtn">Save</button>
+  
+          <!-- Breakfast Section -->
+          <div class="meal-section">
+            <div class="meal-header">
+                <span>มื้อเช้า</span>
+                <span>0 kcal</span>
             </div>
+            <p>
+              <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
+          </p>
+        </div>
+  
+          <!-- Lunch Section -->
+          <div class="meal-section">
+              <div class="meal-header">
+                  <span>มื้อกลางวัน</span>
+                  <span>0 kcal</span>
+              </div>
+              <p>
+                <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
+            </p>
           </div>
+          <!-- Dinner Section -->
+          <div class="meal-section">
+            <div class="meal-header">
+                <span>มื้อเย็น</span>
+                <span>0 kcal</span>
+            </div>
+            <p>
+              <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
+          </p></button>
+      </div>
+
+             
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+       
         
 
 
