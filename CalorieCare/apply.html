@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <title>ฟอนต์ไทยใน HTML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>icons</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            background-image: url('image/BG.png'); /* เปลี่ยนเป็นเส้นทางของภาพ */
+            background-size: cover; /* ทำให้ภาพเต็มพื้นที่ */
+            background-position: center; /* จัดตำแหน่งกลาง */
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* ทำให้พื้นหลังของ container โปร่งใส */
+            padding: 30px 100px 30px 50px;
+            border-radius: 10px;
+        }
+        .logo {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 50px 10px 150px;
+            font-size: 24px;
+            background-image: url('image/Logo_CalorieCare.png');  
+            background-size: cover;
+            background-position: center;
+        }
+        .button {
+            background-color: #8A9A8B;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 150px;
+            margin: 25px 50px 10px 140px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: "Kanit", sans-serif;
+            font-size: 40px;
+            display: flex;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #8A9A8B;
+            font-family: "Kanit", sans-serif;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #8A9A8B;
+        }
+        .divider:not(:empty)::before {
+            margin-right: .25em;
+        }
+        .divider:not(:empty)::after {
+            margin-left: .25em;
+        }
+        .login-button {
+            background-color: #FFFFFF;
+            color: #8A9A8B;
+            border: 1px solid #8A9A8B;
+            padding: 5px 55px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: "Kanit", sans-serif;        
+        }
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8A9A8B;
+            font-family: "Kanit", sans-serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+            margin: 0 0 20px 80px;
+        }
+        .Text {
+            font-size: 30px;
+            color: #6b8d71;
+            margin-top: 15px;
+            margin-left: 15px;
+            font-family: "Kanit", sans-serif;
+            text-align: left;
+            display: block;
+        }
+        .input {
+            height: 70px;
+            border: 1px solid #8A9A8B;
+            border-radius: 8px;
+            padding: 5px 40px 0px 40px;
+            margin: 10px 0;
+            width: calc(100% - 20px);
+            background-color: #f9f9f9;
+            font-size: 40px;
+            font-family: "Kanit", sans-serif;
+            display: inline-block;
+        }
+        .genderContainer {
+            margin: 10px 0px 15px 50px;
+        }
+        .genderButton {
+            display: inline-flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            border: 1px solid #8A9A8B;
+            border-radius: 20px;
+            padding: 30px 50px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: large;
+        }
+        .selected {
+            background-color: #8A9A8B;
+            color: #FFFFFF;
+        }
+        .icon-female {
+            color: rgb(224, 132, 147);
+            align-items: center;
+            margin-top: 5px;
+            display: flex;
+            font-size: 50px;
+            margin-right: 2px;
+        }
+        .icon-male {
+            color: rgb(76, 141, 233);
+            align-items: center;
+            margin-top: 5px;
+            display: flex;
+            font-size: 50px;
+            margin-right: 2px;
+        }
+        .gender-text {
+            margin-left: 5px;
+            display: flex;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function setGender(gender) {
+            const buttons = document.querySelectorAll('.genderButton');
+            buttons.forEach(button => {
+                button.classList.remove('selected');
+                if (button.dataset.gender === gender) {
+                    button.classList.add('selected');
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <div class="title">สมัครสมาชิก</div>
+        <form>
+            <label class="Text"> ชื่อผู้ใช้</label>
+            <input type="text" class="input" id="name" required>
+
+            <label class="Text"> อีเมล</label>
+            <input type="email" class="input" id="email" required>
+
+            <label class="Text"> รหัสผ่าน</label>
+            <input type="password" class="input" id="password" required>
+
+            <label class="Text"> เพศ</label>
+            <div class="genderContainer">
+                <button type="button" class="genderButton" data-gender="male" onclick="setGender('male')">
+                    <span class="material-icons icon-male">male</span>
+                    <span class="gender-text">เพศชาย</span>
+                </button>
+                <button type="button" class="genderButton" data-gender="female" onclick="setGender('female')">
+                    <span class="material-icons icon-female">female</span>
+                    <span class="gender-text">เพศหญิง</span>
+                </button>                                
+            </div>
+
+            <button type="submit" class="button">สมัครสมาชิก</button>
+        </form>
+    </div>
+</body>
+</html>

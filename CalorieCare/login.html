@@ -1,7 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="th">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+
+    <title>ฟอนต์ไทยใน HTML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <style>
+        
         body {
             display: flex;
             justify-content: center;
@@ -10,37 +20,51 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
+            background-image: url('image/BG.png'); /* เปลี่ยนเป็นเส้นทางของภาพ */
+            background-size: cover; /* ทำให้ภาพเต็มพื้นที่ */
+            background-position: center; /* จัดตำแหน่งกลาง */
         }
         .container {
             text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* ทำให้พื้นหลังของ container โปร่งใส */
+            padding: 30px;
+            border-radius: 10px;
         }
         .logo {
             width: 200px;
             height: 200px;
-            background-color: #8A9A8B;
+            /* background-color: #8A9A8B; */
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 20px;
-            color: #FFFFFF;
+            /* color: #FFFFFF; */
             font-size: 24px;
+            background-image: url('image/Logo_CalorieCare.png');  
+            background-size: cover; /* ทำให้ภาพเต็มพื้นที่ */
+            background-position: center; /* จัดตำแหน่งกลาง */
         }
         .button {
             background-color: #8A9A8B;
             color: #FFFFFF;
             border: none;
-            padding: 15px 30px;
+            padding: 5px 50px;
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 20px;
+            font-family: "Kanit", sans-serif;
+            text-decoration: none; /* ไม่มีเส้นใต้ */
+            display: inline-block; /* ให้แสดงเป็น inline-block */
         }
         .divider {
             display: flex;
             align-items: center;
             text-align: center;
             margin-bottom: 20px;
+            color: #8A9A8B;
+            font-family: "Kanit", sans-serif;
         }
         .divider::before, .divider::after {
             content: '';
@@ -57,17 +81,18 @@
             background-color: #FFFFFF;
             color: #8A9A8B;
             border: 1px solid #8A9A8B;
-            padding: 15px 30px;
+            padding: 5px 55px;
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
+            font-family: "Kanit", sans-serif;        
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">LOGO</div>
-        <button class="button">เริ่มสมัครเลย</button>
+        <div class="logo"></div>
+        <a class="button" href="apply.html">เริ่มสมัครเลย</a>
         <div class="divider">หรือ</div>
         <button class="login-button">เข้าสู่ระบบ</button>
     </div>
