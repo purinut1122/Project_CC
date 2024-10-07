@@ -3,117 +3,124 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Calculator</title>
+    <meta name="description" content="Calculator for fitness tracking" />
+    <meta name="author" content="Your Name" />
+    <title>Fitness Calculator</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/history.css" rel="stylesheet" />
 </head>
+
 <body>
-<!-- ปรับปุ่มให้มันสวยงามตามท้องเรื่อง-->
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#">
-                    <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
-                  </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" href="#!">หน้าหลัก</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">ออกกำลังกาย</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">ประวัติ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">เป้าหมาย</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" aria-current="page" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">คำนวณ</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">รวมหน้าคำนวณ</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">คำนวณ BMI</a></li>
-                                <li><a class="dropdown-item" href="#!">คำนวณ BMR</a></li>
-                                <li><a class="dropdown-item" href="#!">คำนวณ TDEE</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-green" type="submit">
-                            <i class="me-auto"></i>
-                            สมัครสมาชิก
-                        </button>
-                    </form>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="#">หน้าหลัก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ออกกำลังกาย</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ประวัติ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">เป้าหมาย</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" aria-current="page" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">คำนวณ</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">รวมหน้าคำนวณ</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#">คำนวณ BMI</a></li>
+                            <li><a class="dropdown-item" href="#">คำนวณ BMR</a></li>
+                            <li><a class="dropdown-item" href="#">คำนวณ TDEE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-green" type="submit">
+                        สมัครสมาชิก
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- calendars -->
+    <div class="calendars">
+        <div class="left">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">December 2022</div>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days"></div>
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input" />
+                        <button class="goto-btn">Go</button>
+                    </div>
+                    <button class="today-btn">Today</button>
                 </div>
             </div>
-        </nav>
-
-        <!-- Header-->
-        <div class="header">
-          ประวัติการกิน (วันนี้)
-      </div>
-  
-      <div class="content">
-          <!-- Date Section -->
-          <div class="date-container">
-              <button>&lt;</button>
-              <span type="date">วันนี้, 4 ก.ย. 67</span>
-              <button>&gt;</button>
-          </div>
-  
-          <!-- Breakfast Section -->
-          <div class="meal-section">
-            <div class="meal-header">
-                <span>มื้อเช้า</span>
-                <span>0 kcal</span>
-            </div>
-            <p>
-              <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
-          </p>
         </div>
-  
-          <!-- Lunch Section -->
-          <div class="meal-section">
-              <div class="meal-header">
-                  <span>มื้อกลางวัน</span>
-                  <span>0 kcal</span>
-              </div>
-              <p>
-                <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
-            </p>
-          </div>
-          <!-- Dinner Section -->
-          <div class="meal-section">
-            <div class="meal-header">
-                <span>มื้อเย็น</span>
-                <span>0 kcal</span>
+
+        <div class="right">
+            <div class="today-date">
+                <div class="event-day">Wed</div>
+                <div class="event-date">12th December 2022</div>
             </div>
-            <p>
-              <a href="search.html" class="add-food-btn link-light link-offset-2">เพิ่มเมนูอาหาร</a>
-          </p></button>
-      </div>
-
-             
-      </div>
-      </div>
+            <div class="events"></div>
+            <div class="add-event-wrapper">
+                <div class="add-event-header">
+                    <div class="title">ประวัติการกินวันนี้</div>
+                    <i class="fas fa-times close"></i>
+      
+                </div>
+                <div class="add-event-body">
+                    <div class="add-event-input">
+                      <input type="text" placeholder="Event Time From" class="event-time-from" />
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Time From" class="event-time-from" />
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Time To" class="event-time-to" />
+                    </div>
+                </div>
+                <div class="add-event-footer">
+                    <button class="add-event-btn">ADD MENU</button>
+                </div>
+            </div>
+        </div>
+        <button class="add-event">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
     </div>
-  </div>
-</div>
 
-
-
-
-
-       
-        
-
-
-            <!-- Bootstrap core JS-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-            <!-- Core theme JS-->
-            <script src="js/scripts.js"></script>
-            <script src="js/history.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="js/history.js"></script>
 </body>
 </html>
