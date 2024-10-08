@@ -310,8 +310,15 @@
   color: var(--primary-clr);
   font-size: 0.5rem;
 }
+.add-event-text{
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 20px;
+  text-align: center;
+}
 .events .event:hover i {
-  color: #fff;
+  color: #ffffff;
 }
 .events .event .event-time {
   font-size: 0.8rem;
@@ -470,6 +477,7 @@
   color: var(--primary-clr);
 }
 
+
 /* media queries */
 
 @media screen and (max-width: 1000px) {
@@ -532,4 +540,53 @@
 .credits a:hover {
   text-decoration: underline;
 }
+.search-container {
+  display: flex;
+  align-items: center; /* Align icon and input to the right */
+}
+
+input {
+  flex: 1; /* Take available space */
+}
+
+.bi-search {
+  color:#20c997; /* Change icon color to black */
+  margin-right: 8px;  /* Add space between input and icon */
+}
+
+
+.add-event-text i {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.row-4 {
+  display: flex;         
+  align-items: center;   
+}
+
+#counter {
+  font-size: 20px;      /* ขนาดตัวอักษร */
+  padding: 10px 20px;   /* เพิ่ม padding */
+  margin: 0;            /* ปรับ margin ให้เป็น 0 */
+  min-width: 40px;      /* กำหนดความกว้างขั้นต่ำ */
+  text-align: center;    /* จัดให้อยู่กลาง */
+}
+
+.plus, .dash {
+  cursor: pointer;      /* แสดงให้รู้ว่าสามารถคลิกได้ */
+  font-size: 20px;     /* กำหนดขนาดไอคอน */
+}
+
+.dash .plus {
+  color: #20c997;
+}
+button:focus-visible {
+	outline: 1px solid rgb(171, 171, 171);
+	outline-offset: 4px;
+}
+
+
+
 

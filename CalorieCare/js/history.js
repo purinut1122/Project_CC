@@ -136,11 +136,48 @@ function nextMonth() {
   }
   initCalendar();
 }
-
+//prev next +1 ,-1
 prev.addEventListener("click", prevMonth);
 next.addEventListener("click", nextMonth);
 
 initCalendar();
+//prev next < >
+// Function to update the month
+const updateMonth = (direction) => {
+    currentDate.setMonth(currentDate.getMonth() + direction); // Increment or decrement the month
+    dateDisplay.innerHTML = formatDate(currentDate);
+}
+
+// Event listeners for left and right buttons
+prev.addEventListener('click', () => updateMonth(-1)); // Go to previous month
+next.addEventListener('click', () => updateMonth(1));  // Go to next month
+//end prev next < >
+
+const counterElement = document.getElementById('counter');
+const plusButton = document.getElementById('plus');
+const minusButton = document.getElementById('minus');
+
+let counter = 0; // Initial counter value
+
+// Update the counter display
+const updateCounter = () => {
+    counterElement.innerHTML = counter;
+}
+
+// Increase the counter when the plus button is clicked
+plusButton.addEventListener('click', () => {
+    counter++;
+    updateCounter();
+});
+
+// Decrease the counter when the minus button is clicked
+minusButton.addEventListener('click', () => {
+    if (counter > 0) {  // Ensure counter does not go below 0
+        counter--;
+    }
+    updateCounter();
+});
+
 
 //function to add active on day
 function addListner() {
@@ -475,3 +512,16 @@ function convertTime(time) {
 function breakfast(){
 
 }
+
+function searchEvent() {
+  const eventTimeFrom = document.querySelector('.event-time-from').value;
+  alert('ค้นหาเหตุการณ์ที่เวลา: ' + eventTimeFrom);
+  // เพิ่มโค้ดสำหรับฟังก์ชันการค้นหาเพิ่มเติมได้ที่นี่
+}
+
+function ctrl($scope){
+  $scope.rows = ['Paul','John','Lucie'];
+};
+
+
+

@@ -15,6 +15,7 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/history.css" rel="stylesheet" />
+    <!--link searchbar-->
 </head>
 
 <body>
@@ -60,9 +61,9 @@
         <div class="left">
             <div class="calendar">
                 <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
+                    <i class="bi bi-chevron-left prev "></i>
                     <div class="date">December 2022</div>
-                    <i class="fas fa-angle-right next"></i>
+                    <i class="bi bi-chevron-right next "></i>
                 </div>
                 <div class="weekdays">
                     <div>Sun</div>
@@ -83,7 +84,7 @@
                 </div>
             </div>
         </div>
-
+<!--event-->
         <div class="right">
             <div class="today-date">
                 <div class="event-day">Wed</div>
@@ -96,19 +97,23 @@
                     <i class="fas fa-times close"></i>
       
                 </div>
-                <div class="add-event-body">
-                    <div class="add-event-input">
-                      <input type="text" placeholder="Event Time From" class="event-time-from" />
+                <div class="add-event-body ">
+                    <div class="search">
+                        <div class="add-event-input">
+                            <div class="search-container">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="searchbar" placeholder="Search...">                           
+                            </div>
+                          </div>
                     </div>
-                    <div class="add-event-input">
-                        <input type="text" placeholder="Event Time From" class="event-time-from" />
-                    </div>
-                    <div class="add-event-input">
-                        <input type="text" placeholder="Event Time To" class="event-time-to" />
-                    </div>
-                </div>
+                    <div class="add-event-text">
+                        <i class="bi bi-dash-circle dash col-4" id="minus"></i>
+                        <output class="col-4" id="counter">0</output>
+                        <i class="bi bi-plus-circle plus col-4" id="plus"></i>
+                    </div>                                                    
+                    <div class="add-event-text">kal.</div>                    
                 <div class="add-event-footer">
-                    <button class="add-event-btn">ADD MENU</button>
+                    <button class="add-event-btn center">ADD MENU</button>
                 </div>
             </div>
         </div>
@@ -122,5 +127,6 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/history.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
