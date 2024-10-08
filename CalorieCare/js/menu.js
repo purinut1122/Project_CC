@@ -1,3281 +1,2616 @@
-{
-    [
+const menu ={
+    "Recovered_Sheet1":[
      {
-      "calorie-tr": "กระเพาะปลา",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "150"
+      "menu": "กระเพาะปลา",
+      "kal": 150
      },
      {
-      "calorie-tr": "กระเพาะปลาตุ๋นน้ำแดง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "225"
+      "menu": "กระเพาะปลาตุ๋นน้ำแดง",
+      "kal": 225
      },
      {
-      "calorie-tr": "กล้วยไข่",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "40"
+      "menu": "กล้วยไข่",
+      "kal": 40
      },
      {
-      "calorie-tr": "กล้วยคลุก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "100"
+      "menu": "กล้วยคลุก",
+      "kal": 100
      },
      {
-      "calorie-tr": "กล้วยฉาบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "29"
+      "menu": "กล้วยฉาบ",
+      "kal": 29
      },
      {
-      "calorie-tr": "กล้วยตาก",
-      "pkt-center": "1 ผล",
-      "pkt-right": "30"
+      "menu": "กล้วยตาก",
+      "kal": 30
      },
      {
-      "calorie-tr": "กล้วยทอด (กล้วยแขก)",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "50"
+      "menu": "กล้วยทอด (กล้วยแขก)",
+      "kal": 50
      },
      {
-      "calorie-tr": "กล้วยน้ำว้า",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "36"
+      "menu": "กล้วยน้ำว้า",
+      "kal": 36
      },
      {
-      "calorie-tr": "กล้วยบวชชี",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "152"
+      "menu": "กล้วยบวชชี",
+      "kal": 152
      },
      {
-      "calorie-tr": "กล้วยเล็บมือนาง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "30"
+      "menu": "กล้วยเล็บมือนาง",
+      "kal": 30
      },
      {
-      "calorie-tr": "กล้วยหอม",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "77"
+      "menu": "กล้วยหอม",
+      "kal": 77
      },
      {
-      "calorie-tr": "กวยจั๊บ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "240"
+      "menu": "กวยจั๊บ",
+      "kal": 240
      },
      {
-      "calorie-tr": "กวยจั๊บญวณ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "235"
+      "menu": "กวยจั๊บญวณ",
+      "kal": 235
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวแขก",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "380"
+      "menu": "ก๋วยเตี๋ยวแขก",
+      "kal": 380
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวคั่วไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "435"
+      "menu": "ก๋วยเตี๋ยวคั่วไก่",
+      "kal": 435
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวต้มยำกุ้ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "320"
+      "menu": "ก๋วยเตี๋ยวต้มยำกุ้ง",
+      "kal": 320
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเนื้อเลียง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "370"
+      "menu": "ก๋วยเตี๋ยวเนื้อเลียง",
+      "kal": 370
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเนื้อสับ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "370"
+      "menu": "ก๋วยเตี๋ยวเนื้อสับ",
+      "kal": 370
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวผัดกะเพราไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "440"
+      "menu": "ก๋วยเตี๋ยวผัดกะเพราไก่",
+      "kal": 440
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวผัดไทยใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "577"
+      "menu": "ก๋วยเตี๋ยวผัดไทยใส่ไข่",
+      "kal": 577
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวราดหน้าปลากะพง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "435"
+      "menu": "ก๋วยเตี๋ยวราดหน้าปลากะพง",
+      "kal": 435
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเรือน้ำตก",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "180"
+      "menu": "ก๋วยเตี๋ยวเรือน้ำตก",
+      "kal": 180
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเรือน้ำตกแห้ง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "225"
+      "menu": "ก๋วยเตี๋ยวเรือน้ำตกแห้ง",
+      "kal": 225
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นปลาน้ำ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "375"
+      "menu": "ก๋วยเตี๋ยวเส้นปลาน้ำ",
+      "kal": 375
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นปลาแห้ง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "420"
+      "menu": "ก๋วยเตี๋ยวเส้นปลาแห้ง",
+      "kal": 420
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นเล็กต้มยำหมู",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "335"
+      "menu": "ก๋วยเตี๋ยวเส้นเล็กต้มยำหมู",
+      "kal": 335
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นเล็กหมูแห้ง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "330"
+      "menu": "ก๋วยเตี๋ยวเส้นเล็กหมูแห้ง",
+      "kal": 330
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นหมี่น้ำลูกชิ้นเนื้อวัว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "226"
+      "menu": "ก๋วยเตี๋ยวเส้นหมี่น้ำลูกชิ้นเนื้อวัว",
+      "kal": 226
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นหมี่ลูกชิ้นเนื้อ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "258"
+      "menu": "ก๋วยเตี๋ยวเส้นหมี่ลูกชิ้นเนื้อ",
+      "kal": 258
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นใหญ่ผัดซีอิ๊วใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "ก๋วยเตี๋ยวเส้นใหญ่ผัดซีอิ๊วใส่ไข่",
+      "kal": 520
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นใหญ่ราดหน้าไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "397"
+      "menu": "ก๋วยเตี๋ยวเส้นใหญ่ราดหน้าไก่",
+      "kal": 397
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวเส้นใหญ่ราดหน้าหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "397"
+      "menu": "ก๋วยเตี๋ยวเส้นใหญ่ราดหน้าหมู",
+      "kal": 397
      },
      {
-      "calorie-tr": "ก๋วยเตี๋ยวหลอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "50"
+      "menu": "ก๋วยเตี๋ยวหลอด",
+      "kal": 50
      },
      {
-      "calorie-tr": "กะละแม",
-      "pkt-center": "1 ห่อเล็ก",
-      "pkt-right": "65"
+      "menu": "กะละแม",
+      "kal": 65
      },
      {
-      "calorie-tr": "กะหรี่ปั๊บ",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "157"
+      "menu": "กะหรี่ปั๊บ",
+      "kal": 157
      },
      {
-      "calorie-tr": "กุ้งแช่น้ำปลา",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "14"
+      "menu": "กุ้งแช่น้ำปลา",
+      "kal": 14
      },
      {
-      "calorie-tr": "กุ้งทอดกระเทียมพริกไทย",
-      "pkt-center": "1 ตัวขนาดกลาง",
-      "pkt-right": "86"
+      "menu": "กุ้งทอดกระเทียมพริกไทย",
+      "kal": 86
      },
      {
-      "calorie-tr": "กุ้งนางนึ่งนมสด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "185"
+      "menu": "กุ้งนางนึ่งนมสด",
+      "kal": 185
      },
      {
-      "calorie-tr": "กุ้งนึ่ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "124"
+      "menu": "กุ้งนึ่ง",
+      "kal": 124
      },
      {
-      "calorie-tr": "กุ้งผัดพริกอ่อน",
-      "pkt-center": "1 จาน",
-      "pkt-right": "235"
+      "menu": "กุ้งผัดพริกอ่อน",
+      "kal": 235
      },
      {
-      "calorie-tr": "กุ้งฝอยชุบแป้งทอด",
-      "pkt-center": "1 แพ",
-      "pkt-right": "308"
+      "menu": "กุ้งฝอยชุบแป้งทอด",
+      "kal": 308
      },
      {
-      "calorie-tr": "กุ้งอบวุ้นเส้น",
-      "pkt-center": "1 จาน",
-      "pkt-right": "300"
+      "menu": "กุ้งอบวุ้นเส้น",
+      "kal": 300
      },
      {
-      "calorie-tr": "กุนเชียงทอด",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "120"
+      "menu": "กุนเชียงทอด",
+      "kal": 120
      },
      {
-      "calorie-tr": "กุยช่ายทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "114"
+      "menu": "กุยช่ายทอด",
+      "kal": 114
      },
      {
-      "calorie-tr": "เกาเหลาราดหน้า",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "300"
+      "menu": "เกาเหลาราดหน้า",
+      "kal": 300
      },
      {
-      "calorie-tr": "เกาเหลาลูกชิ้นน้ำ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "225"
+      "menu": "เกาเหลาลูกชิ้นน้ำ",
+      "kal": 225
      },
      {
-      "calorie-tr": "เกี๊ยวกรอบราดหน้ากุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "635"
+      "menu": "เกี๊ยวกรอบราดหน้ากุ้ง",
+      "kal": 635
      },
      {
-      "calorie-tr": "เกี๊ยวซ่า",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "63"
+      "menu": "เกี๊ยวซ่า",
+      "kal": 63
      },
      {
-      "calorie-tr": "เกี๊ยวกุ้งน้ำ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "275"
+      "menu": "เกี๊ยวกุ้งน้ำ",
+      "kal": 275
      },
      {
-      "calorie-tr": "เกี๊ยวปลาน้ำ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "165"
+      "menu": "เกี๊ยวปลาน้ำ",
+      "kal": 165
      },
      {
-      "calorie-tr": "แกงกะหรี่ไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "450"
+      "menu": "แกงกะหรี่ไก่",
+      "kal": 450
      },
      {
-      "calorie-tr": "แกงกะหรี่หมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "325"
+      "menu": "แกงกะหรี่หมู",
+      "kal": 325
      },
      {
-      "calorie-tr": "แกงขี้เหล็ก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "195"
+      "menu": "แกงขี้เหล็ก",
+      "kal": 195
      },
      {
-      "calorie-tr": "แกงขี้เหล็กหมูย่าง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "245"
+      "menu": "แกงขี้เหล็กหมูย่าง",
+      "kal": 245
      },
      {
-      "calorie-tr": "แกงเขียวหวานไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "240"
+      "menu": "แกงเขียวหวานไก่",
+      "kal": 240
      },
      {
-      "calorie-tr": "แกงเขียวหวานปลาดุก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "235"
+      "menu": "แกงเขียวหวานปลาดุก",
+      "kal": 235
      },
      {
-      "calorie-tr": "แกงเขียวหวานลูกชิ้นปลากราย",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "240"
+      "menu": "แกงเขียวหวานลูกชิ้นปลากราย",
+      "kal": 240
      },
      {
-      "calorie-tr": "แกงเขียวหวานหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "235"
+      "menu": "แกงเขียวหวานหมู",
+      "kal": 235
      },
      {
-      "calorie-tr": "แกงจืดไข่เจียว",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "120"
+      "menu": "แกงจืดไข่เจียว",
+      "kal": 120
      },
      {
-      "calorie-tr": "แกงจืดตำลึงหมูสับ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "แกงจืดตำลึงหมูสับ",
+      "kal": 90
      },
      {
-      "calorie-tr": "แกงจืดเต้าหู้ไม่ใส่หมูสับ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "80"
+      "menu": "แกงจืดเต้าหู้ไม่ใส่หมูสับ",
+      "kal": 80
      },
      {
-      "calorie-tr": "แกงจืดเต้าหู้ยัดไส้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "110"
+      "menu": "แกงจืดเต้าหู้ยัดไส้",
+      "kal": 110
      },
      {
-      "calorie-tr": "แกงจืดถั่วงอกไม่ใส่หมูสับ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "50"
+      "menu": "แกงจืดถั่วงอกไม่ใส่หมูสับ",
+      "kal": 50
      },
      {
-      "calorie-tr": "แกงจืดถั่วงอกหมูสับ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "50"
+      "menu": "แกงจืดถั่วงอกหมูสับ",
+      "kal": 50
      },
      {
-      "calorie-tr": "แกงจืดฟักยัดไส้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "แกงจืดฟักยัดไส้",
+      "kal": 90
      },
      {
-      "calorie-tr": "แกงจืดมะระยัดไส้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "แกงจืดมะระยัดไส้",
+      "kal": 90
      },
      {
-      "calorie-tr": "แกงจืดมะระยัดไส้หมูวุ้นเส้น",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "66"
+      "menu": "แกงจืดมะระยัดไส้หมูวุ้นเส้น",
+      "kal": 66
      },
      {
-      "calorie-tr": "แกงจืดวุ้นเส้น",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "85"
+      "menu": "แกงจืดวุ้นเส้น",
+      "kal": 85
      },
      {
-      "calorie-tr": "แกงไตปลา",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "50"
+      "menu": "แกงไตปลา",
+      "kal": 50
      },
      {
-      "calorie-tr": "แกงป่าไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "110"
+      "menu": "แกงป่าไก่",
+      "kal": 110
      },
      {
-      "calorie-tr": "แกงเผ็ดไก่ใส่มะเขือ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "235"
+      "menu": "แกงเผ็ดไก่ใส่มะเขือ",
+      "kal": 235
      },
      {
-      "calorie-tr": "แกงเผ็ดไก่ใส่หน่อไม้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "245"
+      "menu": "แกงเผ็ดไก่ใส่หน่อไม้",
+      "kal": 245
      },
      {
-      "calorie-tr": "แกงเผ็ดเป็ดย่าง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "240"
+      "menu": "แกงเผ็ดเป็ดย่าง",
+      "kal": 240
      },
      {
-      "calorie-tr": "แกงเผ็ดฟักทองใส่หมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "250"
+      "menu": "แกงเผ็ดฟักทองใส่หมู",
+      "kal": 250
      },
      {
-      "calorie-tr": "แกงเผ็ดฟักทองหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "250"
+      "menu": "แกงเผ็ดฟักทองหมู",
+      "kal": 250
      },
      {
-      "calorie-tr": "แกงเผ็ดมะเขือไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "235"
+      "menu": "แกงเผ็ดมะเขือไก่",
+      "kal": 235
      },
      {
-      "calorie-tr": "แกงเผ็ดลูกชิ้นปลา",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "240"
+      "menu": "แกงเผ็ดลูกชิ้นปลา",
+      "kal": 240
      },
      {
-      "calorie-tr": "แกงเผ็ดหน่อไม้ไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "245"
+      "menu": "แกงเผ็ดหน่อไม้ไก่",
+      "kal": 245
      },
      {
-      "calorie-tr": "แกงเผ็ดหมูยอดมะพร้าว",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "245"
+      "menu": "แกงเผ็ดหมูยอดมะพร้าว",
+      "kal": 245
      },
      {
-      "calorie-tr": "แกงมัสมั่นไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "325"
+      "menu": "แกงมัสมั่นไก่",
+      "kal": 325
      },
      {
-      "calorie-tr": "แกงเลียง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "115"
+      "menu": "แกงเลียง",
+      "kal": 115
      },
      {
-      "calorie-tr": "แกงเลียงผักรวม",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "48"
+      "menu": "แกงเลียงผักรวม",
+      "kal": 48
      },
      {
-      "calorie-tr": "แกงส้ม",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "28"
+      "menu": "แกงส้ม",
+      "kal": 28
      },
      {
-      "calorie-tr": "แกงส้มชะอมไข่ทอดใส่กุ้ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "270"
+      "menu": "แกงส้มชะอมไข่ทอดใส่กุ้ง",
+      "kal": 270
      },
      {
-      "calorie-tr": "แกงส้มดอกแคกุ้ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "105"
+      "menu": "แกงส้มดอกแคกุ้ง",
+      "kal": 105
      },
      {
-      "calorie-tr": "แกงส้มปลาช่อน",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "105"
+      "menu": "แกงส้มปลาช่อน",
+      "kal": 105
      },
      {
-      "calorie-tr": "แกงส้มปลาแป๊ะซะ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "160"
+      "menu": "แกงส้มปลาแป๊ะซะ",
+      "kal": 160
      },
      {
-      "calorie-tr": "แกงส้มผักกระเฉดปลา",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "110"
+      "menu": "แกงส้มผักกระเฉดปลา",
+      "kal": 110
      },
      {
-      "calorie-tr": "แกงส้มผักบุ้งปลาช่อน",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "105"
+      "menu": "แกงส้มผักบุ้งปลาช่อน",
+      "kal": 105
      },
      {
-      "calorie-tr": "แกงส้มผักรวม",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "120"
+      "menu": "แกงส้มผักรวม",
+      "kal": 120
      },
      {
-      "calorie-tr": "แกงหมูเทโพ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "300"
+      "menu": "แกงหมูเทโพ",
+      "kal": 300
      },
      {
-      "calorie-tr": "แกงเหลืองมะละกอกุ้ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "80"
+      "menu": "แกงเหลืองมะละกอกุ้ง",
+      "kal": 80
      },
      {
-      "calorie-tr": "แกงเหลืองหน่อไม้ดองกับปลา",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "80"
+      "menu": "แกงเหลืองหน่อไม้ดองกับปลา",
+      "kal": 80
      },
      {
-      "calorie-tr": "แก้วมังกร",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "60"
+      "menu": "แก้วมังกร",
+      "kal": 60
      },
      {
-      "calorie-tr": "โกยซีหมี่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "550"
+      "menu": "โกยซีหมี่",
+      "kal": 550
      },
      {
-      "calorie-tr": "ไก่ KFC สะโพก",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "355"
+      "menu": "ไก่ KFC สะโพก",
+      "kal": 355
      },
      {
-      "calorie-tr": "ไก่ KFC ฮอตวิง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "78"
+      "menu": "ไก่ KFC ฮอตวิง",
+      "kal": 78
      },
      {
-      "calorie-tr": "ไก่ตุ๋นมะนาวดอง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "110"
+      "menu": "ไก่ตุ๋นมะนาวดอง",
+      "kal": 110
      },
      {
-      "calorie-tr": "ไก่ทอด",
-      "pkt-center": "1 น่อง",
-      "pkt-right": "345"
+      "menu": "ไก่ทอด",
+      "kal": 345
      },
      {
-      "calorie-tr": "ไก่ผัดขิง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ไก่ผัดขิง",
+      "kal": 210
      },
      {
-      "calorie-tr": "ไก่ยอชุบแป้งทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "73"
+      "menu": "ไก่ยอชุบแป้งทอด",
+      "kal": 73
      },
      {
-      "calorie-tr": "ไก่ย่าง",
-      "pkt-center": "1 น่อง",
-      "pkt-right": "165"
+      "menu": "ไก่ย่าง",
+      "kal": 165
      },
      {
-      "calorie-tr": "ขนมกรวย",
-      "pkt-center": "1 กรวย",
-      "pkt-right": "63"
+      "menu": "ขนมกรวย",
+      "kal": 63
      },
      {
-      "calorie-tr": "ขนม",
-      "pkt-center": "1 ห่อ",
-      "pkt-right": "120"
+      "menu": "ขนม",
+      "kal": 120
      },
      {
-      "calorie-tr": "ขนมกลีบลำดวน",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "23"
+      "menu": "ขนมกลีบลำดวน",
+      "kal": 23
      },
      {
-      "calorie-tr": "ขนมกุยช่าย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "53"
+      "menu": "ขนมกุยช่าย",
+      "kal": 53
      },
      {
-      "calorie-tr": "ขนมเกลียว",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "25"
+      "menu": "ขนมเกลียว",
+      "kal": 25
      },
      {
-      "calorie-tr": "ขนมขี้หนู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "165"
+      "menu": "ขนมขี้หนู",
+      "kal": 165
      },
      {
-      "calorie-tr": "ขนมเข่ง",
-      "pkt-center": "1 กระทง",
-      "pkt-right": "120"
+      "menu": "ขนมเข่ง",
+      "kal": 120
      },
      {
-      "calorie-tr": "ขนมครก",
-      "pkt-center": "1 คู่",
-      "pkt-right": "92"
+      "menu": "ขนมครก",
+      "kal": 92
      },
      {
-      "calorie-tr": "ขนมจีน",
-      "pkt-center": "1 ทัพพี",
-      "pkt-right": "80"
+      "menu": "ขนมจีน",
+      "kal": 80
      },
      {
-      "calorie-tr": "ขนมจีนแกงเขียวหวานไก่",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "594"
+      "menu": "ขนมจีนแกงเขียวหวานไก่",
+      "kal": 594
      },
      {
-      "calorie-tr": "ขนมจีนซาวน้ำ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "320"
+      "menu": "ขนมจีนซาวน้ำ",
+      "kal": 320
      },
      {
-      "calorie-tr": "ขนมจีนน้ำเงี้ยว",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "243"
+      "menu": "ขนมจีนน้ำเงี้ยว",
+      "kal": 243
      },
      {
-      "calorie-tr": "ขนมจีนน้ำพริก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "228"
+      "menu": "ขนมจีนน้ำพริก",
+      "kal": 228
      },
      {
-      "calorie-tr": "ขนมจีนน้ำยา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "332"
+      "menu": "ขนมจีนน้ำยา",
+      "kal": 332
      },
      {
-      "calorie-tr": "ขนมจีนน้ำยาปักษ์ใต้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "146"
+      "menu": "ขนมจีนน้ำยาปักษ์ใต้",
+      "kal": 146
      },
      {
-      "calorie-tr": "ขนมจีบหมู",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "32"
+      "menu": "ขนมจีบหมู",
+      "kal": 32
      },
      {
-      "calorie-tr": "ขนมตาล",
-      "pkt-center": "1 กระทง",
-      "pkt-right": "58"
+      "menu": "ขนมตาล",
+      "kal": 58
      },
      {
-      "calorie-tr": "ขนมถั่วแปบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "14"
+      "menu": "ขนมถั่วแปบ",
+      "kal": 14
      },
      {
-      "calorie-tr": "ขนมเทียน",
-      "pkt-center": "1 ห่อ",
-      "pkt-right": "103"
+      "menu": "ขนมเทียน",
+      "kal": 103
      },
      {
-      "calorie-tr": "ขนมบ้าบิ่น",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "130"
+      "menu": "ขนมบ้าบิ่น",
+      "kal": 130
      },
      {
-      "calorie-tr": "ขนมเบื้องไทยไส้เค็ม",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "50"
+      "menu": "ขนมเบื้องไทยไส้เค็ม",
+      "kal": 50
      },
      {
-      "calorie-tr": "ขนมเบื้องไทยไส้หวาน",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "60"
+      "menu": "ขนมเบื้องไทยไส้หวาน",
+      "kal": 60
      },
      {
-      "calorie-tr": "ขนมเปียกปูน",
-      "pkt-center": "1 จานเล็ก",
-      "pkt-right": "195"
+      "menu": "ขนมเปียกปูน",
+      "kal": 195
      },
      {
-      "calorie-tr": "ขนมผิง",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "5"
+      "menu": "ขนมผิง",
+      "kal": 5
      },
      {
-      "calorie-tr": "ขนมฝักบัว",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "70"
+      "menu": "ขนมฝักบัว",
+      "kal": 70
      },
      {
-      "calorie-tr": "ขนมเล็บมือนาง",
-      "pkt-center": "1 จานเล็ก",
-      "pkt-right": "275"
+      "menu": "ขนมเล็บมือนาง",
+      "kal": 275
      },
      {
-      "calorie-tr": "ขนมหน้านวล",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "22"
+      "menu": "ขนมหน้านวล",
+      "kal": 22
      },
      {
-      "calorie-tr": "ขนมหัวผักกาดผัด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "560"
+      "menu": "ขนมหัวผักกาดผัด",
+      "kal": 560
      },
      {
-      "calorie-tr": "ขนมหัวผักกาดผัดใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "630"
+      "menu": "ขนมหัวผักกาดผัดใส่ไข่",
+      "kal": 630
      },
      {
-      "calorie-tr": "ข้าวกะเพราเนื้อ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "622"
+      "menu": "ข้าวกะเพราเนื้อ",
+      "kal": 622
      },
      {
-      "calorie-tr": "ข้าวกุ้งทอดกระเทียม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "495"
+      "menu": "ข้าวกุ้งทอดกระเทียม",
+      "kal": 495
      },
      {
-      "calorie-tr": "ข้าวเกรียบกุ้ง",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "37"
+      "menu": "ข้าวเกรียบกุ้ง",
+      "kal": 37
      },
      {
-      "calorie-tr": "ข้าวเกรียบปากหม้อ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "26"
+      "menu": "ข้าวเกรียบปากหม้อ",
+      "kal": 26
      },
      {
-      "calorie-tr": "ข้าวแกงกะหรี่ไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "389"
+      "menu": "ข้าวแกงกะหรี่ไก่",
+      "kal": 389
      },
      {
-      "calorie-tr": "ข้าวแกงเผ็ดไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "485"
+      "menu": "ข้าวแกงเผ็ดไก่",
+      "kal": 485
      },
      {
-      "calorie-tr": "ข้าวไก่อบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "490"
+      "menu": "ข้าวไก่อบ",
+      "kal": 490
      },
      {
-      "calorie-tr": "ข้าวขาหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "690"
+      "menu": "ข้าวขาหมู",
+      "kal": 690
      },
      {
-      "calorie-tr": "ข้าวไข่เจียว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "445"
+      "menu": "ข้าวไข่เจียว",
+      "kal": 445
      },
      {
-      "calorie-tr": "ข้าวคลุกกะปิ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "410"
+      "menu": "ข้าวคลุกกะปิ",
+      "kal": 410
      },
      {
-      "calorie-tr": "ข้าวแช่",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "350"
+      "menu": "ข้าวแช่",
+      "kal": 350
      },
      {
-      "calorie-tr": "ข้าวซอยไก่",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "395"
+      "menu": "ข้าวซอยไก่",
+      "kal": 395
      },
      {
-      "calorie-tr": "ข้าวซอยหมู",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "395"
+      "menu": "ข้าวซอยหมู",
+      "kal": 395
      },
      {
-      "calorie-tr": "ข้าวต้ม (ข้าวกล้อง)",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "120"
+      "menu": "ข้าวต้ม (ข้าวกล้อง)",
+      "kal": 120
      },
      {
-      "calorie-tr": "ข้าวต้ม (ข้าวขาว)",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "120"
+      "menu": "ข้าวต้ม (ข้าวขาว)",
+      "kal": 120
      },
      {
-      "calorie-tr": "ข้าวต้มทรงเครื่อง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "230"
+      "menu": "ข้าวต้มทรงเครื่อง",
+      "kal": 230
      },
      {
-      "calorie-tr": "ข้าวต้มปลา",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "325"
+      "menu": "ข้าวต้มปลา",
+      "kal": 325
      },
      {
-      "calorie-tr": "ข้าวต้มมัด",
-      "pkt-center": "1 มัด",
-      "pkt-right": "285"
+      "menu": "ข้าวต้มมัด",
+      "kal": 285
      },
      {
-      "calorie-tr": "ข้าวตังหน้าตั้ง",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "90"
+      "menu": "ข้าวตังหน้าตั้ง",
+      "kal": 90
      },
      {
-      "calorie-tr": "ข้าวตังหมูหยอง",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "80"
+      "menu": "ข้าวตังหมูหยอง",
+      "kal": 80
      },
      {
-      "calorie-tr": "ข้าวแตนราดน้ำตาล",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "150"
+      "menu": "ข้าวแตนราดน้ำตาล",
+      "kal": 150
      },
      {
-      "calorie-tr": "ข้าวปุ้น (ส้มตำ-ขนมจีน)",
-      "pkt-center": "1 จาน",
-      "pkt-right": "180"
+      "menu": "ข้าวปุ้น (ส้มตำ-ขนมจีน)",
+      "kal": 180
      },
      {
-      "calorie-tr": "ข้าวผัดกะเพราหมูกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "650"
+      "menu": "ข้าวผัดกะเพราหมูกรอบ",
+      "kal": 650
      },
      {
-      "calorie-tr": "ข้าวผัดกะเพรากุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "540"
+      "menu": "ข้าวผัดกะเพรากุ้ง",
+      "kal": 540
      },
      {
-      "calorie-tr": "ข้าวผัดกะเพราไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "554"
+      "menu": "ข้าวผัดกะเพราไก่",
+      "kal": 554
      },
      {
-      "calorie-tr": "ข้าวผัดกะเพราไก่ไข่ดาว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "630"
+      "menu": "ข้าวผัดกะเพราไก่ไข่ดาว",
+      "kal": 630
      },
      {
-      "calorie-tr": "ข้าวผัดกะเพราหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "580"
+      "menu": "ข้าวผัดกะเพราหมู",
+      "kal": 580
      },
      {
-      "calorie-tr": "ข้าวผัดกุ้งใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "595"
+      "menu": "ข้าวผัดกุ้งใส่ไข่",
+      "kal": 595
      },
      {
-      "calorie-tr": "ข้าวผัดกุนเชียง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "590"
+      "menu": "ข้าวผัดกุนเชียง",
+      "kal": 590
      },
      {
-      "calorie-tr": "ข้าวผัดแกงเขียวหวานไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "630"
+      "menu": "ข้าวผัดแกงเขียวหวานไก่",
+      "kal": 630
      },
      {
-      "calorie-tr": "ข้าวผัดคะน้าหมูกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "670"
+      "menu": "ข้าวผัดคะน้าหมูกรอบ",
+      "kal": 670
      },
      {
-      "calorie-tr": "ข้าวผัดต้มยำทะเลแห้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "400"
+      "menu": "ข้าวผัดต้มยำทะเลแห้ง",
+      "kal": 400
      },
      {
-      "calorie-tr": "ข้าวผัดน้ำพริกกุ้งสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "460"
+      "menu": "ข้าวผัดน้ำพริกกุ้งสด",
+      "kal": 460
      },
      {
-      "calorie-tr": "ข้าวผัดน้ำพริกเผาหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "665"
+      "menu": "ข้าวผัดน้ำพริกเผาหมู",
+      "kal": 665
      },
      {
-      "calorie-tr": "ข้าวผัดน้ำพริกลงเรือ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "605"
+      "menu": "ข้าวผัดน้ำพริกลงเรือ",
+      "kal": 605
      },
      {
-      "calorie-tr": "ข้าวผัดปลาเค็ม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "405"
+      "menu": "ข้าวผัดปลาเค็ม",
+      "kal": 405
      },
      {
-      "calorie-tr": "ข้าวผัดปลาหมึกน้ำพริกเผา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "535"
+      "menu": "ข้าวผัดปลาหมึกน้ำพริกเผา",
+      "kal": 535
      },
      {
-      "calorie-tr": "ข้าวผัดปูใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "610"
+      "menu": "ข้าวผัดปูใส่ไข่",
+      "kal": 610
      },
      {
-      "calorie-tr": "ข้าวผัดผักกระเฉดหมูกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "600"
+      "menu": "ข้าวผัดผักกระเฉดหมูกรอบ",
+      "kal": 600
      },
      {
-      "calorie-tr": "ข้าวผัดมันกุ้งใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "575"
+      "menu": "ข้าวผัดมันกุ้งใส่ไข่",
+      "kal": 575
      },
      {
-      "calorie-tr": "ข้าวผัดรวมมิตร (น้ำมันน้อย)",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ข้าวผัดรวมมิตร (น้ำมันน้อย)",
+      "kal": 210
      },
      {
-      "calorie-tr": "ข้าวผัดสับปะรด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "335"
+      "menu": "ข้าวผัดสับปะรด",
+      "kal": 335
      },
      {
-      "calorie-tr": "ข้าวผัดไส้กรอก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "ข้าวผัดไส้กรอก",
+      "kal": 520
      },
      {
-      "calorie-tr": "ข้าวผัดหนำเลี้ยบหมูใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "370"
+      "menu": "ข้าวผัดหนำเลี้ยบหมูใส่ไข่",
+      "kal": 370
      },
      {
-      "calorie-tr": "ข้าวผัดหมูน้ำพริกเผา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "665"
+      "menu": "ข้าวผัดหมูน้ำพริกเผา",
+      "kal": 665
      },
      {
-      "calorie-tr": "ข้าวผัดหมูใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "557"
+      "menu": "ข้าวผัดหมูใส่ไข่",
+      "kal": 557
      },
      {
-      "calorie-tr": "ข้าวผัดแหนม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "610"
+      "menu": "ข้าวผัดแหนม",
+      "kal": 610
      },
      {
-      "calorie-tr": "ข้าวผัดอเมริกัน",
-      "pkt-center": "1 จาน",
-      "pkt-right": "790"
+      "menu": "ข้าวผัดอเมริกัน",
+      "kal": 790
      },
      {
-      "calorie-tr": "ข้าวพะแนงเนื้อ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "457"
+      "menu": "ข้าวพะแนงเนื้อ",
+      "kal": 457
      },
      {
-      "calorie-tr": "ข้าวโพดต้ม",
-      "pkt-center": "1 ฝัก",
-      "pkt-right": "200"
+      "menu": "ข้าวโพดต้ม",
+      "kal": 200
      },
      {
-      "calorie-tr": "ข้าวมันไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "596"
+      "menu": "ข้าวมันไก่",
+      "kal": 596
      },
      {
-      "calorie-tr": "ข้าวมันไก่ทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "695"
+      "menu": "ข้าวมันไก่ทอด",
+      "kal": 695
      },
      {
-      "calorie-tr": "ข้าวเม่าทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "209"
+      "menu": "ข้าวเม่าทอด",
+      "kal": 209
      },
      {
-      "calorie-tr": "ข้าวยำปักษ์ใต้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "248"
+      "menu": "ข้าวยำปักษ์ใต้",
+      "kal": 248
      },
      {
-      "calorie-tr": "ข้าวราดแกงเขียวหวานไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "483"
+      "menu": "ข้าวราดแกงเขียวหวานไก่",
+      "kal": 483
      },
      {
-      "calorie-tr": "ข้าวราดผัดผักบุ้ง ไข่ดาว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "410"
+      "menu": "ข้าวราดผัดผักบุ้ง ไข่ดาว",
+      "kal": 410
      },
      {
-      "calorie-tr": "ข้าวราดผัดผักใส่หมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "370"
+      "menu": "ข้าวราดผัดผักใส่หมู",
+      "kal": 370
      },
      {
-      "calorie-tr": "ข้าวราดหน้าไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "400"
+      "menu": "ข้าวราดหน้าไก่",
+      "kal": 400
      },
      {
-      "calorie-tr": "ข้าวสตูไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "465"
+      "menu": "ข้าวสตูไก่",
+      "kal": 465
      },
      {
-      "calorie-tr": "ข้าวสวย",
-      "pkt-center": "1 ทัพพี",
-      "pkt-right": "68"
+      "menu": "ข้าวสวย",
+      "kal": 68
      },
      {
-      "calorie-tr": "ข้าวสวย (ข้าวกล้อง)",
-      "pkt-center": "1 ทัพพี",
-      "pkt-right": "80"
+      "menu": "ข้าวสวย (ข้าวกล้อง)",
+      "kal": 80
      },
      {
-      "calorie-tr": "ข้าวสวย (ข้าวขาว)",
-      "pkt-center": "1 ทัพพี",
-      "pkt-right": "80"
+      "menu": "ข้าวสวย (ข้าวขาว)",
+      "kal": 80
      },
      {
-      "calorie-tr": "ข้าวหน้ากุ้งผัดพริกสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "540"
+      "menu": "ข้าวหน้ากุ้งผัดพริกสด",
+      "kal": 540
      },
      {
-      "calorie-tr": "ข้าวหน้าเป็ด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "495"
+      "menu": "ข้าวหน้าเป็ด",
+      "kal": 495
      },
      {
-      "calorie-tr": "ข้าวหมกไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "534"
+      "menu": "ข้าวหมกไก่",
+      "kal": 534
      },
      {
-      "calorie-tr": "ข้าวหมูแดง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "541"
+      "menu": "ข้าวหมูแดง",
+      "kal": 541
      },
      {
-      "calorie-tr": "ข้าวหมูทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "416"
+      "menu": "ข้าวหมูทอด",
+      "kal": 416
      },
      {
-      "calorie-tr": "ข้าวหมูทอดกระเทียม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "525"
+      "menu": "ข้าวหมูทอดกระเทียม",
+      "kal": 525
      },
      {
-      "calorie-tr": "ข้าวหมูอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "389"
+      "menu": "ข้าวหมูอบ",
+      "kal": 389
      },
      {
-      "calorie-tr": "ข้าวเหนียวกะทิ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "225"
+      "menu": "ข้าวเหนียวกะทิ",
+      "kal": 225
      },
      {
-      "calorie-tr": "ข้าวเหนียวดำ",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "205"
+      "menu": "ข้าวเหนียวดำ",
+      "kal": 205
      },
      {
-      "calorie-tr": "ข้าวเหนียวตัด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "210"
+      "menu": "ข้าวเหนียวตัด",
+      "kal": 210
      },
      {
-      "calorie-tr": "ข้าวเหนียวนึ่ง",
-      "pkt-center": "1 ทัพพี",
-      "pkt-right": "160"
+      "menu": "ข้าวเหนียวนึ่ง",
+      "kal": 160
      },
      {
-      "calorie-tr": "ข้าวเหนียวมูนกะทิ",
-      "pkt-center": "1 จานเล็ก",
-      "pkt-right": "197"
+      "menu": "ข้าวเหนียวมูนกะทิ",
+      "kal": 197
      },
      {
-      "calorie-tr": "ข้าวเหนียวหน้าสังขยา",
-      "pkt-center": "1 จานเล็ก",
-      "pkt-right": "223"
+      "menu": "ข้าวเหนียวหน้าสังขยา",
+      "kal": 223
      },
      {
-      "calorie-tr": "ข้าวเหนียวหมูทอด",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "440"
+      "menu": "ข้าวเหนียวหมูทอด",
+      "kal": 440
      },
      {
-      "calorie-tr": "ข้าวเหนียวหมูสวรรค์",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "480"
+      "menu": "ข้าวเหนียวหมูสวรรค์",
+      "kal": 480
      },
      {
-      "calorie-tr": "ข้าวอบเผือก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "385"
+      "menu": "ข้าวอบเผือก",
+      "kal": 385
      },
      {
-      "calorie-tr": "ไข่เค็ม",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "75"
+      "menu": "ไข่เค็ม",
+      "kal": 75
      },
      {
-      "calorie-tr": "ไข่เจียว",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "215"
+      "menu": "ไข่เจียว",
+      "kal": 215
      },
      {
-      "calorie-tr": "ไข่ดาว",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "215"
+      "menu": "ไข่ดาว",
+      "kal": 215
      },
      {
-      "calorie-tr": "ไข่ดาวทรงเครื่อง",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "250"
+      "menu": "ไข่ดาวทรงเครื่อง",
+      "kal": 250
      },
      {
-      "calorie-tr": "ไข่ต้ม",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "73"
+      "menu": "ไข่ต้ม",
+      "kal": 73
      },
      {
-      "calorie-tr": "ไข่ตุ๋น",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "75"
+      "menu": "ไข่ตุ๋น",
+      "kal": 75
      },
      {
-      "calorie-tr": "ไข่ตุ๋นทรงเครื่อง",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "159"
+      "menu": "ไข่ตุ๋นทรงเครื่อง",
+      "kal": 159
      },
      {
-      "calorie-tr": "ไข่นกกระทา",
-      "pkt-center": "1 จานเล็ก",
-      "pkt-right": "191"
+      "menu": "ไข่นกกระทา",
+      "kal": 191
      },
      {
-      "calorie-tr": "ไข่พะโล้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "180"
+      "menu": "ไข่พะโล้",
+      "kal": 180
      },
      {
-      "calorie-tr": "ไข่ยัดไส้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "310"
+      "menu": "ไข่ยัดไส้",
+      "kal": 310
      },
      {
-      "calorie-tr": "ไข่ลวก",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "75"
+      "menu": "ไข่ลวก",
+      "kal": 75
      },
      {
-      "calorie-tr": "ไข่ลูกเขย",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "205"
+      "menu": "ไข่ลูกเขย",
+      "kal": 205
      },
      {
-      "calorie-tr": "ไข่หงส์",
-      "pkt-center": "1 ใบ",
-      "pkt-right": "58"
+      "menu": "ไข่หงส์",
+      "kal": 58
      },
      {
-      "calorie-tr": "ครองแครงกรอบเค็ม",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "19"
+      "menu": "ครองแครงกรอบเค็ม",
+      "kal": 19
      },
      {
-      "calorie-tr": "ครัวซอง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "235"
+      "menu": "ครัวซอง",
+      "kal": 235
      },
      {
-      "calorie-tr": "ครีมซุปไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "160"
+      "menu": "ครีมซุปไก่",
+      "kal": 160
      },
      {
-      "calorie-tr": "คอหมูย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "คอหมูย่าง",
+      "kal": 200
      },
      {
-      "calorie-tr": "คะน้าหมูกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "420"
+      "menu": "คะน้าหมูกรอบ",
+      "kal": 420
      },
      {
-      "calorie-tr": "เครื่องในไก่ผัดขิง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "เครื่องในไก่ผัดขิง",
+      "kal": 200
      },
      {
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "4"
+      "menu": "แคบหมู มีมัน",
+      "kal": 13
      },
      {
-      "calorie-tr": "แคบหมู มีมัน",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "13"
+      "menu": "แคบหมู ไร้มัน",
+      "kal": 10
      },
      {
-      "calorie-tr": "แคบหมู ไร้มัน",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "10"
+      "menu": "โครงไก่ทอด",
+      "kal": 656
      },
      {
-      "calorie-tr": "โครงไก่ทอด",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "656"
+      "menu": "เงาะ",
+      "kal": 12
      },
      {
-      "calorie-tr": "เงาะ",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "12"
+      "menu": "แจ่วบอง",
+      "kal": 25
      },
      {
-      "calorie-tr": "แจ่วบอง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "25"
+      "menu": "โจ๊กใส่ไข่",
+      "kal": 250
      },
      {
-      "calorie-tr": "โจ๊กใส่ไข่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "250"
+      "menu": "โจ๊กหมู",
+      "kal": 160
      },
      {
-      "calorie-tr": "โจ๊กหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "160"
+      "menu": "โจ๊กหมูตับ ใส่ไข่ลวก",
+      "kal": 230
      },
      {
-      "calorie-tr": "โจ๊กหมูตับ ใส่ไข่ลวก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "230"
+      "menu": "เฉาก๊วย",
+      "kal": 90
      },
      {
-      "calorie-tr": "เฉาก๊วย",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "ชมพู่",
+      "kal": 16
      },
      {
-      "calorie-tr": "ชมพู่",
-      "pkt-center": "1 ผล",
-      "pkt-right": "16"
+      "menu": "เชอร์รี",
+      "kal": 15
      },
      {
-      "calorie-tr": "เชอร์รี",
-      "pkt-center": "1 ผล",
-      "pkt-right": "15"
+      "menu": "ซาลาเปาทอด",
+      "kal": 157
      },
      {
-      "calorie-tr": "ซาลาเปาทอด",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "157"
+      "menu": "ซาลาเปาไส้หมู",
+      "kal": 202
      },
      {
-      "calorie-tr": "ซาลาเปาไส้หมู",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "202"
+      "menu": "ซาหริ่ม",
+      "kal": 217
      },
      {
-      "calorie-tr": "ซาหริ่ม",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "217"
+      "menu": "ซ่าหริ่ม",
+      "kal": 275
      },
      {
-      "calorie-tr": "ซ่าหริ่ม",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "275"
+      "menu": "ซุปข้าวโพด",
+      "kal": 140
      },
      {
-      "calorie-tr": "ซุปข้าวโพด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "140"
+      "menu": "ซุปผัก (ใส)",
+      "kal": 15
      },
      {
-      "calorie-tr": "ซุปผัก (ใส)",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "15"
+      "menu": "ซุปหน่อไม้",
+      "kal": 40
      },
      {
-      "calorie-tr": "ซุปหน่อไม้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "40"
+      "menu": "ต้มกะทิสายบัวปลาทูนึ่ง",
+      "kal": 225
      },
      {
-      "calorie-tr": "ต้มกะทิสายบัวปลาทูนึ่ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "225"
+      "menu": "ต้มข่าไก่",
+      "kal": 210
      },
      {
-      "calorie-tr": "ต้มข่าไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "210"
+      "menu": "ต้มโคล้งไก่ย่าง",
+      "kal": 115
      },
      {
-      "calorie-tr": "ต้มโคล้งไก่ย่าง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "115"
+      "menu": "ต้มโคล้งปลากรอบ",
+      "kal": 60
      },
      {
-      "calorie-tr": "ต้มโคล้งปลากรอบ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "60"
+      "menu": "ต้มจับฉ่าย",
+      "kal": 15
      },
      {
-      "calorie-tr": "ต้มจับฉ่าย",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "15"
+      "menu": "ต้มจืดเลือดหมู",
+      "kal": 120
      },
      {
-      "calorie-tr": "ต้มจืดเลือดหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "120"
+      "menu": "ต้มตือฮวน",
+      "kal": 160
      },
      {
-      "calorie-tr": "ต้มตือฮวน",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "160"
+      "menu": "ต้มผักกาดดองซี่โครงหมู",
+      "kal": 90
      },
      {
-      "calorie-tr": "ต้มผักกาดดองซี่โครงหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "ต้มยำกุ้ง",
+      "kal": 65
      },
      {
-      "calorie-tr": "ต้มยำกุ้ง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "65"
+      "menu": "ต้มยำไก่",
+      "kal": 60
      },
      {
-      "calorie-tr": "ต้มยำไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "60"
+      "menu": "ต้มยำไก่ใส่เห็ด",
+      "kal": 80
      },
      {
-      "calorie-tr": "ต้มยำไก่ใส่เห็ด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "80"
+      "menu": "ต้มยำปลากระป๋อง",
+      "kal": 55
      },
      {
-      "calorie-tr": "ต้มยำปลากระป๋อง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "55"
+      "menu": "ต้มยำปลากะพง",
+      "kal": 80
      },
      {
-      "calorie-tr": "ต้มยำปลากะพง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "80"
+      "menu": "ต้มยำปลาทู",
+      "kal": 10
      },
      {
-      "calorie-tr": "ต้มยำปลาทู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "10"
+      "menu": "ต้มยำปลาหมึก",
+      "kal": 9
      },
      {
-      "calorie-tr": "ต้มยำปลาหมึก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "9"
+      "menu": "ต้มยำเห็ดสด",
+      "kal": 30
      },
      {
-      "calorie-tr": "ต้มยำเห็ดสด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "30"
+      "menu": "ต้มส้มปลาทู",
+      "kal": 130
      },
      {
-      "calorie-tr": "ต้มส้มปลาทู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "130"
+      "menu": "ต้มหัวผักกาดขาวซี่โครงหมู",
+      "kal": 90
      },
      {
-      "calorie-tr": "ต้มหัวผักกาดขาวซี่โครงหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "ตะโก้แห้ว",
+      "kal": 78
      },
      {
-      "calorie-tr": "ตะโก้แห้ว",
-      "pkt-center": "1 กระทง",
-      "pkt-right": "78"
+      "menu": "ตับไก่ปิ้ง",
+      "kal": 60
      },
      {
-      "calorie-tr": "ตับไก่ปิ้ง",
-      "pkt-center": "1 ไม้",
-      "pkt-right": "60"
+      "menu": "เต้าส่วน",
+      "kal": 215
      },
      {
-      "calorie-tr": "เต้าส่วน",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "215"
+      "menu": "เต้าหู้แข็ง",
+      "kal": 210
      },
      {
-      "calorie-tr": "เต้าหู้แข็ง",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "210"
+      "menu": "เต้าหู้ไข่",
+      "kal": 70
      },
      {
-      "calorie-tr": "เต้าหู้ไข่",
-      "pkt-center": "1 หลอด",
-      "pkt-right": "70"
+      "menu": "เต้าหู้ทอด",
+      "kal": 57
      },
      {
-      "calorie-tr": "เต้าหู้ทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "57"
+      "menu": "เต้าหู้นมสด",
+      "kal": 150
      },
      {
-      "calorie-tr": "เต้าหู้นมสด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "150"
+      "menu": "เต้าฮวยน้ำขิง",
+      "kal": 130
      },
      {
-      "calorie-tr": "เต้าฮวยน้ำขิง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "130"
+      "menu": "แตงไทย",
+      "kal": 4
      },
      {
-      "calorie-tr": "แตงไทย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "4"
+      "menu": "แตงโม",
+      "kal": 250
      },
      {
-      "calorie-tr": "แตงโม",
-      "pkt-center": "1 กิโลกรัม",
-      "pkt-right": "250"
+      "menu": "ถั่วทอด",
+      "kal": 82
      },
      {
-      "calorie-tr": "ถั่วทอด",
-      "pkt-center": "1 แพ",
-      "pkt-right": "82"
+      "menu": "ถั่วลิสงทอด",
+      "kal": 62
      },
      {
-      "calorie-tr": "ถั่วลิสงทอด",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "62"
+      "menu": "ทองม้วน",
+      "kal": 35
      },
      {
-      "calorie-tr": "ทองม้วน",
-      "pkt-center": "1 อัน",
-      "pkt-right": "35"
+      "menu": "ทอดมันกุ้ง",
+      "kal": 255
      },
      {
-      "calorie-tr": "ทอดมันกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "255"
+      "menu": "ทอดมันปลากราย",
+      "kal": 37
      },
      {
-      "calorie-tr": "ทอดมันปลากราย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "37"
+      "menu": "ทับทิมกรอบ",
+      "kal": 250
      },
      {
-      "calorie-tr": "ทับทิมกรอบ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "250"
+      "menu": "ทุเรียนสด",
+      "kal": 59
      },
      {
-      "calorie-tr": "ทุเรียนสด",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "59"
+      "menu": "ทุเรียนทอดกรอบ",
+      "kal": 9
      },
      {
-      "calorie-tr": "ทุเรียนทอดกรอบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "9"
+      "menu": "เทมปุระ",
+      "kal": 77
      },
      {
-      "calorie-tr": "เทมปุระ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "77"
+      "menu": "นมถั่วเหลือง ()",
+      "kal": 55
      },
      {
-      "calorie-tr": "นมถั่วเหลือง ()",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "55"
+      "menu": "น่องไก่ทอด",
+      "kal": 345
      },
      {
-      "calorie-tr": "น่องไก่ทอด",
-      "pkt-center": "1 น่อง",
-      "pkt-right": "345"
+      "menu": "น่องไก่ย่าง",
+      "kal": 97
      },
      {
-      "calorie-tr": "น่องไก่ย่าง",
-      "pkt-center": "1 น่อง",
-      "pkt-right": "97"
+      "menu": "น้อยหน่า",
+      "kal": 61
      },
      {
-      "calorie-tr": "น้อยหน่า",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "61"
+      "menu": "น้ำ",
+      "kal": 120
      },
      {
-      "calorie-tr": "น้ำ",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "น้ำโค้ก, น้ำเป๊ปซี่",
+      "kal": 100
      },
      {
-      "calorie-tr": "น้ำโค้ก, น้ำเป๊ปซี่",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "100"
+      "menu": "น้ำปลา",
+      "kal": 165
      },
      {
-      "calorie-tr": "น้ำปลา",
-      "pkt-center": "1 ตัวเล็ก",
-      "pkt-right": "165"
+      "menu": "น้ำพริกกะปิผักสด",
+      "kal": 28
      },
      {
-      "calorie-tr": "น้ำพริกกะปิผักสด",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "28"
+      "menu": "น้ำพริกกุ้งเผา",
+      "kal": 90
      },
      {
-      "calorie-tr": "น้ำพริกกุ้งเผา",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "90"
+      "menu": "น้ำพริกปลาป่น",
+      "kal": 35
      },
      {
-      "calorie-tr": "น้ำพริกปลาป่น",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "35"
+      "menu": "น้ำพริกมะขามเปียก",
+      "kal": 55
      },
      {
-      "calorie-tr": "น้ำพริกมะขามเปียก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "55"
+      "menu": "น้ำพริกมะขามสด",
+      "kal": 210
      },
      {
-      "calorie-tr": "น้ำพริกมะขามสด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "210"
+      "menu": "น้ำพริกมะม่วง",
+      "kal": 100
      },
      {
-      "calorie-tr": "น้ำพริกมะม่วง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "100"
+      "menu": "น้ำพริกลงเรือ",
+      "kal": 195
      },
      {
-      "calorie-tr": "น้ำพริกลงเรือ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "195"
+      "menu": "น้ำพริกหนุ่ม",
+      "kal": 18
      },
      {
-      "calorie-tr": "น้ำพริกหนุ่ม",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "18"
+      "menu": "น้ำพริกอ่อง",
+      "kal": 80
      },
      {
-      "calorie-tr": "น้ำพริกอ่อง",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "80"
+      "menu": "น้ำมะเขือเทศ",
+      "kal": 48
      },
      {
-      "calorie-tr": "น้ำมะเขือเทศ",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "48"
+      "menu": "น้ำมะตูม",
+      "kal": 120
      },
      {
-      "calorie-tr": "น้ำมะตูม",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "น้ำมะนาว",
+      "kal": 100
      },
      {
-      "calorie-tr": "น้ำมะนาว",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "100"
+      "menu": "น้ำมะพร้าว",
+      "kal": 120
      },
      {
-      "calorie-tr": "น้ำมะพร้าว",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "น้ำ",
+      "kal": 100
      },
      {
-      "calorie-tr": "น้ำ",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "100"
+      "menu": "น้ำส้มคั้น",
+      "kal": 160
      },
      {
-      "calorie-tr": "น้ำส้มคั้น",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "160"
+      "menu": "น้ำสับปะรด",
+      "kal": 125
      },
      {
-      "calorie-tr": "น้ำสับปะรด",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "125"
+      "menu": "น้ำองุ่น",
+      "kal": 112
      },
      {
-      "calorie-tr": "น้ำองุ่น",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "112"
+      "menu": "น้ำอ้อย",
+      "kal": 240
      },
      {
-      "calorie-tr": "น้ำอ้อย",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "240"
+      "menu": "เนื้อไก่ชุบแป้งทอด",
+      "kal": 71
      },
      {
-      "calorie-tr": "เนื้อไก่ชุบแป้งทอด",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "71"
+      "menu": "เนื้อน้ำตก",
+      "kal": 165
      },
      {
-      "calorie-tr": "เนื้อน้ำตก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "165"
+      "menu": "เนื้อผัดหวาน",
+      "kal": 590
      },
      {
-      "calorie-tr": "เนื้อผัดหวาน",
-      "pkt-center": "1 จาน",
-      "pkt-right": "590"
+      "menu": "บรั่นดี",
+      "kal": 2
      },
      {
-      "calorie-tr": "บรั่นดี",
-      "pkt-center": "1 cc",
-      "pkt-right": "2"
+      "menu": "บะจ่าง",
+      "kal": 300
      },
      {
-      "calorie-tr": "บะจ่าง",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "300"
+      "menu": "บะหมี่กรอบราดหน้า",
+      "kal": 515
      },
      {
-      "calorie-tr": "บะหมี่กรอบราดหน้า",
-      "pkt-center": "1 จาน",
-      "pkt-right": "515"
+      "menu": "บะหมี่กรอบราดหน้าไก่หน่อไม้",
+      "kal": 660
      },
      {
-      "calorie-tr": "บะหมี่กรอบราดหน้าไก่หน่อไม้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "660"
+      "menu": "บะหมี่กรอบราดหน้ารวมมิตร",
+      "kal": 690
      },
      {
-      "calorie-tr": "บะหมี่กรอบราดหน้ารวมมิตร",
-      "pkt-center": "1 จาน",
-      "pkt-right": "690"
+      "menu": "บะหมี่กึ่งสำเร็จรูป",
+      "kal": 253
      },
      {
-      "calorie-tr": "บะหมี่กึ่งสำเร็จรูป",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "253"
+      "menu": "บะหมี่กึ่งสำเร็จรูปผัดกะเพราหมู",
+      "kal": 540
      },
      {
-      "calorie-tr": "บะหมี่กึ่งสำเร็จรูปผัดกะเพราหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "540"
+      "menu": "บะหมี่กึ่งสำเร็จรูปผัดขี้เมา",
+      "kal": 530
      },
      {
-      "calorie-tr": "บะหมี่กึ่งสำเร็จรูปผัดขี้เมา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "530"
+      "menu": "บะหมี่เกี๊ยวเป็ดย่าง",
+      "kal": 415
      },
      {
-      "calorie-tr": "บะหมี่เกี๊ยวเป็ดย่าง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "415"
+      "menu": "บะหมี่น้ำน่องไก่",
+      "kal": 375
      },
      {
-      "calorie-tr": "บะหมี่น้ำน่องไก่",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "375"
+      "menu": "บะหมี่น้ำเกี๊ยวหมูแดง",
+      "kal": 305
      },
      {
-      "calorie-tr": "บะหมี่น้ำเกี๊ยวหมูแดง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "305"
+      "menu": "บะหมี่น้ำต้มยำหมู",
+      "kal": 300
      },
      {
-      "calorie-tr": "บะหมี่น้ำต้มยำหมู",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "300"
+      "menu": "บะหมี่น้ำน่องไก่",
+      "kal": 375
      },
      {
-      "calorie-tr": "บะหมี่น้ำน่องไก่",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "375"
+      "menu": "บะหมี่น้ำเป็ด",
+      "kal": 370
      },
      {
-      "calorie-tr": "บะหมี่น้ำเป็ด",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "370"
+      "menu": "บะหมี่น้ำหมูต้มยำ",
+      "kal": 300
      },
      {
-      "calorie-tr": "บะหมี่น้ำหมูต้มยำ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "300"
+      "menu": "บะหมี่หมูแดง",
+      "kal": 231
      },
      {
-      "calorie-tr": "บะหมี่หมูแดง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "231"
+      "menu": "บะหมี่แห้งหมูแดง",
+      "kal": 345
      },
      {
-      "calorie-tr": "บะหมี่แห้งหมูแดง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "345"
+      "menu": "บัวลอย",
+      "kal": 223
      },
      {
-      "calorie-tr": "บัวลอย",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "223"
+      "menu": "บัวลอยเผือก",
+      "kal": 300
      },
      {
-      "calorie-tr": "บัวลอยเผือก",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "300"
+      "menu": "บาร์บีคิวซี่โครงหมูข้าวคลุกเนย",
+      "kal": 340
      },
      {
-      "calorie-tr": "บาร์บีคิวซี่โครงหมูข้าวคลุกเนย",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "340"
+      "menu": "เบียร์ไทย",
+      "kal": 148
      },
      {
-      "calorie-tr": "เบียร์ไทย",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "148"
+      "menu": "ปลากะพงนึ่งมะนาว",
+      "kal": 155
      },
      {
-      "calorie-tr": "ปลากะพงนึ่งมะนาว",
-      "pkt-center": "1 ชิ้นกลาง",
-      "pkt-right": "155"
+      "menu": "ปลาช่อนทอด",
+      "kal": 1840
      },
      {
-      "calorie-tr": "ปลาช่อนทอด",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "1840"
+      "menu": "ปลาช่อนอบเกลือ",
+      "kal": 220
      },
      {
-      "calorie-tr": "ปลาช่อนอบเกลือ",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "220"
+      "menu": "ปลาชุบขนมปังทอด + สลัดผัก",
+      "kal": 595
      },
      {
-      "calorie-tr": "ปลาชุบขนมปังทอด + สลัดผัก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "595"
+      "menu": "ปลาซาบะย่าง",
+      "kal": 220
      },
      {
-      "calorie-tr": "ปลาซาบะย่าง",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "220"
+      "menu": "ปลาแซลมอนย่าง",
+      "kal": 260
      },
      {
-      "calorie-tr": "ปลาแซลมอนย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "260"
+      "menu": "ปลาทอดสามรส",
+      "kal": 470
      },
      {
-      "calorie-tr": "ปลาทอดสามรส",
-      "pkt-center": "1 ตัวกลาง",
-      "pkt-right": "470"
+      "menu": "ปลาทูทอด",
+      "kal": 280
      },
      {
-      "calorie-tr": "ปลาทูทอด",
-      "pkt-center": "1 ตัวกลาง",
-      "pkt-right": "280"
+      "menu": "ปลานึ่ง",
+      "kal": 156
      },
      {
-      "calorie-tr": "ปลานึ่ง",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "156"
+      "menu": "ปลาเผา",
+      "kal": 156
      },
      {
-      "calorie-tr": "ปลาเผา",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "156"
+      "menu": "ปลาราดซอสมะนาวมันฝรั่งทอด",
+      "kal": 560
      },
      {
-      "calorie-tr": "ปลาราดซอสมะนาวมันฝรั่งทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "560"
+      "menu": "ปลาราดพริก",
+      "kal": 300
      },
      {
-      "calorie-tr": "ปลาราดพริก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "300"
+      "menu": "ปลาร้าทรงเครื่อง",
+      "kal": 155
      },
      {
-      "calorie-tr": "ปลาร้าทรงเครื่อง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "155"
+      "menu": "ปลาร้าสับ",
+      "kal": 35
      },
      {
-      "calorie-tr": "ปลาร้าสับ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "35"
+      "menu": "ปลาเล็กปลาน้อยทอดกรอบ",
+      "kal": 80
      },
      {
-      "calorie-tr": "ปลาเล็กปลาน้อยทอดกรอบ",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "80"
+      "menu": "ปลาสลิดทอด",
+      "kal": 190
      },
      {
-      "calorie-tr": "ปลาสลิดทอด",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "190"
+      "menu": "ปลาหมึกชุปแป้งทอด",
+      "kal": 49
      },
      {
-      "calorie-tr": "ปลาหมึกชุปแป้งทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "49"
+      "menu": "ปลาหมึกนึ่งมะนาว",
+      "kal": 75
      },
      {
-      "calorie-tr": "ปลาหมึกนึ่งมะนาว",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "75"
+      "menu": "ปลาหมึกผัดฉ่า",
+      "kal": 260
      },
      {
-      "calorie-tr": "ปลาหมึกผัดฉ่า",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "260"
+      "menu": "ปลาหมึกย่าง",
+      "kal": 37
      },
      {
-      "calorie-tr": "ปลาหมึกย่าง",
-      "pkt-center": "1 ไม้",
-      "pkt-right": "37"
+      "menu": "ปลาอินทรีเค็มทอด",
+      "kal": 115
      },
      {
-      "calorie-tr": "ปลาอินทรีเค็มทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "115"
+      "menu": "เปาะเปี๊ยะทอด",
+      "kal": 158
      },
      {
-      "calorie-tr": "เปาะเปี๊ยะทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "158"
+      "menu": "ปาท่องโก๋",
+      "kal": 124
      },
      {
-      "calorie-tr": "ปาท่องโก๋",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "124"
+      "menu": "ปีกไก่ทอด",
+      "kal": 107
      },
      {
-      "calorie-tr": "ปีกไก่ทอด",
-      "pkt-center": "1 ชิ้นกลาง",
-      "pkt-right": "107"
+      "menu": "ปีกไก่ยัดไส้ทอด",
+      "kal": 103
      },
      {
-      "calorie-tr": "ปีกไก่ยัดไส้ทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "103"
+      "menu": "ปีกไก่อบ",
+      "kal": 169
      },
      {
-      "calorie-tr": "ปีกไก่อบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "169"
+      "menu": "เป็ดตุ๋นมะนาวดอง",
+      "kal": 110
      },
      {
-      "calorie-tr": "เป็ดตุ๋นมะนาวดอง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "110"
+      "menu": "เป็ดพะโล้",
+      "kal": 110
      },
      {
-      "calorie-tr": "เป็ดพะโล้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "110"
+      "menu": "ผัดกะหล่ำปลีหมู",
+      "kal": 230
      },
      {
-      "calorie-tr": "ผัดกะหล่ำปลีหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "230"
+      "menu": "ผัดกุ้งสะตอหมู",
+      "kal": 200
      },
      {
-      "calorie-tr": "ผัดกุ้งสะตอหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "ผัดกุ้ง",
+      "kal": 230
      },
      {
-      "calorie-tr": "ผัดกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "230"
+      "menu": "ผัดไข่หน่อไม้",
+      "kal": 200
      },
      {
-      "calorie-tr": "ผัดไข่หน่อไม้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "ผัดคะน้าปลาเค็ม",
+      "kal": 200
      },
      {
-      "calorie-tr": "ผัดคะน้าปลาเค็ม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "ผัดไชโป๊ใส่ไข่",
+      "kal": 125
      },
      {
-      "calorie-tr": "ผัดไชโป๊ใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "125"
+      "menu": "ผัดซีอิ๊วเส้นใหญ่หมูใส่ไข่",
+      "kal": 679
      },
      {
-      "calorie-tr": "ผัดซีอิ๊วเส้นใหญ่หมูใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "679"
+      "menu": "ผัดดอกกะหล่ำกุ้ง",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดดอกกะหล่ำกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดดอกกุยช่ายตับ",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดดอกกุยช่ายตับ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดถั่วงอกเต้าหู้",
+      "kal": 155
      },
      {
-      "calorie-tr": "ผัดถั่วงอกเต้าหู้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "155"
+      "menu": "ผัดถั่วลันเตากุ้ง",
+      "kal": 190
      },
      {
-      "calorie-tr": "ผัดถั่วลันเตากุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "190"
+      "menu": "ผัดไทยกุ้งสด",
+      "kal": 486
      },
      {
-      "calorie-tr": "ผัดไทยกุ้งสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "486"
+      "menu": "ผัดไทยกุ้งสดใส่ไข่",
+      "kal": 545
      },
      {
-      "calorie-tr": "ผัดไทยกุ้งสดใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "545"
+      "menu": "ผัดไทยไร้เส้น",
+      "kal": 182
      },
      {
-      "calorie-tr": "ผัดไทยไร้เส้น",
-      "pkt-center": "1 จาน",
-      "pkt-right": "182"
+      "menu": "ผัดไทยวุ้นเส้นกุ้งสด",
+      "kal": 520
      },
      {
-      "calorie-tr": "ผัดไทยวุ้นเส้นกุ้งสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "ผัดไทยห่อไข่",
+      "kal": 565
      },
      {
-      "calorie-tr": "ผัดไทยห่อไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "565"
+      "menu": "ผัดบรอกโคลีกุ้ง",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดบรอกโคลีกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดบวบใส่ไข่",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดบวบใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดเปรี้ยวหวานไก่",
+      "kal": 215
      },
      {
-      "calorie-tr": "ผัดเปรี้ยวหวานไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "215"
+      "menu": "ผัดผักกระเฉดน้ำมันหอย",
+      "kal": 185
      },
      {
-      "calorie-tr": "ผัดผักกระเฉดน้ำมันหอย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "185"
+      "menu": "ผัดผักกาดขาวหมูวุ้นเส้น",
+      "kal": 230
      },
      {
-      "calorie-tr": "ผัดผักกาดขาวหมูวุ้นเส้น",
-      "pkt-center": "1 จาน",
-      "pkt-right": "230"
+      "menu": "ผัดผักกาดดองใส่ไข่",
+      "kal": 205
      },
      {
-      "calorie-tr": "ผัดผักกาดดองใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "205"
+      "menu": "ผัดผักคะน้าน้ำมันหอย",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดผักคะน้าน้ำมันหอย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดผักบุ้ง (ไม่ใส่น้ำมัน)",
+      "kal": 40
      },
      {
-      "calorie-tr": "ผัดผักบุ้ง (ไม่ใส่น้ำมัน)",
-      "pkt-center": "1 จาน",
-      "pkt-right": "40"
+      "menu": "ผัดผักบุ้งไฟแดง",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดผักบุ้งไฟแดง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดผักรวมหมู",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดผักรวมหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดเผ็ดปลาดุก",
+      "kal": 200
      },
      {
-      "calorie-tr": "ผัดเผ็ดปลาดุก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "ผัดเผ็ดปลาทอดกรอบ",
+      "kal": 290
      },
      {
-      "calorie-tr": "ผัดเผ็ดปลาทอดกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "290"
+      "menu": "ผัดเผ็ดมะเขือหมู",
+      "kal": 250
      },
      {
-      "calorie-tr": "ผัดเผ็ดมะเขือหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "250"
+      "menu": "ผัดพริกแกงหมูหน่อไม้",
+      "kal": 200
      },
      {
-      "calorie-tr": "ผัดพริกแกงหมูหน่อไม้",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "ผัดพริกขิงกุ้งกับถั่วฝักยาว",
+      "kal": 245
      },
      {
-      "calorie-tr": "ผัดพริกขิงกุ้งกับถั่วฝักยาว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "245"
+      "menu": "ผัดพริกขิงหมูถั่วฝักยาว",
+      "kal": 265
      },
      {
-      "calorie-tr": "ผัดพริกขิงหมูถั่วฝักยาว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "265"
+      "menu": "ผัดฟักทองใส่ไข่",
+      "kal": 255
      },
      {
-      "calorie-tr": "ผัดฟักทองใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "255"
+      "menu": "ผัดมะเขือยาวหมูสับ",
+      "kal": 210
      },
      {
-      "calorie-tr": "ผัดมะเขือยาวหมูสับ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "210"
+      "menu": "ผัดมักกะโรนีกุ้ง",
+      "kal": 420
      },
      {
-      "calorie-tr": "ผัดมักกะโรนีกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "420"
+      "menu": "ผัดมักกะโรนีหมู",
+      "kal": 514
      },
      {
-      "calorie-tr": "ผัดมักกะโรนีหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "514"
+      "menu": "ผัดยอดมะระน้ำมันหอย",
+      "kal": 185
      },
      {
-      "calorie-tr": "ผัดยอดมะระน้ำมันหอย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "185"
+      "menu": "ผัดวุ้นเส้นใส่ไข่",
+      "kal": 265
      },
      {
-      "calorie-tr": "ผัดวุ้นเส้นใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "265"
+      "menu": "ผัดหมี่ซั่ว",
+      "kal": 395
      },
      {
-      "calorie-tr": "ผัดหมี่ซั่ว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "395"
+      "menu": "เผือกทอด",
+      "kal": 99
      },
      {
-      "calorie-tr": "เผือกทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "99"
+      "menu": "ฝรั่ง",
+      "kal": 174
      },
      {
-      "calorie-tr": "ฝรั่ง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "174"
+      "menu": "ฝอยทอง",
+      "kal": 146
      },
      {
-      "calorie-tr": "ฝอยทอง",
-      "pkt-center": "1 แพ",
-      "pkt-right": "146"
+      "menu": "เฝอ",
+      "kal": 240
      },
      {
-      "calorie-tr": "เฝอ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "240"
+      "menu": "พอร์คชอปทอดผักผัดเนย",
+      "kal": 545
      },
      {
-      "calorie-tr": "พอร์คชอปทอดผักผัดเนย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "545"
+      "menu": "พะแนงไก่",
+      "kal": 230
      },
      {
-      "calorie-tr": "พะแนงไก่",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "230"
+      "menu": "พะโล้",
+      "kal": 210
      },
      {
-      "calorie-tr": "พะโล้",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "210"
+      "menu": "พุทรา",
+      "kal": 20
      },
      {
-      "calorie-tr": "พุทรา",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "20"
+      "menu": "ฟักตุ๋นไก่มะนาวดอง",
+      "kal": 125
      },
      {
-      "calorie-tr": "ฟักตุ๋นไก่มะนาวดอง",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "125"
+      "menu": "ฟักทองแกงบวด",
+      "kal": 165
      },
      {
-      "calorie-tr": "ฟักทองแกงบวด",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "165"
+      "menu": "ฟักทองแกงบวด",
+      "kal": 185
      },
      {
-      "calorie-tr": "ฟักทองแกงบวด",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "185"
+      "menu": "มะกอกฝรั่ง",
+      "kal": 20
      },
      {
-      "calorie-tr": "มะกอกฝรั่ง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "20"
+      "menu": "มะขามหวาน",
+      "kal": 20
      },
      {
-      "calorie-tr": "มะขามหวาน",
-      "pkt-center": "1 ผล",
-      "pkt-right": "20"
+      "menu": "มะปรางสุก",
+      "kal": 20
      },
      {
-      "calorie-tr": "มะปรางสุก",
-      "pkt-center": "1 ผล",
-      "pkt-right": "20"
+      "menu": "มะเฟือง",
+      "kal": 120
      },
      {
-      "calorie-tr": "มะเฟือง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "120"
+      "menu": "มะไฟ",
+      "kal": 4
      },
      {
-      "calorie-tr": "มะไฟ",
-      "pkt-center": "1 ผล",
-      "pkt-right": "4"
+      "menu": "มะม่วงเขียวเสวย",
+      "kal": 120
      },
      {
-      "calorie-tr": "มะม่วงเขียวเสวย",
-      "pkt-center": "1 ผล",
-      "pkt-right": "120"
+      "menu": "มะม่วงดิบ",
+      "kal": 110
      },
      {
-      "calorie-tr": "มะม่วงดิบ",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "110"
+      "menu": "มะม่วงน้ำดอกไม้",
+      "kal": 15
      },
      {
-      "calorie-tr": "มะม่วงน้ำดอกไม้",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "15"
+      "menu": "มะม่วงสุก",
+      "kal": 98
      },
      {
-      "calorie-tr": "มะม่วงสุก",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "98"
+      "menu": "มะม่วงอกร่องสุก",
+      "kal": 15
      },
      {
-      "calorie-tr": "มะม่วงอกร่องสุก",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "15"
+      "menu": "มะยม",
+      "kal": 4
      },
      {
-      "calorie-tr": "มะยม",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "4"
+      "menu": "มะละกอ",
+      "kal": 8
      },
      {
-      "calorie-tr": "มะละกอ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "8"
+      "menu": "มักกะโรนีขี้เมาไก่",
+      "kal": 520
      },
      {
-      "calorie-tr": "มักกะโรนีขี้เมาไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "มักกะโรนีผัดกุ้ง",
+      "kal": 420
      },
      {
-      "calorie-tr": "มักกะโรนีผัดกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "420"
+      "menu": "มังคุด",
+      "kal": 13
      },
      {
-      "calorie-tr": "มังคุด",
-      "pkt-center": "1 ผล",
-      "pkt-right": "13"
+      "menu": "มันแกงบวด",
+      "kal": 184
      },
      {
-      "calorie-tr": "มันแกงบวด",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "184"
+      "menu": "มันทอด",
+      "kal": 124
      },
      {
-      "calorie-tr": "มันทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "124"
+      "menu": "มั่นฝรั่งทอด (เฟรนช์ฟรายส์)",
+      "kal": 20
      },
      {
-      "calorie-tr": "มั่นฝรั่งทอด (เฟรนช์ฟรายส์)",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "20"
+      "menu": "เม็ดขนุน (ขนมไทย)",
+      "kal": 35
      },
      {
-      "calorie-tr": "เม็ดขนุน (ขนมไทย)",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "35"
+      "menu": "เมล็ดมะม่วงหิมพานต์ทอด",
+      "kal": 28
      },
      {
-      "calorie-tr": "เมล็ดมะม่วงหิมพานต์ทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "28"
+      "menu": "เมี่ยงก๋วยเตี๋ยว",
+      "kal": 20
      },
      {
-      "calorie-tr": "เมี่ยงก๋วยเตี๋ยว",
-      "pkt-center": "1 คำ",
-      "pkt-right": "20"
+      "menu": "เมี่ยงคำ",
+      "kal": 30
      },
      {
-      "calorie-tr": "เมี่ยงคำ",
-      "pkt-center": "1 คำ",
-      "pkt-right": "30"
+      "menu": "แม่โขง",
+      "kal": 1
      },
      {
-      "calorie-tr": "แม่โขง",
-      "pkt-center": "1 cc",
-      "pkt-right": "1"
+      "menu": "ยากิโซบะ",
+      "kal": 400
      },
      {
-      "calorie-tr": "ยากิโซบะ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "400"
+      "menu": "ยำกุนเชียง",
+      "kal": 220
      },
      {
-      "calorie-tr": "ยำกุนเชียง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "220"
+      "menu": "ยำขนมจีน",
+      "kal": 220
      },
      {
-      "calorie-tr": "ยำขนมจีน",
-      "pkt-center": "1 จาน",
-      "pkt-right": "220"
+      "menu": "ยำไข่ต้ม",
+      "kal": 105
      },
      {
-      "calorie-tr": "ยำไข่ต้ม",
-      "pkt-center": "1 ฟอง",
-      "pkt-right": "105"
+      "menu": "ยำไข่ต้มทรงเครื่อง",
+      "kal": 188
      },
      {
-      "calorie-tr": "ยำไข่ต้มทรงเครื่อง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "188"
+      "menu": "ยำถั่วพู",
+      "kal": 185
      },
      {
-      "calorie-tr": "ยำถั่วพู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "185"
+      "menu": "ยำเนื้อย่าง",
+      "kal": 165
      },
      {
-      "calorie-tr": "ยำเนื้อย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "165"
+      "menu": "ยำปลากระป๋อง",
+      "kal": 55
      },
      {
-      "calorie-tr": "ยำปลากระป๋อง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "55"
+      "menu": "ยำปลาดุกฟู",
+      "kal": 275
      },
      {
-      "calorie-tr": "ยำปลาดุกฟู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "275"
+      "menu": "ยำปลาหมึกย่าง",
+      "kal": 99
      },
      {
-      "calorie-tr": "ยำปลาหมึกย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "99"
+      "menu": "ยำผักกระเฉด",
+      "kal": 115
      },
      {
-      "calorie-tr": "ยำผักกระเฉด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "115"
+      "menu": "ยำผักกาดดอง",
+      "kal": 30
      },
      {
-      "calorie-tr": "ยำผักกาดดอง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "30"
+      "menu": "ยำผักบุ้งทอดกรอบ",
+      "kal": 310
      },
      {
-      "calorie-tr": "ยำผักบุ้งทอดกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "310"
+      "menu": "ยำมะเขือยาว",
+      "kal": 35
      },
      {
-      "calorie-tr": "ยำมะเขือยาว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "35"
+      "menu": "ยำมะม่วงทะเล",
+      "kal": 136
      },
      {
-      "calorie-tr": "ยำมะม่วงทะเล",
-      "pkt-center": "1 จาน",
-      "pkt-right": "136"
+      "menu": "ยำมาม่า",
+      "kal": 215
      },
      {
-      "calorie-tr": "ยำมาม่า",
-      "pkt-center": "1 จาน",
-      "pkt-right": "215"
+      "menu": "ยำแมงกะพรุน",
+      "kal": 105
      },
      {
-      "calorie-tr": "ยำแมงกะพรุน",
-      "pkt-center": "1 จาน",
-      "pkt-right": "105"
+      "menu": "ยำรวมมิตรทะเล",
+      "kal": 132
      },
      {
-      "calorie-tr": "ยำรวมมิตรทะเล",
-      "pkt-center": "1 จาน",
-      "pkt-right": "132"
+      "menu": "ยำวุ้นเส้น",
+      "kal": 120
      },
      {
-      "calorie-tr": "ยำวุ้นเส้น",
-      "pkt-center": "1 จาน",
-      "pkt-right": "120"
+      "menu": "ยำไส้กรอก",
+      "kal": 110
      },
      {
-      "calorie-tr": "ยำไส้กรอก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "110"
+      "menu": "ยำหนังหมู",
+      "kal": 220
      },
      {
-      "calorie-tr": "ยำหนังหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "220"
+      "menu": "ยำหมูย่าง",
+      "kal": 165
      },
      {
-      "calorie-tr": "ยำหมูย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "165"
+      "menu": "ยำหอยแมลงภู่",
+      "kal": 60
      },
      {
-      "calorie-tr": "ยำหอยแมลงภู่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "60"
+      "menu": "เย็นตาโฟ",
+      "kal": 290
      },
      {
-      "calorie-tr": "เย็นตาโฟ",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "290"
+      "menu": "ระกำ",
+      "kal": 8
      },
      {
-      "calorie-tr": "ระกำ",
-      "pkt-center": "1 ผล",
-      "pkt-right": "8"
+      "menu": "ราดหน้าบะหมี่กรอบ",
+      "kal": 515
      },
      {
-      "calorie-tr": "ราดหน้าบะหมี่กรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "515"
+      "menu": "ราดหน้าบะหมี่กรอบไก่",
+      "kal": 660
      },
      {
-      "calorie-tr": "ราดหน้าบะหมี่กรอบไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "660"
+      "menu": "ราดหน้าปลากะพง",
+      "kal": 435
      },
      {
-      "calorie-tr": "ราดหน้าปลากะพง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "435"
+      "menu": "ราดหน้าเส้นใหญ่หมู",
+      "kal": 405
      },
      {
-      "calorie-tr": "ราดหน้าเส้นใหญ่หมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "405"
+      "menu": "ราดหน้าหมูหมี่กรอบ",
+      "kal": 690
      },
      {
-      "calorie-tr": "ราดหน้าหมูหมี่กรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "690"
+      "menu": "รูทเบียร์",
+      "kal": 105
      },
      {
-      "calorie-tr": "รูทเบียร์",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "105"
+      "menu": "โรตี ใส่นมข้นและน้ำตาล",
+      "kal": 192
      },
      {
-      "calorie-tr": "โรตี ใส่นมข้นและน้ำตาล",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "192"
+      "menu": "โรตีแกงเนื้อ, หมู",
+      "kal": 675
      },
      {
-      "calorie-tr": "โรตีแกงเนื้อ, หมู",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "675"
+      "menu": "ลองกอง",
+      "kal": 6
      },
      {
-      "calorie-tr": "ลองกอง",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "6"
+      "menu": "ลอดช่องน้ำกะทิ",
+      "kal": 210
      },
      {
-      "calorie-tr": "ลอดช่องน้ำกะทิ",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "210"
+      "menu": "ลอดช่องสิงคโปร์",
+      "kal": 215
      },
      {
-      "calorie-tr": "ลอดช่องสิงคโปร์",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "215"
+      "menu": "ละมุด",
+      "kal": 120
      },
      {
-      "calorie-tr": "ละมุด",
-      "pkt-center": "1 ผล",
-      "pkt-right": "120"
+      "menu": "ลางสาด",
+      "kal": 6
      },
      {
-      "calorie-tr": "ลางสาด",
-      "pkt-center": "1 ผล",
-      "pkt-right": "6"
+      "menu": "ลาบไก่",
+      "kal": 125
      },
      {
-      "calorie-tr": "ลาบไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "125"
+      "menu": "ลาบเนื้อ",
+      "kal": 119
      },
      {
-      "calorie-tr": "ลาบเนื้อ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "119"
+      "menu": "ลาบปลา",
+      "kal": 94
      },
      {
-      "calorie-tr": "ลาบปลา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "94"
+      "menu": "ลาบหมู",
+      "kal": 119
      },
      {
-      "calorie-tr": "ลาบหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "119"
+      "menu": "ลำไย",
+      "kal": 8
      },
      {
-      "calorie-tr": "ลำไย",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "8"
+      "menu": "ลำไยแห้ง",
+      "kal": 9
      },
      {
-      "calorie-tr": "ลำไยแห้ง",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "9"
+      "menu": "ลิ้นจี่",
+      "kal": 17
      },
      {
-      "calorie-tr": "ลิ้นจี่",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "17"
+      "menu": "ลูกเกด",
+      "kal": 4
      },
      {
-      "calorie-tr": "ลูกเกด",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "4"
+      "menu": "ลูกชิ้นไก่",
+      "kal": 6
      },
      {
-      "calorie-tr": "ลูกชิ้นไก่",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "6"
+      "menu": "ลูกชิ้นทอด",
+      "kal": 35
      },
      {
-      "calorie-tr": "ลูกชิ้นทอด",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "35"
+      "menu": "ลูกชิ้นเนื้อวัว",
+      "kal": 8
      },
      {
-      "calorie-tr": "ลูกชิ้นเนื้อวัว",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "8"
+      "menu": "ลูกชิ้นปลา",
+      "kal": 4
      },
      {
-      "calorie-tr": "ลูกชิ้นปลา",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "4"
+      "menu": "ลูกชุบ",
+      "kal": 57
      },
      {
-      "calorie-tr": "ลูกชุบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "57"
+      "menu": "ลูกตาลอ่อน",
+      "kal": 120
      },
      {
-      "calorie-tr": "ลูกตาลอ่อน",
-      "pkt-center": "1 ผล",
-      "pkt-right": "120"
+      "menu": "ลูกพลับ",
+      "kal": 120
      },
      {
-      "calorie-tr": "ลูกพลับ",
-      "pkt-center": "1 ผล",
-      "pkt-right": "120"
+      "menu": "วอดก้า",
+      "kal": 2
      },
      {
-      "calorie-tr": "วอดก้า",
-      "pkt-center": "1 cc",
-      "pkt-right": "2"
+      "menu": "วิสกี้",
+      "kal": 2
      },
      {
-      "calorie-tr": "วิสกี้",
-      "pkt-center": "1 cc",
-      "pkt-right": "2"
+      "menu": "วุ้นเส้นต้มยำ",
+      "kal": 245
      },
      {
-      "calorie-tr": "วุ้นเส้นต้มยำ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "245"
+      "menu": "วุ้นเส้นผัดไทยกุ้งสด",
+      "kal": 520
      },
      {
-      "calorie-tr": "วุ้นเส้นผัดไทยกุ้งสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "ไวตามิลค์",
+      "kal": 150
      },
      {
-      "calorie-tr": "ไวตามิลค์",
-      "pkt-center": "1 ขวด",
-      "pkt-right": "150"
+      "menu": "ไวน์เชอร์รี",
+      "kal": 1
      },
      {
-      "calorie-tr": "ไวน์เชอร์รี",
-      "pkt-center": "1 cc",
-      "pkt-right": "1"
+      "menu": "สตรอว์เบอร์รี",
+      "kal": 60
      },
      {
-      "calorie-tr": "สตรอว์เบอร์รี",
-      "pkt-center": "1 ผล",
-      "pkt-right": "60"
+      "menu": "สเต๊กไก่ทอด + มันบด",
+      "kal": 615
      },
      {
-      "calorie-tr": "สเต๊กไก่ทอด + มันบด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "615"
+      "menu": "สเต๊กปลาย่าง",
+      "kal": 260
      },
      {
-      "calorie-tr": "สเต๊กปลาย่าง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "260"
+      "menu": "สเต๊กหมู + ผักสลัด",
+      "kal": 505
      },
      {
-      "calorie-tr": "สเต๊กหมู + ผักสลัด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "505"
+      "menu": "สปาเกตตีกะเพรากุ้ง",
+      "kal": 485
      },
      {
-      "calorie-tr": "สปาเกตตีกะเพรากุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "485"
+      "menu": "สปาเกตตีไก่อบ",
+      "kal": 430
      },
      {
-      "calorie-tr": "สปาเกตตีไก่อบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "430"
+      "menu": "ส้มเขียวหวาน",
+      "kal": 32
      },
      {
-      "calorie-tr": "ส้มเขียวหวาน",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "32"
+      "menu": "ส้มเช้ง",
+      "kal": 60
      },
      {
-      "calorie-tr": "ส้มเช้ง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "60"
+      "menu": "ส้มตำ ไม่ใส่ถั่ว",
+      "kal": 80
      },
      {
-      "calorie-tr": "ส้มตำ ไม่ใส่ถั่ว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "80"
+      "menu": "ส้มตำไทย ไม่ใส่ถั่ว",
+      "kal": 55
      },
      {
-      "calorie-tr": "ส้มตำไทย ไม่ใส่ถั่ว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "55"
+      "menu": "ส้มตำปู ไม่ใส่ถั่ว",
+      "kal": 35
      },
      {
-      "calorie-tr": "ส้มตำปู ไม่ใส่ถั่ว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "35"
+      "menu": "ส้มตำปูไทย ไม่ใส่ถั่ว",
+      "kal": 118
      },
      {
-      "calorie-tr": "ส้มตำปูไทย ไม่ใส่ถั่ว",
-      "pkt-center": "1 จาน",
-      "pkt-right": "118"
+      "menu": "ส้มแป้น",
+      "kal": 340
      },
      {
-      "calorie-tr": "ส้มแป้น",
-      "pkt-center": "1 กิโลกรัม",
-      "pkt-right": "340"
+      "menu": "สละหวาน",
+      "kal": 60
      },
      {
-      "pkt-center": "1 กลีบ",
-      "pkt-right": "60"
+      "menu": "สลัดกุ้ง",
+      "kal": 92
      },
      {
-      "calorie-tr": "สละหวาน",
-      "pkt-center": "1 ผล",
-      "pkt-right": "60"
+      "menu": "สลัดกุ้งน้ำใส",
+      "kal": 92
      },
      {
-      "calorie-tr": "สลัดกุ้ง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "92"
+      "menu": "สลัดไก่",
+      "kal": 97
      },
      {
-      "calorie-tr": "สลัดกุ้งน้ำใส",
-      "pkt-center": "1 จาน",
-      "pkt-right": "92"
+      "menu": "สลัดแขก",
+      "kal": 230
      },
      {
-      "calorie-tr": "สลัดไก่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "97"
+      "menu": "สลัดไข่",
+      "kal": 123
      },
      {
-      "calorie-tr": "สลัดแขก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "230"
+      "menu": "สลัดเนื้อสันในทอด",
+      "kal": 490
      },
      {
-      "calorie-tr": "สลัดไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "123"
+      "menu": "สลัดปลาทูน่า",
+      "kal": 122
      },
      {
-      "calorie-tr": "สลัดเนื้อสันในทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "490"
+      "menu": "สับปะรด",
+      "kal": 8
      },
      {
-      "calorie-tr": "สลัดปลาทูน่า",
-      "pkt-center": "1 จาน",
-      "pkt-right": "122"
+      "menu": "สัมปันนี",
+      "kal": 21
      },
      {
-      "calorie-tr": "สับปะรด",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "8"
+      "menu": "สาคูไส้หมู",
+      "kal": 51
      },
      {
-      "calorie-tr": "สัมปันนี",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "21"
+      "menu": "สาลี่",
+      "kal": 116
      },
      {
-      "calorie-tr": "สาคูไส้หมู",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "51"
+      "menu": "สาลี่หอม",
+      "kal": 60
      },
      {
-      "calorie-tr": "สาลี่",
-      "pkt-center": "1 ผล",
-      "pkt-right": "116"
+      "menu": "สุกี้กุ้ง ไม่ใส่วุ้นเส้น",
+      "kal": 200
      },
      {
-      "calorie-tr": "สาลี่หอม",
-      "pkt-center": "1 ผล",
-      "pkt-right": "60"
+      "menu": "สุกี้ไก่ ไม่ใส่วุ้นเส้น",
+      "kal": 200
      },
      {
-      "calorie-tr": "สุกี้กุ้ง ไม่ใส่วุ้นเส้น",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "200"
+      "menu": "สุกี้น้ำไก่",
+      "kal": 345
      },
      {
-      "calorie-tr": "สุกี้ไก่ ไม่ใส่วุ้นเส้น",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "200"
+      "menu": "สุกี้หมู ไม่ใส่วุ้นเส้น",
+      "kal": 200
      },
      {
-      "calorie-tr": "สุกี้น้ำไก่",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "345"
+      "menu": "สุกี้แห้งทะเล",
+      "kal": 280
      },
      {
-      "calorie-tr": "สุกี้หมู ไม่ใส่วุ้นเส้น",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "200"
+      "menu": "เส้นก๋วยเตี๋ยวผัดขี้เมา",
+      "kal": 605
      },
      {
-      "calorie-tr": "สุกี้แห้งทะเล",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "280"
+      "menu": "เส้นจันท์ผัดปู",
+      "kal": 575
      },
      {
-      "calorie-tr": "เส้นก๋วยเตี๋ยวผัดขี้เมา",
-      "pkt-center": "1 จาน",
-      "pkt-right": "605"
+      "menu": "เส้นหมี่ลูกชิ้นน้ำใส",
+      "kal": 225
      },
      {
-      "calorie-tr": "เส้นจันท์ผัดปู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "575"
+      "menu": "เส้นหมี่ลูกชิ้นหมูแห้ง",
+      "kal": 430
      },
      {
-      "calorie-tr": "เส้นหมี่ลูกชิ้นน้ำใส",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "225"
+      "menu": "เส้นใหญ่ผัดซีอิ๊วใส่ไข่",
+      "kal": 520
      },
      {
-      "calorie-tr": "เส้นหมี่ลูกชิ้นหมูแห้ง",
-      "pkt-center": "1 ชาม",
-      "pkt-right": "430"
+      "menu": "ไส้กรอกเนื้อลูกวัวอบสลัดผัก",
+      "kal": 465
      },
      {
-      "calorie-tr": "เส้นใหญ่ผัดซีอิ๊วใส่ไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "520"
+      "menu": "ไส้กรอกอีสาน",
+      "kal": 90
      },
      {
-      "calorie-tr": "ไส้กรอกเนื้อลูกวัวอบสลัดผัก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "465"
+      "menu": "ไส้อั่ว",
+      "kal": 60
      },
      {
-      "calorie-tr": "ไส้กรอกอีสาน",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "90"
+      "menu": "หน่อไม้ผัดไข่",
+      "kal": 200
      },
      {
-      "calorie-tr": "ไส้อั่ว",
-      "pkt-center": "1 คำ",
-      "pkt-right": "60"
+      "menu": "หมี่กรอบราดหน้าหมู",
+      "kal": 690
      },
      {
-      "calorie-tr": "หน่อไม้ผัดไข่",
-      "pkt-center": "1 จาน",
-      "pkt-right": "200"
+      "menu": "หมี่กะทิ",
+      "kal": 405
      },
      {
-      "calorie-tr": "หมี่กรอบราดหน้าหมู",
-      "pkt-center": "1 จาน",
-      "pkt-right": "690"
+      "menu": "หมี่ซั่วผัด",
+      "kal": 395
      },
      {
-      "calorie-tr": "หมี่กะทิ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "405"
+      "menu": "หมูกรอบ",
+      "kal": 560
      },
      {
-      "calorie-tr": "หมี่ซั่วผัด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "395"
+      "menu": "หมูกะทะ",
+      "kal": 375
      },
      {
-      "calorie-tr": "หมูกรอบ",
-      "pkt-center": "1 จาน",
-      "pkt-right": "560"
+      "menu": "หมูคลุกเกล็ดขนมปังทอดซอส",
+      "kal": 645
      },
      {
-      "calorie-tr": "หมูกะทะ",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "375"
+      "menu": "หมูจุ่ม",
+      "kal": 375
      },
      {
-      "calorie-tr": "หมูคลุกเกล็ดขนมปังทอดซอส",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "645"
+      "menu": "หมูทอดเนยสลัดน้ำใส",
+      "kal": 635
      },
      {
-      "calorie-tr": "หมูจุ่ม",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "375"
+      "menu": "หมูน้ำตก",
+      "kal": 165
      },
      {
-      "calorie-tr": "หมูทอดเนยสลัดน้ำใส",
-      "pkt-center": "1 จาน",
-      "pkt-right": "635"
+      "menu": "หมูบด",
+      "kal": 50
      },
      {
-      "calorie-tr": "หมูน้ำตก",
-      "pkt-center": "1 จาน",
-      "pkt-right": "165"
+      "menu": "หมูปิ้ง",
+      "kal": 125
      },
      {
-      "calorie-tr": "หมูบด",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "50"
+      "menu": "หมูผัดขิง",
+      "kal": 275
      },
      {
-      "calorie-tr": "หมูปิ้ง",
-      "pkt-center": "1 ไม้",
-      "pkt-right": "125"
+      "menu": "หมูแผ่น",
+      "kal": 120
      },
      {
-      "calorie-tr": "หมูผัดขิง",
-      "pkt-center": "1 จาน",
-      "pkt-right": "275"
+      "menu": "หมูฝอย",
+      "kal": 68
      },
      {
-      "calorie-tr": "หมูแผ่น",
-      "pkt-center": "1 แผ่นกลาง",
-      "pkt-right": "120"
+      "menu": "หมูยอชุบแป้งทอด",
+      "kal": 125
      },
      {
-      "calorie-tr": "หมูฝอย",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "68"
+      "menu": "หมูย่างเกาหลี",
+      "kal": 375
      },
      {
-      "calorie-tr": "หมูยอชุบแป้งทอด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "125"
+      "menu": "หมูสะเต๊ะ",
+      "kal": 115
      },
      {
-      "calorie-tr": "หมูย่างเกาหลี",
-      "pkt-center": "1 ชุด",
-      "pkt-right": "375"
+      "menu": "หมูหยอง",
+      "kal": 38
      },
      {
-      "calorie-tr": "หมูสะเต๊ะ",
-      "pkt-center": "1 ไม้",
-      "pkt-right": "115"
+      "menu": "หลนปูเค็ม",
+      "kal": 205
      },
      {
-      "calorie-tr": "หมูหยอง",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "38"
+      "menu": "หอยแมลงภู่ทอด",
+      "kal": 605
      },
      {
-      "calorie-tr": "หลนปูเค็ม",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "205"
+      "menu": "หอยแมลงภู่อบหม้อดิน",
+      "kal": 17
      },
      {
-      "calorie-tr": "หอยแมลงภู่ทอด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "605"
+      "menu": "เห็ดผัดน้ำมันหอย",
+      "kal": 185
      },
      {
-      "calorie-tr": "หอยแมลงภู่อบหม้อดิน",
-      "pkt-center": "1 ตัว",
-      "pkt-right": "17"
+      "menu": "แหนมสด",
+      "kal": 175
      },
      {
-      "calorie-tr": "เห็ดผัดน้ำมันหอย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "185"
+      "menu": "อกไก่ย่าง",
+      "kal": 110
      },
      {
-      "calorie-tr": "แหนมสด",
-      "pkt-center": "1 จาน",
-      "pkt-right": "175"
+      "menu": "อกไก่อบ",
+      "kal": 169
      },
      {
-      "calorie-tr": "อกไก่ย่าง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "110"
+      "menu": "องุ่น",
+      "kal": 16
      },
      {
-      "calorie-tr": "อกไก่อบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "169"
+      "menu": "องุ่นเปรี้ยว",
+      "kal": 3
      },
      {
-      "calorie-tr": "องุ่น",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "16"
+      "menu": "องุ่นหวาน",
+      "kal": 4
      },
      {
-      "calorie-tr": "องุ่นเปรี้ยว",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "3"
+      "menu": "อ้อยควั่น",
+      "kal": 12
      },
      {
-      "calorie-tr": "องุ่นหวาน",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "4"
+      "menu": "แอปเปิล",
+      "kal": 42
      },
      {
-      "calorie-tr": "อ้อยควั่น",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "12"
+      "menu": "โอวัลติน",
+      "kal": 220
      },
      {
-      "calorie-tr": "แอปเปิล",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "42"
+      "menu": "ฮะเก๋า",
+      "kal": 115
      },
      {
-      "calorie-tr": "โอวัลติน",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "220"
+      "menu": "ขนมถ้วย",
+      "kal": 133
      },
      {
-      "calorie-tr": "ฮะเก๋า",
-      "pkt-center": "1 ลูกเล็ก",
-      "pkt-right": "115"
+      "menu": "กระทงทองไส้ข้าวโพด",
+      "kal": 72
      },
      {
-      "calorie-tr": "ขนมถ้วย",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "133"
+      "menu": "กระทงทองไส้ไก่",
+      "kal": 93
      },
      {
-      "calorie-tr": "กระทงทองไส้ข้าวโพด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "72"
+      "menu": "กระยาสารท",
+      "kal": 210
      },
      {
-      "calorie-tr": "กระทงทองไส้ไก่",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "93"
+      "menu": "กล้วยคลุกมะพร้าว",
+      "kal": 100
      },
      {
-      "calorie-tr": "กระยาสารท",
-      "pkt-center": "1 ชิ้นกลาง",
-      "pkt-right": "210"
+      "menu": "ขนมชั้น",
+      "kal": 92
      },
      {
-      "calorie-tr": "กล้วยคลุกมะพร้าว",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "100"
+      "menu": "ขนมต้มขาว",
+      "kal": 41
      },
      {
-      "calorie-tr": "ขนมชั้น",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "92"
+      "menu": "ขนมปลากริมไข่เต่า",
+      "kal": 250
      },
      {
-      "calorie-tr": "ขนมต้มขาว",
-      "pkt-center": "1 ลูก",
-      "pkt-right": "41"
+      "menu": "ขนมปังกระเทียม",
+      "kal": 85
      },
      {
-      "calorie-tr": "ขนมปลากริมไข่เต่า",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "250"
+      "menu": "ขนมปังขาไก่",
+      "kal": 65
      },
      {
-      "calorie-tr": "ขนมปังกระเทียม",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "85"
+      "menu": "ขนมปังปอนด์",
+      "kal": 80
      },
      {
-      "calorie-tr": "ขนมปังขาไก่",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "65"
+      "menu": "ขนมปังมะพร้าว",
+      "kal": 235
      },
      {
-      "calorie-tr": "ขนมปังปอนด์",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "80"
+      "menu": "ขนมปังสังขยา",
+      "kal": 230
      },
      {
-      "calorie-tr": "ขนมปังมะพร้าว",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "235"
+      "menu": "ขนมปังอบกรอบ",
+      "kal": 20
      },
      {
-      "calorie-tr": "ขนมปังสังขยา",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "230"
+      "menu": "ขนมปังไส้กรอก",
+      "kal": 130
      },
      {
-      "calorie-tr": "ขนมปังอบกรอบ",
-      "pkt-center": "1 แผ่นเล็ก",
-      "pkt-right": "20"
+      "menu": "ขนมปังไส้หมูหยอง",
+      "kal": 185
      },
      {
-      "calorie-tr": "ขนมปังไส้กรอก",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "130"
+      "menu": "ขนมหม้อแกง",
+      "kal": 179
      },
      {
-      "calorie-tr": "ขนมปังไส้หมูหยอง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "185"
+      "menu": "ขนมไหว้พระจันทร์ไส้ทุเรียนกวน",
+      "kal": 340
      },
      {
-      "calorie-tr": "ขนมหม้อแกง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "179"
+      "menu": "ขนมไหว้พระจันทร์ไส้ลูกบัวไข่เค็ม",
+      "kal": 375
      },
      {
-      "calorie-tr": "ขนมไหว้พระจันทร์ไส้ทุเรียนกวน",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "340"
+      "menu": "ข้าวกุ้งทอดกระเทียมพริกไทย",
+      "kal": 495
      },
      {
-      "calorie-tr": "ขนมไหว้พระจันทร์ไส้ลูกบัวไข่เค็ม",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "375"
+      "menu": "ข้าวเหนียวหน้ากุ้ง",
+      "kal": 179
      },
      {
-      "calorie-tr": "ข้าวกุ้งทอดกระเทียมพริกไทย",
-      "pkt-center": "1 จาน",
-      "pkt-right": "495"
+      "menu": "ข้าวเหนียวสังขยา",
+      "kal": 370
      },
      {
-      "calorie-tr": "ข้าวเหนียวหน้ากุ้ง",
-      "pkt-center": "1 ห่อ",
-      "pkt-right": "179"
+      "menu": "ครีมเทียม",
+      "kal": 45
      },
      {
-      "calorie-tr": "ข้าวเหนียวสังขยา",
-      "pkt-center": "1 ห่อ",
-      "pkt-right": "370"
+      "menu": "ครีมโรล",
+      "kal": 360
      },
      {
-      "calorie-tr": "ครีมเทียม",
-      "pkt-center": "1 ช้อนชา",
-      "pkt-right": "45"
+      "menu": "คอร์นเฟลก",
+      "kal": 110
      },
      {
-      "calorie-tr": "ครีมโรล",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "360"
+      "menu": "คุ้กกี้",
+      "kal": 75
      },
      {
-      "calorie-tr": "คอร์นเฟลก",
-      "pkt-center": "1 ถ้วยตวง",
-      "pkt-right": "110"
+      "menu": "คุ้กกี้",
+      "kal": 75
      },
      {
-      "calorie-tr": "คุ้กกี้",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "75"
+      "menu": "คุ้กกี้ช็อกโกแลตชิป",
+      "kal": 215
      },
      {
-      "calorie-tr": "คุ้กกี้",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "75"
+      "menu": "คุ้กกี้สิงคโปร์",
+      "kal": 95
      },
      {
-      "calorie-tr": "คุ้กกี้ช็อกโกแลตชิป",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "215"
+      "menu": "คุ้กกี้เนย",
+      "kal": 105
      },
      {
-      "calorie-tr": "คุ้กกี้สิงคโปร์",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "95"
+      "menu": "คุ้กกี้ไส้สับปะรด",
+      "kal": 190
      },
      {
-      "calorie-tr": "คุ้กกี้เนย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "105"
+      "menu": "ชาดำเย็น",
+      "kal": 110
      },
      {
-      "calorie-tr": "คุ้กกี้ไส้สับปะรด",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "190"
+      "menu": "ชามะนาว",
+      "kal": 100
      },
      {
-      "calorie-tr": "ชาดำเย็น",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "110"
+      "menu": "ชาร้อน",
+      "kal": 55
      },
      {
-      "calorie-tr": "ชามะนาว",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "100"
+      "menu": "ชาเย็น",
+      "kal": 100
      },
      {
-      "calorie-tr": "ชาร้อน",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "55"
+      "menu": "ช็อกโกแลตร้อน",
+      "kal": 120
      },
      {
-      "calorie-tr": "ชาเย็น",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "100"
+      "menu": "ถั่วลิสงแผ่นทอด",
+      "kal": 150
      },
      {
-      "calorie-tr": "ช็อกโกแลตร้อน",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "ถั่วลิสงต้ม",
+      "kal": 45
      },
      {
-      "calorie-tr": "ถั่วลิสงแผ่นทอด",
-      "pkt-center": "1 แผ่น",
-      "pkt-right": "150"
+      "menu": "ถั่วเขียวต้มน้ำตาล",
+      "kal": 160
      },
      {
-      "calorie-tr": "ถั่วลิสงต้ม",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "45"
+      "menu": "ทองหยิบ",
+      "kal": 105
      },
      {
-      "calorie-tr": "ถั่วเขียวต้มน้ำตาล",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "160"
+      "menu": "ทุเรียนกวน",
+      "kal": 115
      },
      {
-      "calorie-tr": "ทองหยิบ",
-      "pkt-center": "1 ดอก",
-      "pkt-right": "105"
+      "menu": "น้ำนมข้าวโพด",
+      "kal": 80
      },
      {
-      "calorie-tr": "ทุเรียนกวน",
-      "pkt-center": "1 ช้อนโต๊ะ",
-      "pkt-right": "115"
+      "menu": "น้ำตาลทราย",
+      "kal": 20
      },
      {
-      "calorie-tr": "น้ำนมข้าวโพด",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "80"
+      "menu": "น้ำฝรั่ง",
+      "kal": 100
      },
      {
-      "calorie-tr": "น้ำตาลทราย",
-      "pkt-center": "1 ช้อนชา",
-      "pkt-right": "20"
+      "menu": "บราวนี่",
+      "kal": 340
      },
      {
-      "calorie-tr": "น้ำฝรั่ง",
-      "pkt-center": "1 กล่อง",
-      "pkt-right": "100"
+      "menu": "น้ำใบเตย",
+      "kal": 120
      },
      {
-      "calorie-tr": "บราวนี่",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "340"
+      "menu": "น้ำ",
+      "kal": 120
      },
      {
-      "calorie-tr": "น้ำใบเตย",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "พายกรอบ",
+      "kal": 118
      },
      {
-      "calorie-tr": "น้ำ",
-      "pkt-center": "1 แก้ว",
-      "pkt-right": "120"
+      "menu": "พายชีสบูลเบอร์รี",
+      "kal": 350
      },
      {
-      "calorie-tr": "พายกรอบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "118"
+      "menu": "พายทูน่า",
+      "kal": 280
      },
      {
-      "calorie-tr": "พายชีสบูลเบอร์รี",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "350"
+      "menu": "พิซซ่าขอบไส้กรอกชีส",
+      "kal": 340
      },
      {
-      "calorie-tr": "พายทูน่า",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "280"
+      "menu": "พิซซ่าทะเล",
+      "kal": 335
      },
      {
-      "calorie-tr": "พิซซ่าขอบไส้กรอกชีส",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "340"
+      "menu": "พิซซ่าฮาวายเอี้ยน",
+      "kal": 345
      },
      {
-      "calorie-tr": "พิซซ่าทะเล",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "335"
+      "menu": "พิซซ่าไส้กรอก",
+      "kal": 290
      },
      {
-      "calorie-tr": "พิซซ่าฮาวายเอี้ยน",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "345"
+      "menu": "ฟักทองเชื่อม",
+      "kal": 167
      },
      {
-      "calorie-tr": "พิซซ่าไส้กรอก",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "290"
+      "menu": "มะกอกทรงเครื่อง",
+      "kal": 33
      },
      {
-      "calorie-tr": "ฟักทองเชื่อม",
-      "pkt-center": "1 จาน",
-      "pkt-right": "167"
+      "menu": "มะขามหวาน",
+      "kal": 30
      },
      {
-      "calorie-tr": "มะกอกทรงเครื่อง",
-      "pkt-center": "1 ผล",
-      "pkt-right": "33"
+      "menu": "มะม่วงอกร่องสุก",
+      "kal": 15
      },
      {
-      "calorie-tr": "มะขามหวาน",
-      "pkt-center": "1 ฝัก",
-      "pkt-right": "30"
+      "menu": "มันฝรั่งแผ่น",
+      "kal": 13
      },
      {
-      "calorie-tr": "มะม่วงอกร่องสุก",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "15"
+      "menu": "มันเทศเชื่อม",
+      "kal": 230
      },
      {
-      "calorie-tr": "มันฝรั่งแผ่น",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "13"
+      "menu": "มันแกงบวด",
+      "kal": 184
      },
      {
-      "calorie-tr": "มันเทศเชื่อม",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "230"
+      "menu": "รวมมิตร",
+      "kal": 230
      },
      {
-      "calorie-tr": "มันแกงบวด",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "184"
+      "menu": "ลูกชิ้นปิ้ง",
+      "kal": 165
      },
      {
-      "pkt-center": "1 ช้อนชา",
-      "pkt-right": "45"
+      "menu": "ลูกตาลลอยแก้ว",
+      "kal": 180
      },
      {
-      "calorie-tr": "รวมมิตร",
-      "pkt-center": "1 ถ้วยเล็ก",
-      "pkt-right": "230"
+      "menu": "ลูกเกด",
+      "kal": 4
      },
      {
-      "calorie-tr": "ลูกชิ้นปิ้ง",
-      "pkt-center": "1 ไม้",
-      "pkt-right": "165"
+      "menu": "วุ้นมะพร้าวอ่อน",
+      "kal": 80
      },
      {
-      "calorie-tr": "ลูกตาลลอยแก้ว",
-      "pkt-center": "1 ถ้วย",
-      "pkt-right": "180"
+      "menu": "สังขยา",
+      "kal": 204
      },
      {
-      "calorie-tr": "ลูกเกด",
-      "pkt-center": "1 เม็ด",
-      "pkt-right": "4"
+      "menu": "สังขยาฟักทอง",
+      "kal": 288
      },
      {
-      "calorie-tr": "วุ้นมะพร้าวอ่อน",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "80"
+      "menu": "สังขยาเผือก",
+      "kal": 222
      },
      {
-      "calorie-tr": "สังขยา",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "204"
+      "menu": "เกี๊ยวกรอบ",
+      "kal": 78
      },
      {
-      "calorie-tr": "สังขยาฟักทอง",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "288"
+      "menu": "เค้กกล้วยหอม",
+      "kal": 370
      },
      {
-      "calorie-tr": "สังขยาเผือก",
-      "pkt-center": "1 ชิ้นเล็ก",
-      "pkt-right": "222"
+      "menu": "เค้กช็อกโกแลต",
+      "kal": 275
      },
      {
-      "calorie-tr": "เกี๊ยวกรอบ",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "78"
+      "menu": "เค้กเนย",
+      "kal": 255
      },
      {
-      "calorie-tr": "เค้กกล้วยหอม",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "370"
+      "menu": "เค้กใบเตย",
+      "kal": 250
      },
      {
-      "calorie-tr": "เค้กช็อกโกแลต",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "275"
+      "menu": "เต้าหู้เหลือง",
+      "kal": 90
      },
      {
-      "calorie-tr": "เค้กเนย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "255"
+      "menu": "แซนด์วิชแฮมชีส",
+      "kal": 290
      },
      {
-      "calorie-tr": "เค้กใบเตย",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "250"
+      "menu": "แซนด์วิชทูน่า",
+      "kal": 180
      },
      {
-      "calorie-tr": "เต้าหู้เหลือง",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "90"
+      "menu": "แซนด์วิชไก่",
+      "kal": 240
      },
      {
-      "calorie-tr": "แซนด์วิชแฮมชีส",
-      "pkt-center": "1 คู่",
-      "pkt-right": "290"
+      "menu": "แยมโรล",
+      "kal": 310
      },
      {
-      "calorie-tr": "แซนด์วิชทูน่า",
-      "pkt-center": "1 คู่",
-      "pkt-right": "180"
+      "menu": "แฮมเบอร์เกอร์ไก่ชีส",
+      "kal": 280
      },
      {
-      "calorie-tr": "แซนด์วิชไก่",
-      "pkt-center": "1 คู่",
-      "pkt-right": "240"
+      "menu": "แฮมเบอร์เกอร์หมู",
+      "kal": 245
      },
      {
-      "calorie-tr": "แยมโรล",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "310"
+      "menu": "โดนัท",
+      "kal": 270
      },
      {
-      "calorie-tr": "แฮมเบอร์เกอร์ไก่ชีส",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "280"
+      "menu": "โรตีสายไหม",
+      "kal": 145
      },
      {
-      "calorie-tr": "แฮมเบอร์เกอร์หมู",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "245"
+      "menu": "ไอศกรีมกะทิ",
+      "kal": 108
      },
      {
-      "calorie-tr": "โดนัท",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "270"
+      "menu": "ไอศกรีมกาแฟ",
+      "kal": 142
      },
      {
-      "calorie-tr": "โรตีสายไหม",
-      "pkt-center": "1 ชิ้น",
-      "pkt-right": "145"
+      "menu": "ไอศกรีมช็อกโกแลต",
+      "kal": 110
      },
      {
-      "calorie-tr": "ไอศกรีมกะทิ",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "108"
+      "menu": "ไอศกรีมวานิลลา",
+      "kal": 140
      },
      {
-      "calorie-tr": "ไอศกรีมกาแฟ",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "142"
+      "menu": "ไอศกรีมสตรอว์เบอร์รี",
+      "kal": 110
      },
      {
-      "calorie-tr": "ไอศกรีมช็อกโกแลต",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "110"
-     },
-     {
-      "calorie-tr": "ไอศกรีมวานิลลา",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "140"
-     },
-     {
-      "calorie-tr": "ไอศกรีมสตรอว์เบอร์รี",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "110"
-     },
-     {
-      "calorie-tr": "ไอศกรีมเรซิน",
-      "pkt-center": "1 ก้อน",
-      "pkt-right": "264"
+      "menu": "ไอศกรีมเรซิน",
+      "kal": 264
      }
     ]
-}
+    }
