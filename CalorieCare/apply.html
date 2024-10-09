@@ -19,31 +19,34 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <!-- &nbsp;&nbsp;&nbsp; เว้นวรรค -->
 
     <style>
       body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: auto;
         margin: 0;
+        padding-top: 500px;
+        padding-bottom: 50px;
         font-family: Arial, sans-serif;
         background-color: #ffffff;
-        background-image: url("image/BG.png"); /* เปลี่ยนเป็นเส้นทางของภาพ */
-        background-size: cover; /* ทำให้ภาพเต็มพื้นที่ */
-        background-position: center; /* จัดตำแหน่งกลาง */
+        background-image: url("image/BG.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
       }
+
       .container {
         text-align: center;
-        background: rgba(
-          255,
-          255,
-          255,
-          0.8
-        ); /* ทำให้พื้นหลังของ container โปร่งใส */
-        padding: 30px 100px 30px 50px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 30px 130px 30px 50px;
         border-radius: 10px;
+        max-width: 800px;
+        margin: 0 20px;
       }
+
       .logo {
         width: 500px;
         height: 500px;
@@ -62,13 +65,14 @@
         color: #ffffff;
         border: none;
         padding: 15px 150px;
-        margin: 25px 50px 10px 120px;
+        margin: 60px 50px 30px 145px;
         border-radius: 10px;
         font-size: 16px;
         cursor: pointer;
         font-family: "Kanit", sans-serif;
         font-size: 40px;
-        display: flex;
+        display: inline-block;
+        text-decoration: none; /* ไม่มีเส้นใต้ */
       }
       .divider {
         display: flex;
@@ -90,28 +94,18 @@
       .divider:not(:empty)::after {
         margin-left: 0.25em;
       }
-      .login-button {
-        background-color: #ffffff;
-        color: #8a9a8b;
-        border: 1px solid #8a9a8b;
-        padding: 5px 55px;
-        border-radius: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        font-family: "Kanit", sans-serif;
-      }
       .title {
         display: flex;
         justify-content: center;
         align-items: center;
         color: #8a9a8b;
         font-family: "Kanit", sans-serif;
-        font-size: 50px;
+        font-size: 60px;
         margin-bottom: 20px;
-        margin: 0 0 20px 80px;
+        margin: 0 30px 20px 120px;
       }
       .Text {
-        font-size: 30px;
+        font-size: 40px;
         color: #6b8d71;
         margin-top: 15px;
         margin-left: 15px;
@@ -123,7 +117,7 @@
         height: 70px;
         border: 1px solid #8a9a8b;
         border-radius: 8px;
-        padding: 5px 40px 0px 40px;
+        padding: 5px 50px 0px 40px;
         margin: 10px 0;
         width: calc(100% - 20px);
         background-color: #f9f9f9;
@@ -153,11 +147,12 @@
         border-radius: 20px;
         padding: 30px 50px;
         margin: 5px;
+        margin-left: 25px;
         cursor: pointer;
         font-size: large;
       }
       .selected {
-        background-color: #8a9a8b;
+        background-color: #dedede;
         color: #ffffff;
         font-size: 20px;
       }
@@ -176,38 +171,67 @@
         font-family: "Kanit", sans-serif;
         display: flex;
         font-size: 40px;
-        margin-right: 2px;
+        margin-right: 12px;
         font-weight: bold;
       }
       .icon-arrow_back {
-        margin-top: 20px;
-        margin-left: 5px;
+        margin-top: 40px;
         display: flex;
         align-items: center;
-        font-size: 50px;
-        font-weight: bold;
+        font-size: 70px;
         color: #8a9a8b;
         text-decoration: none;
         font-family: "Kanit", sans-serif;
       }
+      .icon-arrow_back .TextBack {
+        font-size: 50px;
+        margin-left: 5px;
+      }
+
+
+    </style>
+
     </style>
 
     <script>
-      function setGender(gender) {
-        const buttons = document.querySelectorAll(".genderButton");
-        buttons.forEach((button) => {
-          button.classList.remove("selected");
-          if (button.dataset.gender === gender) {
-            button.classList.add("selected");
-          }
-        });
-      }
+        let selectedGender = ""; // ตัวแปรสำหรับเก็บเพศที่เลือก
+
+        function setGender(gender) {
+            const buttons = document.querySelectorAll(".genderButton");
+            buttons.forEach((button) => {
+                button.classList.remove("selected");
+                if (button.dataset.gender === gender) {
+                    button.classList.add("selected");
+                    selectedGender = gender; // เก็บค่าของเพศที่เลือก
+
+                    // เปลี่ยนสีพื้นหลังตามเพศที่เลือก
+                    if (gender === 'male') {
+                        button.style.backgroundColor = 'rgb(76, 141, 233, 0.2)'; // สีน้ำเงินสำหรับเพศชาย
+                    } else {
+                        button.style.backgroundColor = 'rgb(224, 132, 147, 0.2)'; // สีชมพูสำหรับเพศหญิง
+                    }
+                } else {
+                    // รีเซ็ตสีพื้นหลังสำหรับปุ่มที่ไม่เลือก
+                    button.style.backgroundColor = '#ffffff'; // สีพื้นฐาน
+                }
+            });
+        }
+
+        // ฟังก์ชันส่งฟอร์ม
+        function handleSubmit(event) {
+            event.preventDefault(); // ป้องกันการรีเฟรชหน้า
+            console.log("เพศที่เลือก:", selectedGender);
+            // ส่งข้อมูลฟอร์มตามต้องการ
+        }
     </script>
+
   </head>
 
   <body>
     <div class="container">
-        <a class="bi bi-arrow-left-short icon-arrow_back" href="login.html">ย้อนกลับ</a>
+      <a class="bi bi-arrow-left-short icon-arrow_back" href="app.html">
+        <span class="TextBack">กลับ</span>
+      </a>
       </span>
       <div class="logo"></div>
       <div class="title">สมัครสมาชิก</div>
@@ -223,27 +247,26 @@
 
         <label class="Text"> เพศ</label>
         <div class="genderContainer">
-          <!-- button-male -->
           <button
             type="button"
-            class="genderButton-male"
+            class="genderButton genderButton-male"
             data-gender="male"
             onclick="setGender('male')"
           >
-            <a class="bi bi-gender-male icon-male gender-text">เพศชาย</a>
+            <span class="bi bi-gender-male icon-male gender-text">เพศชาย</span>
           </button>
-          <!-- button-female -->
           <button
             type="button"
-            class="genderButton-female"
+            class="genderButton genderButton-female"
             data-gender="female"
             onclick="setGender('female')"
           >
-            <a class="bi bi-gender-female icon-female gender-text">เพศหญิง</a>
+            <span class="bi bi-gender-female icon-female gender-text">เพศหญิง</span>
           </button>
         </div>
+        
 
-        <button type="submit" class="button">สมัครสมาชิก</button>
+        <a type="submit" class="button" href="personal_information.html">ถัดไป</a>
       </form>
     </div>
   </body>
