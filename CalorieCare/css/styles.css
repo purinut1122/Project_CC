@@ -10871,3 +10871,60 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/* Button styling */
+.button_cal {
+  width: 100%;
+  padding: 12px;
+  background-color: #697F6E;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #556857;
+}
+
+.cal-result {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #4CAF50; /* สีเขียว */
+  border-radius: 5px; /* มุมโค้ง */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50; /* สีพื้นหลังปุ่มเขียว */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049; /* สีปุ่มเมื่อ hover */
+}
+
+
+
