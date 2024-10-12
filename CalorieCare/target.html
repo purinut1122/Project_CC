@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>เป้าหมาย</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+     <!-- Navigation-->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">หน้าหลัก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="excercise.html">ออกกำลังกาย</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">ประวัติ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="target.html">เป้าหมาย</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculator.html">คำนวณ</a></li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-green" type="submit">
+                        <i class="me-auto"></i>
+                        สมัครสมาชิก
+                    </button>
+                </form>
+            </div>
+        </div>
+      </nav>
+
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-start text-black">
+            <h2 class="display-8 fw-bolder pb-4">เป้าหมายของคุณคืออะไร ?</h2>
+        </div>
+        <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
+            <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-lg-3 col-3">
+                    <img src="image/stockdown.png" class="img-fluid rounded-start ms-3" alt="...">
+                  </div>
+                  <div class="col-lg-9 col-9 ps-4">
+                    <div class="card-body">
+                      <h5 class="card-title text-start fw-bolder">ลดน้ำหนัก</h5>
+                      <p class="card-text text-start text-green">เป้าหมายคือการลดน้ำหนัก</p>
+                      <form class="d-flex" style="justify-content: end;">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#loseweight">
+                        เลือกเป้าหมาย
+                        </button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-lg-3 col-3">
+                    <img src="image/balance.png" class="img-fluid rounded-start ms-3" alt="...">
+                  </div>
+                  <div class="col-lg-9 col-9 ps-4">
+                    <div class="card-body">
+                      <h5 class="card-title text-start fw-bolder">ควบคุมน้ำหนัก</h5>
+                      <p class="card-text text-start text-green">เป้าหมายคือการควบคุมน้ำหนักให้คงที่</p>
+                      <form class="d-flex" style="justify-content: end;">
+                         <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#balanceweight">
+                        เลือกเป้าหมาย
+                        </button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-lg-3 col-3">
+                    <img src="image/gym.png" class="img-fluid rounded-start ms-3" alt="...">
+                  </div>
+                  <div class="col-lg-9 col-9 ps-4">
+                    <div class="card-body">
+                      <h5 class="card-title text-start fw-bolder">เพิ่มน้ำหนัก</h5>
+                      <p class="card-text text-start text-green">เป้าหมายคือการเพิ่มน้ำหนัก</p>
+                      <form class="d-flex" style="justify-content: end;">
+                         <!-- Button trigger modal -->
+                         <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#gainweight">
+                         เลือกเป้าหมาย
+                         </button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+      <footer class="py-5 bg-green" style="position: absolute; left: 0; bottom: 0; width: 100%;">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+      </footer>
+    <!-- lose weight Modal-->
+    <div class="modal fade" id="loseweight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-green">
+            <h5 class="modal-title text-white" id="staticBackdropLabel">ลดน้ำหนัก</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5>น้ำหนักปัจจุบันของคุณ : 70 (kg.)</h5>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
+            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
+              <label class="form-check-label" for="exercise1">
+                <h6>อยู่นิ่งๆ</h6>
+                  <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
+              <label class="form-check-label" for="exercise2">
+                <h6>ออกกำลังกายนิดๆ</h6>
+                  <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
+              <label class="form-check-label" for="exercise3">
+                <h6>ออกกำลังกายปานกลาง</h6>
+                  <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
+              <label class="form-check-label" for="exercise4">
+                <h6>ออกกำลังกายหนัก</h6>
+                  <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
+              <label class="form-check-label" for="exercise5">
+                <h6>ออกกำลังกายหนักมาก</h6>
+                  <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
+              </label>
+            </div>
+          </div> 
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder">คุณต้องการลดเร็วแค่ไหน</h5>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="lose" id="lose1">
+              <label class="form-check-label" for="gain1">
+                <h6>ลดน้ำหนัก 0.25 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="lose" id="lose2">
+              <label class="form-check-label" for="gain2">
+                <h6>ลดน้ำหนัก 0.5 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="lose" id="lose3">
+              <label class="form-check-label" for="gain3">
+                <h6>ลดน้ำหนัก 0.75 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="lose" id="lose4">
+              <label class="form-check-label" for="gain4">
+                <h6>ลดน้ำหนัก 1 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>    
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ยกเลิก</button>
+        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#settarget">ตั้งเป้าหมาย</button>
+      </div>
+    </div>
+  </div>
+    </div> <!-- End of lose weight Modal-->
+
+    <!-- balance weight Modal-->
+    <div class="modal fade" id="balanceweight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-green">
+            <h5 class="modal-title text-white" id="staticBackdropLabel">ควบคุมน้ำหนัก</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="content">
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5>น้ำหนักปัจจุบันของคุณ : 70 (kg.)</h5>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
+            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
+              <label class="form-check-label" for="exercise1">
+                <h6>อยู่นิ่งๆ</h6>
+                  <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
+              <label class="form-check-label" for="exercise2">
+                <h6>ออกกำลังกายนิดๆ</h6>
+                  <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
+              <label class="form-check-label" for="exercise3">
+                <h6>ออกกำลังกายปานกลาง</h6>
+                  <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
+              <label class="form-check-label" for="exercise4">
+                <h6>ออกกำลังกายหนัก</h6>
+                  <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
+              <label class="form-check-label" for="exercise5">
+                <h6>ออกกำลังกายหนักมาก</h6>
+                  <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
+              </label>
+             </div> 
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ยกเลิก</button>
+        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#settarget">ตั้งเป้าหมาย</button>
+      </div>
+    </div>
+  </div>
+    </div> <!-- End of balance weight Modal-->
+
+    <!-- gain weight Modal-->
+    <div class="modal fade" id="gainweight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-green">
+            <h5 class="modal-title text-white" id="staticBackdropLabel">เพิ่มน้ำหนัก</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5>น้ำหนักปัจจุบันของคุณ : 70 (kg.)</h5>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
+            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+          </div>
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
+              <label class="form-check-label" for="exercise1">
+                <h6>อยู่นิ่งๆ</h6>
+                  <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
+              <label class="form-check-label" for="exercise2">
+                <h6>ออกกำลังกายนิดๆ</h6>
+                  <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
+              <label class="form-check-label" for="exercise3">
+                <h6>ออกกำลังกายปานกลาง</h6>
+                  <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
+              <label class="form-check-label" for="exercise4">
+                <h6>ออกกำลังกายหนัก</h6>
+                  <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
+              <label class="form-check-label" for="exercise5">
+                <h6>ออกกำลังกายหนักมาก</h6>
+                  <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
+              </label>
+            </div>
+          </div> 
+          <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
+            <h5 class="fw-bolder">คุณต้องการเพิ่มเร็วแค่ไหน</h5>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="gain" id="gain1">
+              <label class="form-check-label" for="gain1">
+                <h6>เพิ่มน้ำหนัก 0.25 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="gain" id="gain2">
+              <label class="form-check-label" for="gain2">
+                <h6>เพิ่มน้ำหนัก 0.5 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="gain" id="gain3">
+              <label class="form-check-label" for="gain3">
+                <h6>เพิ่มน้ำหนัก 0.75 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="gain" id="gain4">
+              <label class="form-check-label" for="gain4">
+                <h6>เพิ่มน้ำหนัก 1 กิโลกรัมต่อสัปดาห์</h6>
+              </label>
+          </div>    
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ยกเลิก</button>
+        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#settarget">ตั้งเป้าหมาย</button>
+      </div>
+    </div>
+  </div>
+    </div> <!-- End of gain weight Modal-->
+
+    <!-- set target Modal-->
+    <div class="modal fade" id="settarget" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="text-center">
+            <img src="image/Logo 1.png" alt="Bootstrap" width="250" height="250">
+            <p class="m-0">
+              <h4 class="text-green">ตั้งเป้าหมายสำเร็จ</h4>
+              <h6>คุณทำตั้งเป้าหมายสำเร็จ</h6>
+              <img class="mt-3" src="image/checked.png" alt="Bootstrap" width="100" height="100"><br>
+              <button class="btn btn-outline-green mt-3"><a href="finishtarget.html" class="link-green" style="text-decoration: none;">กลับเข้าสู่หน้าเป้าหมาย</a></button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End of set target Modal -->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

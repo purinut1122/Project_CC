@@ -2983,6 +2983,40 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #212529;
 }
 
+.btn-green {
+  --bs-btn-color: #839788;
+  --bs-btn-border-color: #839788;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #839788;
+  --bs-btn-hover-border-color: #839788;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #839788;
+  --bs-btn-active-border-color: #839788;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #839788;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #839788;
+  --bs-gradient: none;
+}
+
+.btn-pink {
+  --bs-btn-color: #ff4080;
+  --bs-btn-border-color: #ff4080;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ff4080;
+  --bs-btn-hover-border-color: #ff4080;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #ff4080;
+  --bs-btn-active-border-color: #ff4080;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #ff4080;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #ff4080;
+  --bs-gradient: none;
+}
+
 .btn-outline-primary {
   --bs-btn-color: #0d6efd;
   --bs-btn-border-color: #0d6efd;
@@ -6733,6 +6767,13 @@ textarea.form-control-lg {
   color: #198754 !important;
 }
 .link-success:hover, .link-success:focus {
+  color: #146c43 !important;
+}
+
+.link-green {
+  color: #839788 !important;
+}
+.link-green:hover, .link-green:focus {
   color: #146c43 !important;
 }
 
@@ -10871,60 +10912,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-
-/* Button styling */
-.button_cal {
-  width: 100%;
-  padding: 12px;
-  background-color: #697F6E;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #556857;
-}
-
-.cal-result {
-  text-align: center;
-  font-size: 18px;
-  color: green;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-input[type="text"], input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #4CAF50; /* สีเขียว */
-  border-radius: 5px; /* มุมโค้ง */
-  font-size: 16px;
-  font-family: 'Arial', sans-serif;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-input[type="submit"] {
-  background-color: #4CAF50; /* สีพื้นหลังปุ่มเขียว */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049; /* สีปุ่มเมื่อ hover */
-}
-
-
-
