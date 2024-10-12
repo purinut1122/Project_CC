@@ -15,6 +15,7 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/history.css" rel="stylesheet" />
+    <link href="css/search.css" rel="stylesheet" />
     <!--link searchbar-->
 </head>
 
@@ -60,6 +61,7 @@
     <div class="calendars">
         <div class="left">
             <div class="calendar">
+              
                 <div class="month">
                     <i class="bi bi-chevron-left prev "></i>
                     <div class="date">December 2022</div>
@@ -74,10 +76,11 @@
                     <div>Fri</div>
                     <div>Sat</div>
                 </div>
+            
                 <div class="days"></div>
                 <div class="goto-today">
                     <div class="goto">
-                        <input type="text" placeholder="mm/yyyy" class="date-input" />
+                        <input type="text" placeholder="mm/yyyy" class="date-input"/>
                         <button class="goto-btn">Go</button>
                     </div>
                     <button class="today-btn">Today</button>
@@ -102,7 +105,8 @@
                         <div class="add-event-input">
                             <div class="search-container">
                                 <i class="bi bi-search"></i>
-                                <input type="text" id="searchbar" placeholder="Search...">                           
+                                <div><input type="text" id="searchInput" placeholder="Search...">
+                                    <ul id="suggestions"></ul></div>                      
                             </div>
                           </div>
                     </div>
@@ -113,13 +117,13 @@
                     </div>                                                    
                     <div class="add-event-text">kal.</div>                    
                 <div class="add-event-footer">
-                    <button class="add-event-btn center">ADD MENU</button>
+                    <button class="add-event-btn d-grid gap-2 col-6 mx-auto">ADD MENU</button>
                 </div>
             </div>
         </div>
-        <button class="add-event">
-          <i class="bi bi-plus-lg"></i>
-        </button>
+        <a href="search.html"><button class="add-event">
+            <i class="bi bi-plus-lg"></i>
+          </button></a>
     </div>
 
     <!-- Bootstrap core JS-->

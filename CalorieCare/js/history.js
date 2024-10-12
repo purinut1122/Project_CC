@@ -233,6 +233,7 @@ todayBtn.addEventListener("click", () => {
   month = today.getMonth();
   year = today.getFullYear();
   initCalendar();
+  
 });
 
 dateInput.addEventListener("input", (e) => {
@@ -519,9 +520,8 @@ function searchEvent() {
   // เพิ่มโค้ดสำหรับฟังก์ชันการค้นหาเพิ่มเติมได้ที่นี่
 }
 
-function ctrl($scope){
-  $scope.rows = ['Paul','John','Lucie'];
-};
+
+
 
 
 
