@@ -2617,30 +2617,95 @@ const foodItems =  {
   // Function to render food items
  // Function to render food items
  function renderFoodItems(items) {
-      const foodList = document.getElementById('food-list');
-      foodList.innerHTML = ''; // Clear any existing content
+    const foodList = document.getElementById('food-list');
+    foodList.innerHTML = ''; // Clear any existing content
 
-      items.Recovered_Sheet1.forEach(item => {
-          const foodItemDiv = document.createElement('div');
-          foodItemDiv.classList.add('food-item');
+    items.Recovered_Sheet1.forEach(item => {
+        const foodItemDiv = document.createElement('div');
+        foodItemDiv.classList.add('food-item');
 
-          const foodContent = `
-              <div>
-                  <div class="food-name">${item.menu}</div>
-                  <div class="food-calories">${item.kcal} kcal</div>
-              </div>
-              <button class="add-btn">+</button>
-          `;
+        const modalId = `exampleModal-${item.id}`; // เปลี่ยนเป็น item.id
+        const foodContent = ` 
+            <div>
+                <div class="food-name">${item.menu}</div>
+                <div class="food-calories">${item.kcal} kcal</div>
+            </div>
+            <button class="add-btn" style="font-size: 25px; background-color: #839788; width: 50px; height: 50px; border-radius: 50%; color: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; text-align: center;" type="button" data-bs-toggle="modal" data-bs-target="#${modalId}">+</button>
+            <!-- Modal -->
+            <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="align-items: center; justify-content: center;">        
+                    <div class="modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-body allpopup">
+                            <div class="popup1">จำนวนที่ต้องการกิน</div>
+                            <div class="popup2"> 
+                                <i class="bi bi-dash-circle dash" id="minus-${item.id}"></i>
+                                <output id="counter-${item.id}">0</output>
+                                <i class="bi bi-plus-circle plus" id="plus-${item.id}"></i>
+                            </div>
+                            <div class="popup3">จำนวนแคลอรี่ : </div>
+                            <div class="popup4 d-flex justify-content-center gap-2">
+                                <button class="bthcancel" onclick="swapColors(this)" type="button" data-bs-dismiss="modal">ยกเลิก</button>
+                                <button class="bthconfirm" onclick="swapColors(this)" type="button">ยืนยัน</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
 
-          foodItemDiv.innerHTML = foodContent;
-          foodList.appendChild(foodItemDiv);
-      });
-  }
+        foodItemDiv.innerHTML = foodContent;
+        foodList.appendChild(foodItemDiv);
 
-  // Initial render
-  renderFoodItems(foodItems);
+        // เรียกใช้งาน handleCounter สำหรับแต่ละโมดัล
+        handleCounter(modalId, item.id);
+    });
+}
 
-  
+// ฟังก์ชันจัดการการนับ
+function handleCounter(modalId, foodId) {
+    const minusBtn = document.getElementById(`minus-${foodId}`);
+    const plusBtn = document.getElementById(`plus-${foodId}`);
+    const counter = document.getElementById(`counter-${foodId}`);
+    
 
+    let quantity = 0; // จำนวนเริ่มต้น
+    
+    // แสดงค่าของ counter
+    const updateCounter = () => {
+        counter.innerHTML = quantity; // อัปเดตค่าใน output
+    };
 
+    // เพิ่มจำนวน
+    plusBtn.addEventListener('click', () => {
+        quantity++;
+        updateCounter();
+    });
 
+    // ลดจำนวน
+    minusBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+            quantity--;
+            updateCounter();
+        }
+    });
+
+    // รีเซ็ตเมื่อ modal ถูกปิด
+    const modal = document.getElementById(modalId);
+    modal.addEventListener('hidden.bs.modal', () => {
+        quantity = 0; // รีเซ็ตจำนวน
+        updateCounter(); // แสดงค่าที่อัปเดต
+    });
+}
+
+// ฟังก์ชันเปลี่ยนสี
+function swapColors(button) {
+    if (button.classList.contains('bthcancel')) {
+        button.classList.toggle('active-cancel');
+    } else if (button.classList.contains('bthconfirm')) {
+        button.classList.toggle('active-confirm');
+    }
+}
+
+// เริ่มต้นการเรนเดอร์
+renderFoodItems(foodItems);

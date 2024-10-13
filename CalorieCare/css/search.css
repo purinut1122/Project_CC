@@ -1,35 +1,69 @@
+.container{
+  display: flex;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+* {
+ font-family: "Noto Sans Thai", sans-serif;
+}
+
+
+
+.search-bar {
+  background-color: white;
+  padding: 5px 5px;
+  border-radius: 20px;
+  flex-grow: 1; 
+  
+}
+.search-box {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px;
+  flex: 1;
+  outline: none;
+}
+
+button.back_arrow {
+  margin-right: 20px; /* ระยะห่างระหว่างปุ่มลูกศรกับช่องค้นหา */
+}
+
+input.search_box {
+  flex-grow: 1; /* ทำให้ช่องค้นหาขยายตามพื้นที่ที่เหลือ */
+}
+.bisearch {
+  font-size: 18px;
+  color: #839788;
+}
+@media (max-width: 600px) {
+  .navbar .search-box {
+    width: 80%;
+
+  }
+}
+
+
 .bi-arrow-left {
     color: #fff; /* White color */
+  }
+.bisearch{
+  color: #839788;
   }
 
 
 .search {
     padding: 10px;
-    width: 100%; /* Full width by default */
     border: none;
     outline: none;
     border-radius: 5px;
+    
 
 }
 
 .search::placeholder {
     color: #839788; /* Change placeholder text color */
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #8b9b84;
-    color: white;
-    padding: 10px;
-    border-radius: 8px 8px 0 0;
-}
-.header input {
-    flex: 1;
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-}
+
 .food-item {
     display: flex;
     justify-content: space-between;
@@ -45,7 +79,7 @@
 }
 .food-calories {
     font-size: 14px;
-    color: gray;
+    color: #839788;
 }
 .add-btn {
     background-color: #8b9b84;
@@ -55,48 +89,86 @@
     border: none;
     cursor: pointer;
 }
-.navbar .back-btn {
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
+.btn-close{
+  color: #839788; 
+  font-size: 25px; 
+  margin-left: auto;  
+  border: none; 
+}
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative; 
+  font-size: 30px;
+}
+
+.allpopup{
+  font-family: 'Mitr', sans-serif; 
+  color: #839788; display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+}
+.popup1{
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.popup2{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 20px; 
+  gap: 30px;
+  font-size: 30px;
+  
+}
+.dash, .plus {
+  font-size: 40px; 
+  cursor: pointer;
+}
+.popup3{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.popup4{
+  margin-bottom: 20px;
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .navbar {
+    margin-bottom: 20px;
+    gap: 20px;
+
   }
+}
 
-  /* Center search box styling */
-  .navbar .search-box {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px 10px;
-    width: 100%;
-    max-width: 250px;
-  }
+.bthcancel {
+  background-color: white;
+  color: #839788;
+  border: 2px solid #839788;
+}
 
-  /* Input field inside the search box */
-  .navbar .search-box input {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 5px;
-  }
+.bthconfirm {
+  background-color: white;
+  color: #839788;
+  border: 2px solid #839788;
+}
 
-  .navbar .search-box i {
-    margin-right: 5px;
-    font-size: 14px;
-  }
+/* เมื่อ active หลังจากการคลิก */
+.bthcancel:hover {
+  background-color: #839788;
+  color: white;
+  border: 2px solid #839788;
+}
 
-  /* Optional: Mobile responsive adjustments */
-  @media (max-width: 600px) {
-    .navbar .search-box {
-      max-width: 180px;
-    }
-  }
-ื
-
-
-
-
+.bthconfirm:hover {
+  background-color: #839788;
+  color: white;
+  border: 2px solid #839788;
+}
 
 
 
