@@ -1,0 +1,12 @@
+13/10/2567
+
+Profile
+- Change design page editgender
+
+Calculate
+- Change design gender radio button 
+- Change activity button to Dropdroplist
+- Edit scripts (calBMI , calBMR , calTDEE)
+
+Excercise
+- Edit ui (card)

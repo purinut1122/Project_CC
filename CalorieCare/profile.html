@@ -188,13 +188,18 @@
                         <p>รหัสผ่าน</p>
                         <input type="text" id="password" class="w-100"/>
                     </div>
-                    <div class="text-green mt-3">
-                        <p>เพศ</p>
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary w-25" for="option1"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
-
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-pink w-25" for="option2"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                    <div class="container text-green mt-3">
+                        <div class="row">
+                            <p>เพศ</p>
+                            <div class="col text-center">
+                                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary w-100" for="option1"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                            </div>
+                            <div class="col text-center"> 
+                                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                                <label class="btn btn-pink w-100" for="option2"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                            </div>
+                        </div>
                     </div>
                     <h4 class="text-green mt-4 fw-bolder">ข้อมูลส่วนตัว</h4>
                     <div class="text-green mt-3">
@@ -218,7 +223,7 @@
                             <option value="3">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</option>
                             <option value="4">ออกกำลังกายหนักมาก 6-7 วันต่อสัปดาห์</option>
                             <option value="5">ฝึกซ้อมหนักทุกวันไม่หยุด</option>
-                          </select>
+                        </select>
                     </div>
                 </div>
             </div>
