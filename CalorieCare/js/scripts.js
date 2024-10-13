@@ -20,7 +20,6 @@ function calculateBMI() {
     let height = parseFloat(document.querySelector("#height-bmi").value);
     let weight = parseFloat(document.querySelector("#weight-bmi").value);
     let age = parseInt(document.querySelector("#age-bmi").value);
-    let gender = document.querySelector('input[name="gender-bmi"]:checked').value;
     let result = document.querySelector("#result-bmi");
 
     if (isNaN(height) || height <= 0) {
@@ -83,7 +82,7 @@ function calculateTDEE() {
         veryActive: 1.9
     };
 
-    let activityLevel = document.querySelector('input[name="activity-level"]:checked').value;
+    let activityLevel = document.querySelector('select[name="activity-level"]').value;
 
     if (isNaN(height) || height <= 0) {
         result.innerHTML = "กรุณาใส่ส่วนสูง!";

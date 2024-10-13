@@ -65,9 +65,6 @@
                         <input type="text" id="weight-bmi" />
                         <p>อายุ (ปี)</p>
                         <input type="text" id="age-bmi" />
-                        <p>เพศ</p>
-                        <label><input type="radio" name="gender-bmi" value="male" checked> ชาย</label>
-                        <label><input type="radio" name="gender-bmi" value="female"> หญิง</label>
                         <button class="button_cal" id="btn-bmi">คำนวณ BMI</button>
                         <div class="cal-result" id="result-bmi"></div>
                     </div>
@@ -94,9 +91,22 @@
                         <input type="text" id="weight-bmr" />
                         <p>อายุ (ปี)</p>
                         <input type="text" id="age-bmr" />
+
                         <p>เพศ</p>
-                        <label><input type="radio" name="gender-bmr" value="male" checked> ชาย</label>
-                        <label><input type="radio" name="gender-bmr" value="female"> หญิง</label>
+
+                        <div class="container mb-3"> 
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="male" id="gender-bmr-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="gender-bmr-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="female" id="gender-bmr-female" autocomplete="off">
+                                    <label class="btn btn-pink w-100" for="gender-bmr-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                </div>
+                            </div>
+                        </div>
+                    
                         <button class="button_cal" id="btn-bmr">คำนวณ BMR</button>
                         <div class="cal-result" id="result-bmr"></div>
                     </div>
@@ -122,14 +132,30 @@
                         <p>อายุ (ปี)</p>
                         <input type="text" id="age-tdee" />
                         <p>เพศ</p>
-                        <label><input type="radio" name="gender-tdee" value="male" checked> ชาย</label>
-                        <label><input type="radio" name="gender-tdee" value="female"> หญิง</label>
+
+                        <div class="container mb-3"> 
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-tdee" value="male" id="gender-tdee-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="gender-tdee-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-tdee" value="female" id="gender-tdee-female" autocomplete="off">
+                                    <label class="btn btn-pink w-100" for="gender-tdee-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <p>ระดับการออกกำลังกาย</p>
-                        <label><input type="radio" name="activity-level" value="sedentary" checked> นั่งทำงานทั้งวัน</label><br>
-                        <label><input type="radio" name="activity-level" value="light"> ออกกำลังกายเบาๆ (1-3 ครั้งต่อสัปดาห์)</label><br>
-                        <label><input type="radio" name="activity-level" value="moderate"> ออกกำลังกายปานกลาง (3-5 ครั้งต่อสัปดาห์)</label><br>
-                        <label><input type="radio" name="activity-level" value="active"> ออกกำลังกายหนัก (6-7 ครั้งต่อสัปดาห์)</label><br>
-                        <label><input type="radio" name="activity-level" value="veryActive"> ออกกำลังกายอย่างหนักมาก (ออกกำลังกายมากกว่า 1 ครั้งต่อวัน)</label><br>
+                        <select name="activity-level" class="form-select form-select-m mb-3" aria-label=".form-select-lg example">
+                            <option selected>เลือกกิจกรรมการออกกำลังกาย</option>
+                            <option value="sedentary">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</option>
+                            <option value="light">ออกกำลังกายเบาๆ 1-3 วันต่อสัปดาห์</option>
+                            <option value="moderate">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</option>
+                            <option value="active">ออกกำลังกายหนักมาก 6-7 วันต่อสัปดาห์</option>
+                            <option value="veryActive">ฝึกซ้อมหนักทุกวันไม่หยุด</option>
+                        </select>
+
                         <button class="button_cal" id="btn-tdee">คำนวณ TDEE</button>
                         <div class="cal-result" id="result-tdee"></div>
                     </div>
