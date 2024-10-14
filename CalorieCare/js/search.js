@@ -2613,7 +2613,14 @@ const foodItems =  {
     "kcal": 264
    }
   ]
-  }
+  };
+
+  
+
+
+  
+
+
   // Function to render food items
  // Function to render food items
  function renderFoodItems(items) {
@@ -2709,3 +2716,4 @@ function swapColors(button) {
 
 // เริ่มต้นการเรนเดอร์
 renderFoodItems(foodItems);
+
