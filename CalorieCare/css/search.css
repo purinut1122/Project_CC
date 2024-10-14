@@ -36,6 +36,10 @@ input.search_box {
   font-size: 18px;
   color: #839788;
 }
+li{
+  list-style-type: none;
+}
+
 @media (max-width: 300px) {
   .navbar .search-box {
     width: 20px; 
@@ -194,3 +198,24 @@ input.search_box {
   color: white;
   border: 2px solid #839788;
 }
+#foodList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#foodList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#foodList li:hover {
+  background-color: #f1f1f1;
+}
+
+.calories {
+  color: #888;
+}
+

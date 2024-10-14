@@ -2615,59 +2615,85 @@ const foodItems =  {
   ]
   };
 
-  
-
 
   
-
-
-  // Function to render food items
- // Function to render food items
- function renderFoodItems(items) {
+  function renderFoodItems(items) {
     const foodList = document.getElementById('food-list');
-    foodList.innerHTML = ''; // Clear any existing content
+    foodList.innerHTML = ''; // Clear existing content
 
-    items.Recovered_Sheet1.forEach(item => {
+    // ตรวจสอบข้อมูล
+    if (!items || !items.Recovered_Sheet1 || items.Recovered_Sheet1.length === 0) {
+        console.error('No food items available!');
+        return;
+    }
+
+    // Loop ผ่านแต่ละรายการใน items.Recovered_Sheet1
+    items.Recovered_Sheet1.forEach((item, index) => {
         const foodItemDiv = document.createElement('div');
-        foodItemDiv.classList.add('food-item');
+        foodItemDiv.classList.add('food-item', 'mb-3', 'p-3', 'border', 'rounded');
 
-        const modalId = `exampleModal-${item.id}`; // เปลี่ยนเป็น item.id
-        const foodContent = ` 
+        const modalId = `exampleModal-${index}`; // ใช้ index แทน id ในที่นี้
+        const foodContent = `
             <div>
-                <div class="food-name">${item.menu}</div>
-                <div class="food-calories">${item.kcal} kcal</div>
+                <h3 class="food-name name">${item.menu}</h3>
+                <p class="food-calories born">${item.kcal} kcal</p>
             </div>
-            <button class="add-btn" style="font-size: 25px; background-color: #839788; width: 50px; height: 50px; border-radius: 50%; color: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; text-align: center;" type="button" data-bs-toggle="modal" data-bs-target="#${modalId}">+</button>
+            <button class="add-btn" 
+                style="font-size: 25px; background-color: #839788; width: 50px; height: 50px; border-radius: 50%; color: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; text-align: center;" 
+                type="button" data-bs-toggle="modal" data-bs-target="#${modalId}">
+                +
+            </button>
             <!-- Modal -->
             <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" style="align-items: center; justify-content: center;">        
                     <div class="modal-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body allpopup">
                             <div class="popup1">จำนวนที่ต้องการกิน</div>
                             <div class="popup2"> 
-                                <i class="bi bi-dash-circle dash" id="minus-${item.id}"></i>
-                                <output id="counter-${item.id}">0</output>
-                                <i class="bi bi-plus-circle plus" id="plus-${item.id}"></i>
+                                <i class="bi bi-dash-circle dash" id="minus-${index}"></i>
+                                <output id="counter-${index}">0</output>
+                                <i class="bi bi-plus-circle plus" id="plus-${index}"></i>
                             </div>
                             <div class="popup3">จำนวนแคลอรี่ : </div>
                             <div class="popup4 d-flex justify-content-center gap-2">
                                 <button class="bthcancel" onclick="swapColors(this)" type="button" data-bs-dismiss="modal">ยกเลิก</button>
                                 <button class="bthconfirm" onclick="swapColors(this)" type="button">ยืนยัน</button>
-                        </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         `;
 
+        // ตรวจสอบว่าโค้ด HTML ถูกสร้างครบถ้วนก่อนใส่เข้าไป
         foodItemDiv.innerHTML = foodContent;
         foodList.appendChild(foodItemDiv);
-
-        // เรียกใช้งาน handleCounter สำหรับแต่ละโมดัล
-        handleCounter(modalId, item.id);
     });
 }
+
+// ฟังก์ชันสำหรับการค้นหารายการอาหาร
+function myFunction() {
+    var input, filter, foodItems, foodName, i;
+    input = document.getElementById('search-text');
+    filter = input.value.toUpperCase();
+    foodItems = document.querySelectorAll('.food-item');
+  
+    // Loop ผ่านแต่ละรายการอาหาร
+    for (i = 0; i < foodItems.length; i++) {
+        foodName = foodItems[i].querySelector('.food-name').textContent || foodItems[i].querySelector('.food-name').innerText;
+        if (foodName.toUpperCase().indexOf(filter) > -1) {
+            foodItems[i].style.display = "";
+        } else {
+            foodItems[i].style.display = "none";
+        }
+    }
+}
+
+
+
+
+
+
 
 // ฟังก์ชันจัดการการนับ
 function handleCounter(modalId, foodId) {
