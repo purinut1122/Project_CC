@@ -77,3 +77,12 @@
   font-size: 50px;
   margin-left: 5px;
 }
+.forget_password {
+  font-size: 40px;
+  color: #6b8d71;
+  margin-top: 5px;
+  font-family: "Noto Sans Thai", sans-serif;
+  text-align: right;
+  display: block;
+  text-decoration: none;
+}
