@@ -2614,25 +2614,25 @@ const foodItems =  {
    }
   ]
   };
-
-
   
+
   function renderFoodItems(items) {
     const foodList = document.getElementById('food-list');
     foodList.innerHTML = ''; // Clear existing content
 
-    // ตรวจสอบข้อมูล
+    // Check if the data is valid
     if (!items || !items.Recovered_Sheet1 || items.Recovered_Sheet1.length === 0) {
         console.error('No food items available!');
         return;
     }
 
-    // Loop ผ่านแต่ละรายการใน items.Recovered_Sheet1
+    // Loop through each item in items.Recovered_Sheet1
     items.Recovered_Sheet1.forEach((item, index) => {
         const foodItemDiv = document.createElement('div');
         foodItemDiv.classList.add('food-item', 'mb-3', 'p-3', 'border', 'rounded');
 
-        const modalId = `exampleModal-${index}`; // ใช้ index แทน id ในที่นี้
+        const modalId = `exampleModal-${index}`; // Unique modal ID for each item
+        const foodId = index; // Use index as a unique ID for counters and buttons
         const foodContent = `
             <div>
                 <h3 class="food-name name">${item.menu}</h3>
@@ -2648,13 +2648,13 @@ const foodItems =  {
                 <div class="modal-dialog" style="align-items: center; justify-content: center;">        
                     <div class="modal-content">
                         <div class="modal-body allpopup">
-                            <div class="popup1">จำนวนที่ต้องการกิน</div>
+                            <div class="popup1">จำนวนที่ต้องการกิน : ${item.menu} </div>
                             <div class="popup2"> 
-                                <i class="bi bi-dash-circle dash" id="minus-${index}"></i>
-                                <output id="counter-${index}">0</output>
-                                <i class="bi bi-plus-circle plus" id="plus-${index}"></i>
+                                <i class="bi bi-dash-circle dash" id="minus-${foodId}"></i>
+                                <output id="counter-${foodId}">0</output>
+                                <i class="bi bi-plus-circle plus" id="plus-${foodId}"></i>
                             </div>
-                            <div class="popup3">จำนวนแคลอรี่ : </div>
+                           <div class="popup3">จำนวนแคลอรี่ : <span id="total-calories-${foodId}">0</span> kcal</div>
                             <div class="popup4 d-flex justify-content-center gap-2">
                                 <button class="bthcancel" onclick="swapColors(this)" type="button" data-bs-dismiss="modal">ยกเลิก</button>
                                 <button class="bthconfirm" onclick="swapColors(this)" type="button">ยืนยัน</button>
@@ -2665,9 +2665,55 @@ const foodItems =  {
             </div>
         `;
 
-        // ตรวจสอบว่าโค้ด HTML ถูกสร้างครบถ้วนก่อนใส่เข้าไป
+        // Ensure the HTML is generated before inserting
         foodItemDiv.innerHTML = foodContent;
         foodList.appendChild(foodItemDiv);
+
+        // Attach the counter handler for each food item with kcal passed
+        handleCounter(modalId, foodId, item.kcal);
+    });
+}
+
+//ฟังก์ชันสำหรับคำนวณแคล
+function handleCounter(modalId, foodId, kcal) {
+    const minusBtn = document.getElementById(`minus-${foodId}`);
+    const plusBtn = document.getElementById(`plus-${foodId}`);
+    const counter = document.getElementById(`counter-${foodId}`);
+    const totalCaloriesElem = document.getElementById(`total-calories-${foodId}`);
+    
+    let quantity = 0; // Initial quantity
+
+    // Update the counter display
+    const updateCounter = () => {
+        counter.innerHTML = quantity; // Set the current quantity in the counter element
+
+        // Calculate total calories safely
+        const totalCalories = Number(kcal) * quantity; // Ensure both are numbers
+
+        console.log("Total Calories:", totalCalories); // Log the total calories for debugging
+        totalCaloriesElem.innerHTML = totalCalories; // Update the total calories based on quantity
+        console.log("Quantity:", quantity);
+    };
+
+    // Increase quantity
+    plusBtn.addEventListener('click', () => {
+        quantity++;
+        updateCounter();
+    });
+
+    // Decrease quantity
+    minusBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+            quantity--;
+            updateCounter();
+        }
+    });
+
+    // Reset counter when modal is closed
+    const modal = document.getElementById(modalId);
+    modal.addEventListener('hidden.bs.modal', () => {
+        quantity = 0; // Reset the quantity to 0
+        updateCounter(); // Reflect the updated value in the counter and total calories
     });
 }
 
@@ -2692,45 +2738,6 @@ function myFunction() {
 
 
 
-
-
-
-// ฟังก์ชันจัดการการนับ
-function handleCounter(modalId, foodId) {
-    const minusBtn = document.getElementById(`minus-${foodId}`);
-    const plusBtn = document.getElementById(`plus-${foodId}`);
-    const counter = document.getElementById(`counter-${foodId}`);
-    
-
-    let quantity = 0; // จำนวนเริ่มต้น
-    
-    // แสดงค่าของ counter
-    const updateCounter = () => {
-        counter.innerHTML = quantity; // อัปเดตค่าใน output
-    };
-
-    // เพิ่มจำนวน
-    plusBtn.addEventListener('click', () => {
-        quantity++;
-        updateCounter();
-    });
-
-    // ลดจำนวน
-    minusBtn.addEventListener('click', () => {
-        if (quantity > 0) {
-            quantity--;
-            updateCounter();
-        }
-    });
-
-    // รีเซ็ตเมื่อ modal ถูกปิด
-    const modal = document.getElementById(modalId);
-    modal.addEventListener('hidden.bs.modal', () => {
-        quantity = 0; // รีเซ็ตจำนวน
-        updateCounter(); // แสดงค่าที่อัปเดต
-    });
-}
-
 // ฟังก์ชันเปลี่ยนสี
 function swapColors(button) {
     if (button.classList.contains('bthcancel')) {
@@ -2742,4 +2749,9 @@ function swapColors(button) {
 
 // เริ่มต้นการเรนเดอร์
 renderFoodItems(foodItems);
+// Attach the counter handler for each food item, including kcal for calorie calculation
+handleCounter(modalId, foodId, Number(item.kcal)); // Ensure this is called with a number
+
+
+
 
