@@ -1,4 +1,6 @@
-const menu =
+let index = -1;
+const flag = { menu: false,  kcal: false };
+let data =
     {
         "Recovered_Sheet1":[
          {
@@ -2616,3 +2618,7 @@ const menu =
         ]
         
     }
+    
+
+
+    

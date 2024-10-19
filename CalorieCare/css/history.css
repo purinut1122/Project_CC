@@ -299,7 +299,7 @@
   padding: 0 20px;
   padding-left: 50px;
   color: #fff;
-  background: linear-gradient(90deg, #f3f3f3, transparent);
+  background: linear-gradient(90deg, #839788, transparent);
   cursor: pointer;
 }
 /* even event */
@@ -345,7 +345,7 @@
 }
 /* add tick in event after */
 .events .event::after {
-  content: "✓";
+  content: "X";
   position: absolute;
   top: 50%;
   right: 0;
@@ -355,7 +355,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0.3;
-  color: var(--primary-clr);
+  color: #fff;
   transform: translateY(-50%);
 }
 .events .event:hover::after {
@@ -544,7 +544,7 @@
   padding: 10px;
   font-size: 12px;
   color: #fff;
-  background-color: #b38add;
+  background-color: #839788;
 }
 .credits a {
   text-decoration: none;

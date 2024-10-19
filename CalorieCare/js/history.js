@@ -13,6 +13,8 @@ const calendar = document.querySelector(".calendar"),
   addEventWrapper = document.querySelector(".add-event-wrapper "),
   addEventCloseBtn = document.querySelector(".close "),
   addEventTitle = document.querySelector(".event-name "),
+  addEventkcal = document.querySelector(".event-kcal "),
+  addEventquantity = document.querySelector(".event-quantity "),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn ");
@@ -136,48 +138,11 @@ function nextMonth() {
   }
   initCalendar();
 }
-//prev next +1 ,-1
+
 prev.addEventListener("click", prevMonth);
 next.addEventListener("click", nextMonth);
 
 initCalendar();
-//prev next < >
-// Function to update the month
-const updateMonth = (direction) => {
-    currentDate.setMonth(currentDate.getMonth() + direction); // Increment or decrement the month
-    dateDisplay.innerHTML = formatDate(currentDate);
-}
-
-// Event listeners for left and right buttons
-prev.addEventListener('click', () => updateMonth(-1)); // Go to previous month
-next.addEventListener('click', () => updateMonth(1));  // Go to next month
-//end prev next < >
-
-const counterElement = document.getElementById('counter');
-const plusButton = document.getElementById('plus');
-const minusButton = document.getElementById('minus');
-
-let counter = 0; // Initial counter value
-
-// Update the counter display
-const updateCounter = () => {
-    counterElement.innerHTML = counter;
-}
-
-// Increase the counter when the plus button is clicked
-plusButton.addEventListener('click', () => {
-    counter++;
-    updateCounter();
-});
-
-// Decrease the counter when the minus button is clicked
-minusButton.addEventListener('click', () => {
-    if (counter > 0) {  // Ensure counter does not go below 0
-        counter--;
-    }
-    updateCounter();
-});
-
 
 //function to add active on day
 function addListner() {
@@ -233,7 +198,6 @@ todayBtn.addEventListener("click", () => {
   month = today.getMonth();
   year = today.getFullYear();
   initCalendar();
-  
 });
 
 dateInput.addEventListener("input", (e) => {
@@ -279,31 +243,36 @@ function getActiveDay(date) {
 function updateEvents(date) {
   let events = "";
   eventsArr.forEach((event) => {
-    if (
-      date === event.day &&
-      month + 1 === event.month &&
-      year === event.year
-    ) {
+    if (date === event.day && month + 1 === event.month && year === event.year) {
       event.events.forEach((event) => {
+        const totalCalories = event.quantity * event.kcal;
         events += `<div class="event">
             <div class="title">
               <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
             </div>
-            <div class="event-time">
-              <span class="event-time">${event.time}</span>
+            <div class="event-kcal">
+              <span>calories : ${event.kcal}</span>
+            </div>
+            <div class="event-quantity">
+              <span>Quantity : ${event.quantity}</span>
+            </div>
+             <div class="event-quantity">
+              <span>total: ${totalCalories}</span>
             </div>
         </div>`;
       });
     }
   });
+  
   if (events === "") {
     events = `<div class="no-event">
-            <h3>ยังไม่มีประวัติ</h3>
+            <h3>No Events</h3>
         </div>`;
   }
+  
   eventsContainer.innerHTML = events;
-  saveEvents();
+  saveEvents(); // Ensure saving updated events
 }
 
 //function to add event
@@ -321,111 +290,58 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//allow 50 chars in eventtitle
 addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
-}
-
-defineProperty();
-
-//allow only time in eventtime from and to
-addEventFrom.addEventListener("input", (e) => {
-  addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "");
-  if (addEventFrom.value.length === 2) {
-    addEventFrom.value += ":";
-  }
-  if (addEventFrom.value.length > 5) {
-    addEventFrom.value = addEventFrom.value.slice(0, 5);
-  }
+addEventkcal.addEventListener("input", (e) => {
+  addEventkcal.value = addEventkcal.value.slice(0, 60);
 });
 
-addEventTo.addEventListener("input", (e) => {
-  addEventTo.value = addEventTo.value.replace(/[^0-9:]/g, "");
-  if (addEventTo.value.length === 2) {
-    addEventTo.value += ":";
-  }
-  if (addEventTo.value.length > 5) {
-    addEventTo.value = addEventTo.value.slice(0, 5);
-  }
+addEventquantity.addEventListener("input", (e) => {
+  addEventquantity.value = addEventquantity.value.slice(0, 60);
 });
 
-//function to add event to eventsArr
+// Handle event submission
 addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
-  const eventTimeFrom = addEventFrom.value;
-  const eventTimeTo = addEventTo.value;
-  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
+  const eventkcal = addEventkcal.value;
+  const eventquantity = addEventquantity.value;
+
+  // Validate if inputs are filled
+  if (eventTitle === "" || eventkcal === "" || eventquantity === "") {
     alert("Please fill all the fields");
     return;
   }
 
-  //check correct time format 24 hour
-  const timeFromArr = eventTimeFrom.split(":");
-  const timeToArr = eventTimeTo.split(":");
-  if (
-    timeFromArr.length !== 2 ||
-    timeToArr.length !== 2 ||
-    timeFromArr[0] > 23 ||
-    timeFromArr[1] > 59 ||
-    timeToArr[0] > 23 ||
-    timeToArr[1] > 59
-  ) {
-    alert("Invalid Time Format");
-    return;
-  }
-
-  const timeFrom = convertTime(eventTimeFrom);
-  const timeTo = convertTime(eventTimeTo);
-
-  //check if event is already added
+  // Check if event already exists
   let eventExist = false;
   eventsArr.forEach((event) => {
-    if (
-      event.day === activeDay &&
-      event.month === month + 1 &&
-      event.year === year
-    ) {
-      event.events.forEach((event) => {
-        if (event.title === eventTitle) {
+    if (event.day === activeDay && event.month === month + 1 && event.year === year) {
+      event.events.forEach((e) => {
+        if (e.title === eventTitle) {
           eventExist = true;
         }
       });
     }
   });
+
   if (eventExist) {
     alert("Event already added");
     return;
   }
+
+  // Add new event (no time)
   const newEvent = {
     title: eventTitle,
-    time: timeFrom + " - " + timeTo,
+    kcal: eventkcal,      // Assuming this is a part of the event's data
+    quantity: eventquantity,
   };
-  console.log(newEvent);
-  console.log(activeDay);
+
   let eventAdded = false;
   if (eventsArr.length > 0) {
     eventsArr.forEach((item) => {
-      if (
-        item.day === activeDay &&
-        item.month === month + 1 &&
-        item.year === year
-      ) {
+      if (item.day === activeDay && item.month === month + 1 && item.year === year) {
         item.events.push(newEvent);
         eventAdded = true;
       }
@@ -441,13 +357,19 @@ addEventSubmit.addEventListener("click", () => {
     });
   }
 
-  console.log(eventsArr);
-  addEventWrapper.classList.remove("active");
+  console.log(eventsArr); // Debugging output
+
+  // Clear form and close event wrapper
   addEventTitle.value = "";
-  addEventFrom.value = "";
-  addEventTo.value = "";
+  addEventkcal.value = "";
+  addEventquantity.value = "";
+  
+  addEventWrapper.classList.remove("active");
+
+  // Update events on the calendar
   updateEvents(activeDay);
-  //select active day and add event class if not added
+
+  // Add event class to active day
   const activeDayEl = document.querySelector(".day.active");
   if (!activeDayEl.classList.contains("event")) {
     activeDayEl.classList.add("event");
@@ -457,23 +379,22 @@ addEventSubmit.addEventListener("click", () => {
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("event")) {
-    if (confirm("Are you sure you want to delete this event?")) {
-      const eventTitle = e.target.children[0].children[1].innerHTML;
+    const eventTitle = e.target.querySelector(".event-title").innerHTML; // Use querySelector for clarity
+    if (confirm(`คุณต้องการลบเมนู ${eventTitle} ไหม`)) { // Template literal to insert event title
+      // Loop through eventsArr to find and remove the event
       eventsArr.forEach((event) => {
-        if (
-          event.day === activeDay &&
-          event.month === month + 1 &&
-          event.year === year
-        ) {
+        if (event.day === activeDay && event.month === month + 1 && event.year === year) {
           event.events.forEach((item, index) => {
             if (item.title === eventTitle) {
-              event.events.splice(index, 1);
+              event.events.splice(index, 1); // Remove the event
             }
           });
-          //if no events left in a day then remove that day from eventsArr
+
+          // If no events left for the day, remove the day from eventsArr
           if (event.events.length === 0) {
             eventsArr.splice(eventsArr.indexOf(event), 1);
-            //remove event class from day
+            
+            // Remove the event class from the active day
             const activeDayEl = document.querySelector(".day.active");
             if (activeDayEl.classList.contains("event")) {
               activeDayEl.classList.remove("event");
@@ -481,11 +402,12 @@ eventsContainer.addEventListener("click", (e) => {
           }
         }
       });
+
+      // Update the events displayed
       updateEvents(activeDay);
     }
   }
 });
-
 //function to save events in local storage
 function saveEvents() {
   localStorage.setItem("events", JSON.stringify(eventsArr));
@@ -499,29 +421,5 @@ function getEvents() {
   }
   eventsArr.push(...JSON.parse(localStorage.getItem("events")));
 }
-
-function convertTime(time) {
-  //convert time to 24 hour format
-  let timeArr = time.split(":");
-  let timeHour = timeArr[0];
-  let timeMin = timeArr[1];
-  let timeFormat = timeHour >= 12 ? "PM" : "AM";
-  timeHour = timeHour % 12 || 12;
-  time = timeHour + ":" + timeMin + " " + timeFormat;
-  return time;
-}
-function breakfast(){
-
-}
-
-function searchEvent() {
-  const eventTimeFrom = document.querySelector('.event-time-from').value;
-  alert('ค้นหาเหตุการณ์ที่เวลา: ' + eventTimeFrom);
-  // เพิ่มโค้ดสำหรับฟังก์ชันการค้นหาเพิ่มเติมได้ที่นี่
-}
-
-
-
-
 
 
