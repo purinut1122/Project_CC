@@ -1,14 +1,8 @@
 :root {
   --primary-clr: #839788;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  
-}
-/* nice scroll bar */
+
+
 
 
 
@@ -17,33 +11,28 @@
 
 
 .calendars {
-  min-height: 100vh;
-  max-height: 1000vh;
-  flex-direction: row;
-  height: auto;
-  position: relative;
-  min-height: 850px;
-  margin: 0 auto;
-  padding: 5px;
+  height: auto; /* ให้ปรับขนาดตามเนื้อหา */
+  width: 80%; /* กำหนดความกว้างที่คุณต้องการ เช่น 80% ของหน้าจอ */
+  max-width: 2000px; /* ตั้งค่าความกว้างสูงสุด เพื่อไม่ให้เกินขนาดที่กำหนด */
+  margin: 0 auto; /* จัดให้อยู่ตรงกลางในแนวนอน */
   color: #fff;
   display: flex;
-  border-radius: 10px;
-  background-color: #6c757d;
-  min-height: 100vh;
-  max-height: 1000vh;
+  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  border-radius: 10px; /* เพิ่มขอบมนถ้าต้องการ */
+  
 }
+
 
 .left {
   width: 60%;
   padding: 20px;
   align-items: flex-end;
-
+  background-color: #ffffff;
   
-
-
 }
 .calendar {
   width: 100%;
@@ -51,9 +40,9 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: #878895;
   border-radius: 5px;
   background-color: #fff;
+  border: 5px solid #839788; /* เพิ่มขอบสีเขียว */ 
 
 
   
@@ -81,14 +70,12 @@
   font-weight: 500;
   text-transform: capitalize;
 }
-.calendar .month .prev,
-.calendar .month .next {
-  cursor: pointer;
+.month{
+  background-color: #839788;
+  color: #ffffff;
 }
-.calendar .month .prev:hover,
-.calendar .month .next:hover {
-  color: var(--primary-clr);
-}
+
+
 .calendar .weekdays {
   width: 100%;
   height: 100px;
@@ -107,7 +94,7 @@
   align-items: center;
   justify-content: center;
 }
-.calendar .days {
+.days {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -116,9 +103,11 @@
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 20px;
+  
 }
-.calendar .days .day {
+ .days .day {
   width: 14.28%;
+  color: #000;
   height: 90px;
   display: flex;
   align-items: center;
@@ -144,10 +133,7 @@
   color: #fff;
   background-color: var(--primary-clr);
 }
-.calendar .days .prev-date,
-.calendar .days .next-date {
-  color: #ffffff;
-}
+
 .calendar .days .active {
   position: relative;
   font-size: 2rem;
@@ -191,11 +177,8 @@
   padding-bottom: 10px;
 }
 .goto-today {
-   /* กำหนดให้ใช้การจัดตำแหน่งแบบ relative */
-  bottom: 6px; /* ชิดขอบล่างและมีระยะห่าง 5px */
-  
+  bottom: 6px;  
   position: relative;
-  
 }
 
 .calendar .goto-today {
@@ -252,7 +235,25 @@
 .right{
   align-items: flex-start;
   position: relative;
+  background-color: #ffffff;
+  
 }
+/* เปลี่ยนสีเทาให้เป็นสีขาวหรือตามที่คุณต้องการ */
+.calendar::before,
+.calendar::after {
+  background-color: transparent; /* เปลี่ยนจากสีเทาเป็นโปร่งใส */
+}
+
+/* ถ้าต้องการกำหนดพื้นหลังใน .events */
+.events .event {
+  background: linear-gradient(90deg, #839788, transparent); /* แทนที่พื้นหลังเป็นสีขาวหรือสีที่ต้องการ */
+}
+
+/* ส่วนของ .credits */
+.credits {
+  background-color: #fff; /* เปลี่ยนจากสีเทาเป็นสีขาว */
+}
+
 
 
 .right .today-date {
@@ -263,14 +264,14 @@
   gap: 10px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  padding-left: 70px;
   margin-top: 50px;
   margin-bottom: 20px;
   text-transform: capitalize;
 }
+.event-day {
+  margin: 0; 
+}
 .right .today-date .event-day {
-  font-size: 2rem;
   font-weight: 500;
 }
 .right .today-date .event-date {
@@ -371,8 +372,8 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: #839788;
+  border: 2px solid #839788;
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -494,10 +495,6 @@
 /* media queries */
 
 @media screen and (max-width: 1000px) {
-  body {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
   .calendars {
     min-height: 100vh;
     flex-direction: column;
@@ -604,6 +601,20 @@ input {
 button:focus-visible {
 	outline: 1px solid rgb(171, 171, 171);
 	outline-offset: 4px;
+}
+.historyday {
+  display: flex;               /* Enable Flexbox */
+  justify-content: space-between;  /* Space between items */
+  align-items: center;        /* Center items vertically */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;            /* Center the container */
+  font-size: 25px;        
+}
+
+.th1{
+  color: #839788;
+  font-size: 24px;
 }
 
 

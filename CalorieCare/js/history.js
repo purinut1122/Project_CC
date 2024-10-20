@@ -24,38 +24,12 @@ let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
 
+
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+   'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+            'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'
 ];
 
-// const eventsArr = [
-//   {
-//     day: 13,
-//     month: 11,
-//     year: 2022,
-//     events: [
-//       {
-//         title: "Event 1 lorem ipsun dolar sit genfa tersd dsad ",
-//         time: "10:00 AM",
-//       },
-//       {
-//         title: "Event 2",
-//         time: "11:00 AM",
-//       },
-//     ],
-//   },
-// ];
 
 const eventsArr = [];
 getEvents();
@@ -71,7 +45,7 @@ function initCalendar() {
   const day = firstDay.getDay();
   const nextDays = 7 - lastDay.getDay() - 1;
 
-  date.innerHTML = months[month] + " " + year;
+  date.innerHTML =  months[month] + " " + (year + 543);
 
   let days = "";
 
@@ -193,6 +167,7 @@ function addListner() {
   });
 }
 
+
 todayBtn.addEventListener("click", () => {
   today = new Date();
   month = today.getMonth();
@@ -223,10 +198,11 @@ function gotoDate() {
   if (dateArr.length === 2) {
     if (dateArr[0] > 0 && dateArr[0] < 13 && dateArr[1].length === 4) {
       month = dateArr[0] - 1;
-      year = dateArr[1];
+      year = dateArr[1] - 543;  // ลบ 543 เพื่อแปลงเป็นปีคริสต์ศักราช
       initCalendar();
       return;
     }
+    
   }
   alert("Invalid Date");
 }
@@ -234,9 +210,10 @@ function gotoDate() {
 //function get active day day name and date and update eventday eventdate
 function getActiveDay(date) {
   const day = new Date(year, month, date);
-  const dayName = day.toString().split(" ")[0];
+  const dayNames = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
+  const dayName = dayNames[day.getDay()]; // ใช้ getDay() เพื่อรับค่าดัชนีของวันในสัปดาห์
   eventDay.innerHTML = dayName;
-  eventDate.innerHTML = date + " " + months[month] + " " + year;
+  eventDate.innerHTML = date + " " + months[month] + " " + (year + 543); // แสดงปีไทย (พ.ศ.)
 }
 
 //function update events when a day is active
@@ -265,11 +242,11 @@ function updateEvents(date) {
     }
   });
   
-  if (events === "") {
-    events = `<div class="no-event">
-            <h3>No Events</h3>
-        </div>`;
-  }
+ //  if (events === "") {
+   //  events = `<div class="no-event">
+           //  <h3>No Events</h3>
+        // </div>`;
+  //}
   
   eventsContainer.innerHTML = events;
   saveEvents(); // Ensure saving updated events
