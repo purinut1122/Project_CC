@@ -46,6 +46,13 @@ app.use("*", (req, res, next) => {
     loggedIn = req.session.userId
     next()
 })
+app.use((req, res, next) => {
+    res.locals.messages = {
+        error: req.flash('error'),
+    };
+    next();
+});
+
 app.set('view engine', 'ejs')
 
 app.get('/', indexController)

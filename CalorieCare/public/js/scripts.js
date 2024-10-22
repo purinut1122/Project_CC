@@ -61,7 +61,7 @@ function calculateBMR() {
         } else {
             bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
-        result.innerHTML = `Your BMR is: <span>${bmr.toFixed(2)}</span> kcal/day`;
+        result.innerHTML = `ค่า BMR ของคุณคือ : <span>${bmr.toFixed(2)}</span> กิโลแคลอรี่/ต่อวัน`;
     }
 }
 
@@ -98,6 +98,6 @@ function calculateTDEE() {
             bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
         let tdee = bmr * activityLevels[activityLevel];
-        result.innerHTML = `Your TDEE is: <span>${tdee.toFixed(2)}</span> kcal/day`;
+        result.innerHTML = `ค่า TDEE ของคุณคือ : <span>${tdee.toFixed(2)}</span> กิโลแคลอรี่/ต่อวัน`;
     }
 }

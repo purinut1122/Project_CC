@@ -1,0 +1,9 @@
+.navbar-nav-1 {
+    flex-grow: 1; /* เพื่อให้มีการขยายตัว */
+    justify-content: space-between; /* จัดการช่องว่างระหว่างรายการ */
+}
+
+.nav-item-1 {
+    flex: 1; /* ทำให้ทุก nav-item มีขนาดเท่ากัน */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+}

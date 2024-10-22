@@ -6,6 +6,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Calculator</title>
+    <!-- add icon link -->
+    <link rel="icon" href="image/Logo_CalorieCare.png" type="image/x-icon" />
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -13,28 +15,43 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css\styles.css" rel="stylesheet" />
     <link href="css\cal.css" rel="stylesheet" />
+    <style>
+        li {
+            display: block;
+            list-style-type: disc;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 100px;
+            } 
+    </style>
 </head>
 <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/home">
                     <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
                   </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" href="index.html">หน้าหลัก</a></li>
-                        <li class="nav-item"><a class="nav-link" href="excercise.html">ออกกำลังกาย</a></li>
-                        <li class="nav-item"><a class="nav-link" href="history.html">ประวัติ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="target.html">เป้าหมาย</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="calculator.html">คำนวณ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/home">หน้าหลัก</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/excercise">ออกกำลังกาย</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/history">ประวัติ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/target">เป้าหมาย</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/calculator">คำนวณ</a></li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-green" type="submit">
-                            <i class="me-auto"></i>
-                            สมัครสมาชิก
-                        </button>
+                        <% if (loggedIn) { %>
+                            <h1><a class="nav-link" href="/profile"><i class="bi bi-person-circle text-green"></i></a></h1>
+                        <% } %>
+        
+                        <% if (!loggedIn) { %>
+                            <a class="btn btn-outline-green mx-3" href="/login">เข้าสู่ระบบ</a>
+                            <a class="btn btn-outline-green" href="/register">สมัครสมาชิก</a>
+                        <% } %>
                     </form>
                 </div>
             </div>
