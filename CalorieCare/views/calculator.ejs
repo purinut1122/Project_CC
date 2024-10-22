@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Calculator</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css\styles.css" rel="stylesheet" />
+    <link href="css\cal.css" rel="stylesheet" />
+</head>
+<body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#">
+                    <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
+                  </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html">หน้าหลัก</a></li>
+                        <li class="nav-item"><a class="nav-link" href="excercise.html">ออกกำลังกาย</a></li>
+                        <li class="nav-item"><a class="nav-link" href="history.html">ประวัติ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="target.html">เป้าหมาย</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="calculator.html">คำนวณ</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-green" type="submit">
+                            <i class="me-auto"></i>
+                            สมัครสมาชิก
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-4 px-lg-5 my-1">
+                <div class="text-center text-green">
+                    <h4 class="display-6 fw-bolder">คำนวณค่าต่างๆ</h4>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- BMI Section -->
+        <header class="py-2">
+            <div class="container px-4 px-lg-5 my-0">
+                <div class="text-start text-green">
+                    <h3 class="display-6 fw-bolder ">เครื่องคำนวณหาค่าดัชนีมวลกาย (BMI)</h3>
+                    <p class="lead fw-normal text-black-50">การหาค่าดัชนีมวลกาย (Body Mass Index : BMI) คือ เป็นมาตรการที่ใช้ประเมินภาวะอ้วนและผอมในผู้ใหญ่ ตั้งแต่อายุ 20 ปีขึ้นไป สามารถทำได้โดยการชั่งน้ำหนักตัวเป็นกิโลกรัมและวัดส่วนสูงเป็นเซนติเมตร แล้วนำมาหาดัชมีมวลกาย 
+                    </p>
+                
+                    <div class="container text-black">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-bmi" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-bmi" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-bmi" />
+                        <button class="button_cal" id="btn-bmi">คำนวณ BMI</button>
+                        <div class="cal-result" id="result-bmi"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        <!-- BMR Section -->
+        <header class="py-5">
+            <div class="container px-4 px-lg-5 my-0">
+                <div class="text-start text-green">
+                    <h3 class="display-6 fw-bolder ">เครื่องคำนวณการเผาผลาญพลังงาน (BMR)</h3>
+                    <p class="lead fw-normal text-black-50">
+                        BMR ย่อมาจาก Basal Metabolic Rate หรือเราสามารถเรียก
+                        ได้ว่าเป็นอัตราการเผาผลาญพลังงานในแต่ละวัน โดยค่าพลังงาน
+                        นี้ร่างกายจะใช้ในการขับเคลื่อนระบบเเละควบคุมอวัยวะต่างๆ 
+                        ในร่างกายค่ะ
+                    </p>
+
+                    <div class="container text-black">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-bmr" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-bmr" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-bmr" />
+
+                        <p>เพศ</p>
+
+                        <div class="container mb-3"> 
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="male" id="gender-bmr-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="gender-bmr-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="female" id="gender-bmr-female" autocomplete="off">
+                                    <label class="btn btn-pink w-100" for="gender-bmr-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <button class="button_cal" id="btn-bmr">คำนวณ BMR</button>
+                        <div class="cal-result" id="result-bmr"></div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- TDEE Section -->
+        <header class="py-5">
+            <div class="container px-4 px-lg-5 my-0">
+                <div class="text-start text-green">
+                    <h3 class="display-6 fw-bolder ">เครื่องคำนวณ (TDEE)</h3>
+                    <p class="lead fw-normal text-black-50">
+                        TDEE คือ Total Daily Energy Expenditure การใช้พลังงาน
+                        ทั้งหมดต่อวัน ค่า TDEE หาได้โดยการนำค่า BMR ไปคำนวณกับ
+                        กิจกรรมที่ทำในแต่ละวัน อีกทั้งค่านี้ยังสามารถใช้ในการเพื่อเพิ่ม
+                        มวลกล้ามเนื้อได้อีกด้วยนะคะ
+                    </p>
+
+                    <div class="container text-black">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height-tdee" />
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight-tdee" />
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age-tdee" />
+                        <p>เพศ</p>
+
+                        <div class="container mb-3"> 
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-tdee" value="male" id="gender-tdee-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="gender-tdee-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-tdee" value="female" id="gender-tdee-female" autocomplete="off">
+                                    <label class="btn btn-pink w-100" for="gender-tdee-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>ระดับการออกกำลังกาย</p>
+                        <select name="activity-level" class="form-select form-select-m mb-3" aria-label=".form-select-lg example">
+                            <option selected>เลือกกิจกรรมการออกกำลังกาย</option>
+                            <option value="sedentary">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</option>
+                            <option value="light">ออกกำลังกายเบาๆ 1-3 วันต่อสัปดาห์</option>
+                            <option value="moderate">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</option>
+                            <option value="active">ออกกำลังกายหนักมาก 6-7 วันต่อสัปดาห์</option>
+                            <option value="veryActive">ฝึกซ้อมหนักทุกวันไม่หยุด</option>
+                        </select>
+
+                        <button class="button_cal" id="btn-tdee">คำนวณ TDEE</button>
+                        <div class="cal-result" id="result-tdee"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CalorieCare</title>
+        <!-- add icon link -->
+        <link rel="icon" href="image/Logo_CalorieCare.png" type="image/x-icon" />
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+        <style>
+            body {
+                background-image: url("image/BG.png");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            } 
+            .btn-white2 {
+                --bs-btn-color: #212529;
+                --bs-btn-bg: #fff;
+                --bs-btn-border-color: #fff;
+                --bs-btn-hover-color: #212529;
+                --bs-btn-hover-bg: #fff;
+                --bs-btn-hover-border-color: #fff;
+                --bs-btn-focus-shadow-rgb: 25, 135, 84;
+                --bs-btn-active-color: #fff;
+                --bs-btn-active-bg: #fff;
+                --bs-btn-active-border-color: #fff;
+                --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+                --bs-btn-disabled-color: #fff;
+                --bs-btn-disabled-bg: transparent;
+                --bs-btn-disabled-border-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light mt-4">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">
+                    <img src="image/Logo_CalorieCare.png" alt="Bootstrap" width="70" height="70">
+                </a>
+                    <form class="d-flex justify-content-end">
+                        <% if (loggedIn) { %>
+                            <h2><a class="nav-link" href="/profile"><i class="bi bi-person-circle text-green"></i></a></h2>
+                            <a class="btn btn-outline-danger" href="/logout">
+                                ออกจากระบบ
+                            </a>
+                        <% } %>
+                
+                        <% if (!loggedIn) { %>
+                            <a class="btn btn-white2 btn-lg" href="/register">
+                                สมัครสมาชิก
+                            </a>
+                        <% } %>
+                    </form>
+            </div>
+        </nav>
+
+        <!-- Container / Login form -->
+        <div class="container-fluid">
+            <div class="row vh-100 d-flex justify-content-center align-items-center">
+                <div class="col-3 d-none d-md-block"> <!-- ขนาดเล็กกว่าและซ่อนในขนาดเล็ก -->
+                </div>
+                <div class="col-3"> <!-- ขนาดกลาง -->
+                    <h1 class="text-white fw-bolder">CaloriesCare เว็ปแอพลิเคชั่นในการดูแลสุขภาพ คำนวณแคลอรี่</h1>
+                    <h5 class="text-white">
+                        แอพพลิเคชั่นแนะนำแคลอรี่ที่ควรได้รับในแต่ละวัน หรือค่า TDEE และยังมีฟีเจอร์ การตั้งเป้าหมาย , คำนวณค่าต่างๆ , แนวทางการออกกำลังกาย , 
+                        ประวัติการรับแคลอรี่และพลังงานที่ใช้ในแต่ละวันโดยที่ผู้ใช้งานจะต้องกรอกข้อมูลจำนวนแคลอรี่ที่ทานในแต่ละมื้อ
+                    </h5>
+                </div>
+                <div class="col-3"> <!-- ขนาดเล็ก -->
+                    <div class="card mx-auto" style="width: 40rem; max-width: 450px;">
+                        <div class="card-body p-5">
+                            <h4 class="card-title fw-bolder">เข้าสู่ระบบ</h4>
+                            <form action="/user/login" method="POST">
+                                <div class="form-group mt-4">
+                                    <label class="Text" for="username">ชื่อผู้ใช้</label>
+                                    <input type="username" class="form-control" id="username" name="username"/>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label class="Text" for="password">รหัสผ่าน</label>
+                                    <input type="password" class="form-control" id="password" name="password"/>
+                                </div>
+                                <button class="button w-100 btn btn-lg mt-3 btn-success mt-4" type="submit">เข้าสู่ระบบ</button>
+                                <div class="mt-4">
+                                    <a class="forget_password" href="forget-password.html">ลืมรหัสผ่าน?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-none d-md-block"> <!-- ขนาดเล็กกว่าและซ่อนในขนาดเล็ก -->
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

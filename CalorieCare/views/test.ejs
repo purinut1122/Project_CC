@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>แสดงข้อมูลใน HTML</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="กรุณากรอกข้อความ">
+    <button onclick="showValue()">แสดงค่า</button>
+    <div id="output"></div>
+
+    <script>
+        function showValue() {
+            var inputValue = document.getElementById("myInput").value;
+            document.getElementById("output").innerText = "ค่าที่กรอก: " + inputValue;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Profile</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#">
+                    <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
+                  </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html">หน้าหลัก</a></li>
+                        <li class="nav-item"><a class="nav-link" href="excercise.html">ออกกำลังกาย</a></li>
+                        <li class="nav-item"><a class="nav-link" href="history.html">ประวัติ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="target.html">เป้าหมาย</a></li>
+                        <li class="nav-item"><a class="nav-link" href="calculator.html">คำนวณ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-4 px-lg-5 my-1">
+                <div class="text-center text-green">
+                    <h4 class="display-6 fw-bolder">บัญชีผู้ใช้</h4>
+                </div>
+
+            </div>
+        </header>
+
+        <div>
+            <div class="container" >
+                <div class="card mb-3">
+                    <div class="card-body ms-2">
+                        <p class="card-text">
+                          <div class="container">
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <i class="bi bi-person-circle text-green display-1"></i>
+                                </div>
+                                <div class="col-sm mt-auto">
+                                    <h3 class="fw-bolder text-green" id="username">test</h3>
+                                    <p id="gender">เพศ</p>
+                                    <p id="age"></p>
+                                </div>
+                            </div>
+                          </div>
+                          <hr>
+                          <p class="m-0" style="text-align:left;">
+                            น้ำหนักปัจจุบัน
+                            <span class="text-gray" style="float:right;" id="weight">
+                            </span>
+                          </p>
+                          <p class="m-0" style="text-align:left;">
+                            ส่วนสูง
+                            <span class="text-gray fw" style="float:right;" id="height">
+                            </span>
+                          </p>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body ms-2">
+                      <h4 class="card-title fw-bolder text-green ">เป้าหมายสุขภาพ</h4>
+                      <p class="card-text" >
+                        <p class="m-0" style="text-align:left;">
+                            ประเภทเป้าหมาย
+                            <span class="text-gray" style="float:right;" id="display-target">
+                                ลดน้ำหนัก
+                            </span>
+                        </p>
+                        <p class="m-0" style="text-align:left;">
+                            เป้าหมายแคลอรี่ต่อวัน
+                            <span class="text-gray" style="float:right;" id="display-tdee">
+                                123 kcal.
+                            </span>
+                        </p>
+                        <p class="m-0" style="text-align:left;">
+                            เผาผลาญแคลอรี่ต่อวัน
+                            <span class="text-gray" style="float:right;" id="display-bmr">
+                                500 cal.
+                            </span>
+                        </p>
+                        <p class="m-0" style="text-align:left;">
+                            กิจกรรมการออกกำลังกาย
+                            <span class="text-gray" style="float:right;" id="display-activity">
+                                3-5 ครั้ง/สัปดาห์
+                            </span>
+                        </p>
+                      </p>
+                    </div>
+                </div>
+                <p class="py-5" style="text-align:left;" data-bs-toggle="modal" data-bs-target="#editprofile">
+                    <a href="#" class="text-gray link-underline-primary">แก้ไขข้อมูลผู้ใช้</a>
+                    <span class="" style="float:right;" data-bs-toggle="modal" data-bs-target="#signout">
+                        <a href="#" class="link-danger">ออกจากระบบ</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+  <!-- Modal -->
+    <div class="modal fade" id="signout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <img src="image/Logo 1.png" alt="Bootstrap" width="250" height="250">
+                <p class="m-0">
+                    <h4 class="text-green">ออกจากระบบ</h4>
+                    <h6>คุณต้องการออกจากระบบหรือไม่ ?</h6>
+                </p>
+                <button type="button" class="btn btn-outline-green w-25" data-bs-dismiss="modal">ไม่</button>
+                <button type="button" class="btn btn-green w-25" data-bs-target="#signoutsuccess" data-bs-toggle="modal">ใช่</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signoutsuccess" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="text-center">
+            <img src="image/Logo 1.png" alt="Bootstrap" width="250" height="250">
+            <p class="m-0">
+                <h4 class="text-green">ออกจากระบบ</h4>
+                <h6>คุณทำการออกจากระบบสำเร็จ</h6>
+                <img class="mt-3" src="image/checked.png" alt="Bootstrap" width="100" height="100"><br>
+                <button class="btn btn-outline-green mt-3"><a href="index.html" class="link-green" style="text-decoration: none;">กลับเข้าสู่หน้าหลัก</a></button>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editprofile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-green" id="staticBackdropLabel">แก้ไขข้อมูลผู้ใช้</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <h1><i class="bi bi-person-circle display-1 text-green"></i></h1>
+            </div>
+            <div class="container"> 
+                <div class="row">
+                    <div class="text-green">
+                        <p>ชื่อผู้บัญชีผู้ใช้</p>
+                        <input type="text" id="username" class="w-100" />
+                    </div>
+                    <div class="text-green mt-3">
+                        <p>อีเมล</p>
+                        <input type="text" id="email" class="w-100"/>
+                    </div>
+                    <div class="text-green mt-3">
+                        <p>รหัสผ่าน</p>
+                        <input type="text" id="password" class="w-100"/>
+                    </div>
+                    <p class="text-green mt-3">เพศ</p>
+                        <div class="container mb-3"> 
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="male" id="gender-bmr-male" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="gender-bmr-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                </div>
+                                <div class="col text-center">
+                                    <input type="radio" class="btn-check" name="gender-bmr" value="female" id="gender-bmr-female" autocomplete="off">
+                                    <label class="btn btn-pink w-100" for="gender-bmr-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                </div>
+                            </div>
+                        </div>
+                    <h4 class="text-green mt-4 fw-bolder">ข้อมูลส่วนตัว</h4>
+                    <div class="text-green mt-3">
+                        <p>น้ำหนักตัว (kg.)</p>
+                        <input type="text" id="weight" class="w-100"/>
+                    </div>
+                    <div class="text-green mt-3">
+                        <p>ส่วนสูง (cm.)</p>
+                        <input type="text" id="height" class="w-100"/>
+                    </div>
+                    <div class="text-green mt-3">
+                        <p>อายุ (ปี)</p>
+                        <input type="text" id="age" class="w-100"/>
+                    </div>
+                    <div class="text-green mt-3">
+                        <p>ระดับการออกกำลังกาย</p>
+                        <select name="activity-level" class="form-select form-select-m mb-3" aria-label=".form-select-lg example">
+                            <option selected>เลือกกิจกรรมการออกกำลังกาย</option>
+                            <option value="sedentary">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</option>
+                            <option value="light">ออกกำลังกายเบาๆ 1-3 วันต่อสัปดาห์</option>
+                            <option value="moderate">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</option>
+                            <option value="active">ออกกำลังกายหนักมาก 6-7 วันต่อสัปดาห์</option>
+                            <option value="veryActive">ฝึกซ้อมหนักทุกวันไม่หยุด</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-outline-green" data-bs-target="#editsuccess" data-bs-toggle="modal" id="submit-profile">บันทึกข้อมูล</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editsuccess" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="text-center">
+            <img src="image/Logo 1.png" alt="Bootstrap" width="250" height="250">
+            <p class="m-0">
+                <h4 class="text-green">แก้ไขข้อมูลผู้ใช้สำเร็จ</h4>
+                <h6>คุณทำการแก้ไขข้อมูลสำเร็จ</h6>
+                <img class="mt-3" src="image/checked.png" alt="Bootstrap" width="100" height="100"><br>
+                <button class="btn btn-outline-green mt-3"><a href="profile.html" class="link-green" style="text-decoration: none;">กลับเข้าสู่บัญชี</a></button>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+            <!-- Bootstrap core JS-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Core theme JS-->
+            <script src="js/scripts.js"></script>
+            <script src="js/profile.js"></script>
+</body>
+</html>
