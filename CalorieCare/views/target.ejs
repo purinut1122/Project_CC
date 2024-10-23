@@ -139,41 +139,41 @@
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
-            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+            <input type="text" class="form-control" id="inputWeight" placeholder="กรอกจำนวนตัวเลข">
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
-              <label class="form-check-label" for="exercise1">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="never" id="exerciseNever">
+              <label class="form-check-label" for="exerciseNever">
                 <h6>อยู่นิ่งๆ</h6>
                   <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
-              <label class="form-check-label" for="exercise2">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="sometimes" id="exerciseSometimes">
+              <label class="form-check-label" for="exerciseSometimes">
                 <h6>ออกกำลังกายนิดๆ</h6>
                   <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
-              <label class="form-check-label" for="exercise3">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="often" id="exerciseOften">
+              <label class="form-check-label" for="exerciseOften">
                 <h6>ออกกำลังกายปานกลาง</h6>
                   <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
-              <label class="form-check-label" for="exercise4">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="usually" id="exerciseUsually">
+              <label class="form-check-label" for="exerciseUsually">
                 <h6>ออกกำลังกายหนัก</h6>
                   <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
-              <label class="form-check-label" for="exercise5">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="always" id="exerciseAlways">
+              <label class="form-check-label" for="exerciseAlways">
                 <h6>ออกกำลังกายหนักมาก</h6>
                   <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
               </label>
@@ -182,26 +182,26 @@
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder">คุณต้องการลดเร็วแค่ไหน</h5>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="lose" id="lose1">
-              <label class="form-check-label" for="gain1">
+              <input class="form-check-input" type="radio" name="weightLoss" value="loss025" id="lose025perWeek">
+              <label class="form-check-label" for="lose025perWeek">
                 <h6>ลดน้ำหนัก 0.25 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="lose" id="lose2">
-              <label class="form-check-label" for="gain2">
+              <input class="form-check-input" type="radio" name="weightLoss" value="loss05" id="lose05perWeek">
+              <label class="form-check-label" for="lose05perWeek">
                 <h6>ลดน้ำหนัก 0.5 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="lose" id="lose3">
-              <label class="form-check-label" for="gain3">
+              <input class="form-check-input" type="radio" name="weightLoss" value="loss075" id="lose075perWeek">
+              <label class="form-check-label" for="lose075perWeek">
                 <h6>ลดน้ำหนัก 0.75 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="lose" id="lose4">
-              <label class="form-check-label" for="gain4">
+              <input class="form-check-input" type="radio" name="weightLoss" value="loss1" id="lose1perWeek">
+              <label class="form-check-label" for="lose1perWeek">
                 <h6>ลดน้ำหนัก 1 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>    
@@ -210,7 +210,7 @@
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ยกเลิก</button>
-        <button type="button" class="btn btn-outline-green" data-bs-toggle="modal" data-bs-target="#settarget">ตั้งเป้าหมาย</button>
+        <button type="button" class="btn btn-outline-green" onclick="validateForm()">ตั้งเป้าหมาย</button>
       </div>
     </div>
   </div>
@@ -231,41 +231,41 @@
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
-            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข">
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
-              <label class="form-check-label" for="exercise1">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="never" id="exerciseNever">
+              <label class="form-check-label" for="exerciseNever">
                 <h6>อยู่นิ่งๆ</h6>
                   <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
-              <label class="form-check-label" for="exercise2">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="sometimes" id="exerciseSometimes">
+              <label class="form-check-label" for="exerciseSometimes">
                 <h6>ออกกำลังกายนิดๆ</h6>
                   <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
-              <label class="form-check-label" for="exercise3">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="often" id="exerciseOften">
+              <label class="form-check-label" for="exerciseOften">
                 <h6>ออกกำลังกายปานกลาง</h6>
                   <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
-              <label class="form-check-label" for="exercise4">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="usually" id="exerciseUsually">
+              <label class="form-check-label" for="exerciseUsually">
                 <h6>ออกกำลังกายหนัก</h6>
                   <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
-              <label class="form-check-label" for="exercise5">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="always" id="exerciseAlways">
+              <label class="form-check-label" for="exerciseAlways">
                 <h6>ออกกำลังกายหนักมาก</h6>
                   <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
               </label>
@@ -296,41 +296,41 @@
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder">คุณอยากมีน้ำหนักเท่าไร (kg.)</h5>
-            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข" value=>
+            <input type="text" class="form-control" id="InputGain" placeholder="กรอกจำนวนตัวเลข">
           </div>
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder mb-2">คุณออกกำลังกายบ่อยแค่ไหน</h5>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise1">
-              <label class="form-check-label" for="exercise1">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="never" id="exerciseNever">
+              <label class="form-check-label" for="exerciseNever">
                 <h6>อยู่นิ่งๆ</h6>
                   <p class="text-green">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise2">
-              <label class="form-check-label" for="exercise2">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="sometimes" id="exerciseSometimes">
+              <label class="form-check-label" for="exerciseSometimes">
                 <h6>ออกกำลังกายนิดๆ</h6>
                   <p class="text-green">ออกกำลังกายนิดๆ 1-3 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise3">
-              <label class="form-check-label" for="exercise3">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="often" id="exerciseOften">
+              <label class="form-check-label" for="exerciseOften">
                 <h6>ออกกำลังกายปานกลาง</h6>
                   <p class="text-green">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise4">
-              <label class="form-check-label" for="exercise4">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="usually" id="exerciseUsually">
+              <label class="form-check-label" for="exerciseUsually">
                 <h6>ออกกำลังกายหนัก</h6>
                   <p class="text-green">ออกกำลังกายหนัก 6-7 วันต่อสัปดาห์</p>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exercise" id="exercise5">
-              <label class="form-check-label" for="exercise5">
+              <input class="form-check-input" type="radio" name="exerciseFrequency" value="always" id="exerciseAlways">
+              <label class="form-check-label" for="exerciseAlways">
                 <h6>ออกกำลังกายหนักมาก</h6>
                   <p class="text-green">ฝึกซ้อมหนักทุกวันไม่มีหยุด</p>
               </label>
@@ -339,26 +339,26 @@
           <div class="border border-secondary border-2 p-3 mb-2" style="border-radius: 5px;">
             <h5 class="fw-bolder">คุณต้องการเพิ่มเร็วแค่ไหน</h5>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="gain" id="gain1">
-              <label class="form-check-label" for="gain1">
+              <input class="form-check-input" type="radio" name="weightGain" value="gain025" id="gain025perWeek">
+              <label class="form-check-label" for="gain025perWeek">
                 <h6>เพิ่มน้ำหนัก 0.25 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="gain" id="gain2">
-              <label class="form-check-label" for="gain2">
+              <input class="form-check-input" type="radio" name="weightGain" value="gain05" id="gain05perWeek">
+              <label class="form-check-label" for="gain05perWeek">
                 <h6>เพิ่มน้ำหนัก 0.5 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="gain" id="gain3">
-              <label class="form-check-label" for="gain3">
+              <input class="form-check-input" type="radio" name="weightGain" value="gain075" id="gain075perWeek">
+              <label class="form-check-label" for="gain075perWeek">
                 <h6>เพิ่มน้ำหนัก 0.75 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="gain" id="gain4">
-              <label class="form-check-label" for="gain4">
+              <input class="form-check-input" type="radio" name="weightGain" value="gain1" id="gain1perWeek">
+              <label class="form-check-label" for="gain1perWeek">
                 <h6>เพิ่มน้ำหนัก 1 กิโลกรัมต่อสัปดาห์</h6>
               </label>
           </div>    
