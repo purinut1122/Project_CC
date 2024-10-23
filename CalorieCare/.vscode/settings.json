@@ -1,6 +1,6 @@
 {
-    "editor.fontSize": 24,
-    "workbench.colorTheme": "Kanagawa",
+    "editor.fontSize": 18,
+    "workbench.colorTheme": "Night Owl",
     "workbench.preferredDarkColorTheme": "Ayu Dark Bordered",
     "workbench.preferredHighContrastColorTheme": "Ayu Dark Bordered",
     "workbench.preferredHighContrastLightColorTheme": "Ayu Light Bordered",

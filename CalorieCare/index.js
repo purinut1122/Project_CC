@@ -20,8 +20,8 @@ global.loggedIn = null
 // Controllers
 const indexController = require('./controllers/indexController')
 const loginController = require('./controllers/loginController')
-const registerController = require('./controllers/registerController')
-const storeUserController = require('./controllers/storeUserController')
+const registerController = require('./controllers/registerController')  // display register form
+const storeUserController = require('./controllers/storeUserController')  // process get data
 const loginUserController = require('./controllers/loginUserController')
 const logoutController = require('./controllers/logoutController')
 const homeController = require('./controllers/homeController')
@@ -59,6 +59,7 @@ app.get('/', indexController)
 app.get('/home', authMiddleware, homeController)
 app.get('/login', redirectIfAuth, loginController)
 app.get('/register', redirectIfAuth, registerController)
+// post method --> save data or add data
 app.post('/user/register', redirectIfAuth, storeUserController)
 app.post('/user/login', redirectIfAuth, loginUserController)
 app.get('/logout', logoutController)
