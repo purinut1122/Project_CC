@@ -30,7 +30,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/home">
                     <img src="image/logo.png" alt="Bootstrap" width="48" height="48">
                   </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -77,21 +77,38 @@
                                     <i class="bi bi-person-circle text-green display-1"></i>
                                 </div>
                                 <div class="col-sm mt-auto">
-                                    <h3 class="fw-bolder text-green" id="username">test</h3>
-                                    <p id="gender">เพศ</p>
-                                    <p id="age"></p>
+                                    <h3 class="fw-bolder text-green" id="username"><%= UserData.username %></h3>
+                                    <p>
+                                        <% if (UserData.gender === 'male') { %>
+                                            เพศชาย
+                                        <% } else if (UserData.gender === 'female') { %>
+                                            เพศหญิง
+                                        <% } else { %>
+                                            เพศไม่ระบุ
+                                        <% } %>, อายุ <%= UserData.age %> ปี
+                                    </p>
                                 </div>
                             </div>
                           </div>
                           <hr>
                           <p class="m-0" style="text-align:left;">
                             น้ำหนักปัจจุบัน
-                            <span class="text-gray" style="float:right;" id="weight">
+                            <span class="text-gray" style="float:right;"><%= UserData.weight %> kg.
                             </span>
                           </p>
                           <p class="m-0" style="text-align:left;">
+                            น้ำหนักเป้าหมาย
+                            <span class="text-gray" style="float:right;">
+                                <% if (UserData.weight_target === null) { %>
+                                    ยังไม่ได้ตั้งเป้าหมาย
+                                <% } else { %>
+                                    <%= UserData.weight_target %> kg.
+                                <% } %>
+                            </span>
+                        </p>
+                          <p class="m-0" style="text-align:left;">
                             ส่วนสูง
-                            <span class="text-gray fw" style="float:right;" id="height">
+                            <span class="text-gray fw" style="float:right;"><%= UserData.height %> cm.
                             </span>
                           </p>
                         </p>
@@ -105,27 +122,45 @@
                         <p class="m-0" style="text-align:left;">
                             ประเภทเป้าหมาย
                             <span class="text-gray" style="float:right;" id="display-target">
-                                ลดน้ำหนัก
+                                <% if (UserData.target === null) { %>
+                                    ยังไม่ได้ตั้งเป้าหมาย
+                                <% } else { %>
+                                    <%= UserData.target %>
+                                <% } %>
                             </span>
                         </p>
+                        
                         <p class="m-0" style="text-align:left;">
                             เป้าหมายแคลอรี่ต่อวัน
                             <span class="text-gray" style="float:right;" id="display-tdee">
-                                123 kcal.
+                                <%= UserData.tdee %> kcal.
                             </span>
                         </p>
                         <p class="m-0" style="text-align:left;">
                             เผาผลาญแคลอรี่ต่อวัน
                             <span class="text-gray" style="float:right;" id="display-bmr">
-                                500 cal.
+                                <%= UserData.bmr %> kcal.
                             </span>
                         </p>
                         <p class="m-0" style="text-align:left;">
                             กิจกรรมการออกกำลังกาย
-                            <span class="text-gray" style="float:right;" id="display-activity">
-                                3-5 ครั้ง/สัปดาห์
+                            <span class="text-gray" style="float:right;">
+                                <% if (UserData.activity === 'Sedentary') { %>
+                                    ออกกำลังกายน้อย
+                                <% } else if (UserData.activity === 'Light') { %>
+                                    ออกกำลังกายเบาๆ
+                                <% } else if (UserData.activity === 'Moderate') { %>
+                                    ออกกำลังกายปานกลาง
+                                <% } else if (UserData.activity === 'Active') { %>
+                                    ออกกำลังกายหนักมาก
+                                <% } else if (UserData.activity === 'VeryActive') { %>
+                                    ฝึกซ้อมหนักทุกวันไม่หยุด
+                                <% } else { %>
+                                    ไม่ระบุประเภทกิจกรรม
+                                <% } %>
                             </span>
                         </p>
+                        
                       </p>
                     </div>
                 </div>

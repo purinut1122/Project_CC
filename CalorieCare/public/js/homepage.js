@@ -47,6 +47,7 @@ function displayCurrentDate() {
     // สร้างข้อความวันที่
     const dateString = `วัน${day}ที่ ${date} ${month} ${year}`;
     document.getElementById('current-date').innerText = dateString;
+
 }
 
 // เรียกฟังก์ชันเมื่อหน้าโหลด
