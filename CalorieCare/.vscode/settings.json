@@ -1,6 +1,10 @@
 {
     "editor.fontSize": 18,
+<<<<<<< Updated upstream
     "workbench.colorTheme": "Kanagawa",
+=======
+    "workbench.colorTheme": "One Dark Pro",
+>>>>>>> Stashed changes
     "workbench.preferredDarkColorTheme": "Ayu Dark Bordered",
     "workbench.preferredHighContrastColorTheme": "Ayu Dark Bordered",
     "workbench.preferredHighContrastLightColorTheme": "Ayu Light Bordered",
