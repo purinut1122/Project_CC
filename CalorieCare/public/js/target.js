@@ -1,5 +1,5 @@
 function validateLossForm() {
-    document.getElementById('form').addEventListener('submit', function(event) {
+    document.getElementById('Lossform').addEventListener('submit', function(event) {
         // Prevent form submission until validation
         event.preventDefault();
     
@@ -63,13 +63,12 @@ function validateLossForm() {
 }
 
 function validateBalanceForm() {
-    document.getElementById('form').addEventListener('submit', function(event) {
+    document.getElementById('Balanceform').addEventListener('submit', function(event) {
         // Prevent form submission until validation
         event.preventDefault();
     
          // List of radio group names
         const balanceFormGroups = ['exerciseFrequency'];
-        // let gainFormGroups = ['exerciseFrequency', 'weightGain'];
         let allValid = true;
         let errorRadio = '';
         let errorMessage = '';
@@ -81,7 +80,7 @@ function validateBalanceForm() {
     
         // Check if any of the radios in the group are checked
             for (let j = 0; j < balanceFormRadios.length; j++) {
-                if (lossFormRadios[j].checked) {
+                if (balanceFormRadios[j].checked) {
                     isChecked = true;
                     break;
                 }
@@ -90,7 +89,7 @@ function validateBalanceForm() {
          // If no radio button is selected for the group, show an error message
             if (!isChecked) {
                 allValid = false;
-                errorRadio += 'กรุณาติ๊กช่องความถี่และความเร็วในการลดน้ำหนักให้ครบ';
+                errorRadio += 'กรุณาติ๊กช่องความถี่ในการควบคุมน้ำหนัก';
                 break;
             }else {
                 document.getElementById('error-radio').innerText = '';
@@ -121,14 +120,14 @@ function validateBalanceForm() {
             document.getElementById('error-message').innerText = errorMessage;
             document.getElementById('error-radio').innerText = errorRadio;
         } else {
-            $('#loseweight').modal('hide');
+            $('#balanceweight').modal('hide');
             $('#settarget').modal('show');
         }
     });
 }
 
 function validateGainForm() {
-    document.getElementById('form').addEventListener('submit', function(event) {
+    document.getElementById('Gainform').addEventListener('submit', function(event) {
         // Prevent form submission until validation
         event.preventDefault();
     
@@ -154,7 +153,7 @@ function validateGainForm() {
          // If no radio button is selected for the group, show an error message
             if (!isChecked) {
                 allValid = false;
-                errorRadio += 'กรุณาติ๊กช่องความถี่และความเร็วในการลดน้ำหนักให้ครบ';
+                errorRadio += 'กรุณาติ๊กช่องความถี่และความเร็วในการเพิ่มน้ำหนักให้ครบ';
                 break;
             }else {
                 document.getElementById('error-radio').innerText = '';
@@ -185,7 +184,7 @@ function validateGainForm() {
             document.getElementById('error-message').innerText = errorMessage;
             document.getElementById('error-radio').innerText = errorRadio;
         } else {
-            $('#loseweight').modal('hide');
+            $('#gainweight').modal('hide');
             $('#settarget').modal('show');
         }
     });
@@ -203,51 +202,3 @@ function clearInput(e) {
     document.querySelector(`#${e.id}`).style.border = "2px solid #f0f0f0";
     document.getElementById('error-message').innerText = '';
 }
-
-
-// const form = document.querySelector('#form');
-// const inputweight = document.querySelector('#inputWeight');
-
-// // Show input error messages
-// function showError(input, message) {
-//     const formControl = input.parentElement;
-//     formControl.className = 'form-control error';
-//     const small = formControl.querySelector('small');
-//     small.innerText = message;
-// }
-
-// // Show input success messages
-// function showSuccess(input) {
-//     const formControl = input.parentElement;
-//     formControl.className = 'form-control success';
-// }
-
-// // checkRequired fields
-// function checkRequired(inputwei) {
-//     inputwei(function(input) {
-//         if (input.value.trim() === '') {
-//             showError(input, `${getFieldName(input)} is required`); 
-//         } else {
-//             showSuccess(input);
-//         }
-//     });
-// }
-
-// // check input length
-// function checkLength(input, min, max) {
-//     if(input.value.length < min) {
-//         showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-//     } else if (input.value.length > max) {
-//         showError(input, `${getFieldName(input)} must be less than ${max} characters`);
-//     } else {
-//         showSuccess(input);
-//     }
-// } 
-
-// // get Fieldname
-// function getFieldName(input) {
-//     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-// }
-
-//     checkRequired([inputweight]);
-//     checkLength(inputweight,40,100);
