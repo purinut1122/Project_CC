@@ -1,0 +1,26 @@
+:root {
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}

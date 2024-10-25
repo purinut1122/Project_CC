@@ -1,34 +1,72 @@
-function validateForm() {
-    let exerciseFrequency = document.getElementsByName('exerciseFrequency');
-    let weightLoss = document.getElementsByName('weightLoss');
-    let weightGain = document.getElementsByName('weightGain');
-    let formValid = false;
+function validateLossForm() {
+    document.getElementById('form').addEventListener('submit', function(event) {
+        // Prevent form submission until validation
+        event.preventDefault();
     
-    for (let i=0, j=0;(i < exerciseFrequency.length) && (j < weightLoss.length); i++, j++) {
-        if (exerciseFrequency[i].checked && weightLoss[j].checked) {
-            formValid = true;
-            break;
+         // List of radio group names
+        const lossFormGroups = ['exerciseFrequency', 'weightLoss'];
+        // let balanceFormGroups = ['exerciseFrequency'];
+        // let gainFormGroups = ['exerciseFrequency', 'weightGain'];
+        let allValid = true;
+        let errorRadio = '';
+        let errorMessage = '';
+    
+        // Loop through each group to check if one radio button is checked
+        for (let i = 0; i < lossFormGroups.length; i++) {
+            let lossFormRadios = document.getElementsByName(lossFormGroups[i]);
+            let isChecked = false;
+    
+        // Check if any of the radios in the group are checked
+            for (let j = 0; j < lossFormRadios.length; j++) {
+                if (lossFormRadios[j].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+    
+         // If no radio button is selected for the group, show an error message
+            if (!isChecked) {
+                allValid = false;
+                errorRadio += 'กรุณาติ๊กช่องความถี่และความเร็วในการลดน้ำหนักให้ครบ';
+                // alert('กรุณาเลือกคำตอบให้ครบ');
+                break;
+            }else {
+                document.getElementById('error-radio').innerText = '';
+                // alert('ตั้งเป้าหมายเสร็จสิ้น');
+            }
         }
-    }
 
-    if (!formValid) {
-        alert('กรุณาเลือกคำตอบให้ครบ');
-        return false;
-    }
+        // Validate weight input field
+        const weightField = document.getElementById('inputWeight');
+        const weightValue = weightField.value.trim();
 
-    // $("submitTarget").click(function(){
-    //     $("#settarget").modal();
-    // });
+        // Convert weightValue to a number for further validation
+        const weightNumber = parseFloat(weightValue);
+        
+        // Check if weight is a number and if it has the correct length (e.g., between 2 and 3 digits)
+        if (isNaN(weightValue) || weightValue.length < 2 || weightValue.length > 3 || weightNumber < 40 || weightNumber > 90) {
+          allValid = false;
+          weightField.style.border = "2px solid #e74c3c";
+          errorMessage += 'กรุณาใส่น้ำหนักที่ต้องการระหว่าง 40 ถึง 90 กิโลกรัม';
+        } else {
+            document.getElementById('error-message').innerText = '';
+        }
+
+         // Display error message if any validation fails
+        if(!allValid) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            // alert('กรุณาเลือกคำตอบให้ครบ');
+            document.getElementById('error-message').innerText = errorMessage;
+            document.getElementById('error-radio').innerText = errorRadio;
+            // document.getElementById('error-message').innerText = errorMessage;
+        } else {
+            $('#loseweight').modal('hide');
+            $('#settarget').modal('show');
+        }
+    });
 }
 
-var modalToggle = document.getElementById('settarget') // relatedTarget
-myModal.show(modalToggle)
-
-var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-    keyboard: false
-})
-
-myModal.toggle()
 
 
 
@@ -36,13 +74,97 @@ myModal.toggle()
 
 
 
-// function exerciseFrequency() {
-// const exerciseFrequency = document.querySelector('input[name="exerciseFrequency"]:checked');
-// if (!exerciseFrequency) {
-//     isValid = false;
-//     alert('กรุณาเลือกความถี่ในการออกกำลังกาย.');   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function resetData() {
+    $("#form").trigger("reset");
+    const weightField = document.getElementById('inputWeight');
+    weightField.style.border = "2px solid #f0f0f0";
+    document.getElementById('error-message').innerText = '';
+    document.getElementById('error-radio').innerText = '';
+}
+
+function clearInput(e) {
+    document.querySelector(`#${e.id}`).style.border = "2px solid #f0f0f0";
+    document.getElementById('error-message').innerText = '';
+}
+
+
+// const form = document.querySelector('#form');
+// const inputweight = document.querySelector('#inputWeight');
+
+// // Show input error messages
+// function showError(input, message) {
+//     const formControl = input.parentElement;
+//     formControl.className = 'form-control error';
+//     const small = formControl.querySelector('small');
+//     small.innerText = message;
 // }
-// else {
-    
+
+// // Show input success messages
+// function showSuccess(input) {
+//     const formControl = input.parentElement;
+//     formControl.className = 'form-control success';
 // }
+
+// // checkRequired fields
+// function checkRequired(inputwei) {
+//     inputwei(function(input) {
+//         if (input.value.trim() === '') {
+//             showError(input, `${getFieldName(input)} is required`); 
+//         } else {
+//             showSuccess(input);
+//         }
+//     });
 // }
+
+// // check input length
+// function checkLength(input, min, max) {
+//     if(input.value.length < min) {
+//         showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+//     } else if (input.value.length > max) {
+//         showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+//     } else {
+//         showSuccess(input);
+//     }
+// } 
+
+// // get Fieldname
+// function getFieldName(input) {
+//     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+// }
+
+//     checkRequired([inputweight]);
+//     checkLength(inputweight,40,100);
