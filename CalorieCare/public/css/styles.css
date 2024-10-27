@@ -3271,9 +3271,9 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
-  --bs-dropdown-min-width: 10rem;
-  --bs-dropdown-padding-x: 0;
-  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-min-width: 13rem;
+  --bs-dropdown-padding-x: 1rem;
+  --bs-dropdown-padding-y: 1rem;
   --bs-dropdown-spacer: 0.125rem;
   --bs-dropdown-font-size: 1rem;
   --bs-dropdown-color: #212529;
@@ -3499,7 +3499,7 @@ textarea.form-control-lg {
 
 .dropdown-item {
   display: block;
-  width: 100%;
+  width: 10rem;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
   clear: both;
   font-weight: 400;
@@ -8119,6 +8119,11 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
   color: rgba(131,151,136,255);
 }
+
+.text-pink {
+  --bs-text-opacity: 1;
+  color: #ff4080;
+} 
 
 .text-gray {
   --bs-text-opacity: 1;

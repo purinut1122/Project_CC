@@ -26,14 +26,20 @@ const loginUserController = require('./controllers/loginUserController')
 const logoutController = require('./controllers/logoutController')
 const homeController = require('./controllers/homeController')
 const profileController = require('./controllers/profileController')
+const editUserController = require('./controllers/editUserController')
 const excerciseController = require('./controllers/excerciseController')
 const historyController = require('./controllers/historyController')
 const targetController = require('./controllers/targetController')
+const targetUserController = require('./controllers/targetUserController')
+const editTargetController = require('./controllers/editTargetController')
+const currentTargetController = require('./controllers/currentTargetController')
 const calculatorController = require('./controllers/calculatorController')
+
 
 // Middleware
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
+const redirectIfGoal = require('./middleware/redirectIfGoal')
 
 app.use(express.static('public'))
 app.use(express.json())
@@ -52,6 +58,7 @@ app.use((req, res, next) => {
     };
     next();
 });
+app.use(editTargetController);
 
 app.set('view engine', 'ejs')
 
@@ -64,9 +71,14 @@ app.post('/user/register', redirectIfAuth, storeUserController)
 app.post('/user/login', redirectIfAuth, loginUserController)
 app.get('/logout', logoutController)
 app.get('/profile', profileController)
+app.post('/user/edit', editUserController)
 app.get('/excercise', authMiddleware, excerciseController)
 app.get('/history', authMiddleware, historyController)
-app.get('/target', authMiddleware, targetController)
+app.get('/target', redirectIfGoal, targetController)
+// post method --> save data or add data
+app.post('/user/target', authMiddleware, targetUserController)
+app.post('/user/edittarget', editTargetController)
+app.get('/currentTarget', authMiddleware, currentTargetController)
 app.get('/calculator', authMiddleware, calculatorController)
 
 app.listen(4000, () => {

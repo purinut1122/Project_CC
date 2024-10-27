@@ -24,6 +24,25 @@
             margin-right: 0;
             padding-left: 100px;
             } 
+        @media (max-width: 767.98px) {
+            li {
+                display: block;
+                list-style-type: disc;
+                text-align: end;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+            } 
+            .grid {
+                grid-template-columns: 1fr; /* ให้เป็น 1 คอลัมน์สำหรับขนาดเล็ก */
+            }
+            h1 {
+                text-align: end; /* จัดข้อความใน h1 ไปทางขวา */
+                font-size: 40px;
+            }
+            }
     </style>
 </head>
 <body>
@@ -57,7 +76,7 @@
         </nav>
 
         <!-- Header-->
-        <header class="py-5">
+        <header class="py-3">
             <div class="container px-4 px-lg-5 my-1">
                 <div class="text-center text-green">
                     <h4 class="display-6 fw-bolder">บัญชีผู้ใช้</h4>
@@ -67,51 +86,63 @@
         </header>
 
         <div>
-            <div class="container" >
+            <div class="container" style="width: auto;">
                 <div class="card mb-3">
                     <div class="card-body ms-2">
                         <p class="card-text">
                           <div class="container">
                             <div class="row">
-                                <div class="col-md-auto">
+                                <div class="col-md-auto col-3 m-0">
                                     <i class="bi bi-person-circle text-green display-1"></i>
                                 </div>
-                                <div class="col-sm mt-auto">
-                                    <h3 class="fw-bolder text-green" id="username"><%= UserData.username %></h3>
-                                    <p>
-                                        <% if (UserData.gender === 'male') { %>
-                                            เพศชาย
-                                        <% } else if (UserData.gender === 'female') { %>
-                                            เพศหญิง
-                                        <% } else { %>
-                                            เพศไม่ระบุ
-                                        <% } %>, อายุ <%= UserData.age %> ปี
-                                    </p>
+                                <div class="col-sm-auto col-9 m-0">
+                                    <h6 class="fw-bolder text-green" id="username">Username</h6>
+                                    <%= UserData.username %>
+                                    <h6 class="fw-bolder text-green">Email</h6>
+                                    <%= UserData.email %>
                                 </div>
                             </div>
                           </div>
                           <hr>
+                          <h4 class="card-title fw-bolder text-green mt-4">ข้อมูลส่วนตัว</h4>
+                          <p class="m-0" style="text-align:left;">
+                            เพศ
+                            <span class="text-gray" style="float:right;">
+                                <% if (UserData.gender === 'male') { %>
+                                    ชาย <i class="bi bi-gender-male text-primary"></i>
+                                <% } else if (UserData.gender === 'female') { %>
+                                    หญิง <i class="bi bi-gender-female text-pink"></i>
+                                <% } else { %>
+                                    ไม่ระบุ
+                                <% } %>                                
+                            </span>
+                          </p>
+                          <p class="m-0" style="text-align:left;">
+                            อายุ
+                            <span class="text-gray" style="float:right;"><%= UserData.age %> ปี
+                            </span>
+                          </p>
                           <p class="m-0" style="text-align:left;">
                             น้ำหนักปัจจุบัน
                             <span class="text-gray" style="float:right;"><%= UserData.weight %> kg.
                             </span>
                           </p>
-                          <p class="m-0" style="text-align:left;">
-                            น้ำหนักเป้าหมาย
-                            <span class="text-gray" style="float:right;">
-                                <% if (UserData.weight_target === null) { %>
-                                    ยังไม่ได้ตั้งเป้าหมาย
-                                <% } else { %>
-                                    <%= UserData.weight_target %> kg.
-                                <% } %>
-                            </span>
-                        </p>
+
                           <p class="m-0" style="text-align:left;">
                             ส่วนสูง
                             <span class="text-gray fw" style="float:right;"><%= UserData.height %> cm.
                             </span>
                           </p>
                         </p>
+                        <div class="grid">
+                            <div class="grid-item text-end"> <!-- ใช้ text-end เพื่อจัดตำแหน่งขวา -->
+                                <form action="#">
+                                    <button type="submit" class="btn btn-outline-green" style="width: auto; min-width: 100px;" data-bs-toggle="modal" data-bs-target="#editprofile"> <!-- เปลี่ยน width เป็น auto และกำหนด min-width -->
+                                        <i class="bi bi-pencil-square"></i> แก้ไขข้อมูลส่วนตัว
+                                    </button>
+                                </form>   
+                            </div>
+                        </div>                                          
                     </div>
                 </div>
 
@@ -125,7 +156,26 @@
                                 <% if (UserData.target === null) { %>
                                     ยังไม่ได้ตั้งเป้าหมาย
                                 <% } else { %>
-                                    <%= UserData.target %>
+                                    <% if (UserData.target === 'LoseWeight') { %>
+                                        ลดน้ำหนัก
+                                    <% } else if (UserData.target === 'GainWeight') { %>
+                                        เพิ่มน้ำหนัก
+                                    <% } else if (UserData.target === 'MaintainWeight') { %>
+                                        รักษาน้ำหนัก
+                                    <% } else { %>
+                                        <%= UserData.target %> <!-- สำหรับค่าที่อาจจะไม่ได้คาดการณ์ -->
+                                    <% } %>
+                                <% } %>
+                            </span>
+                        </p>
+
+                        <p class="m-0" style="text-align:left;">
+                            น้ำหนักเป้าหมาย
+                            <span class="text-gray" style="float:right;">
+                                <% if (UserData.weight_target === null) { %>
+                                    ยังไม่ได้ตั้งเป้าหมาย
+                                <% } else { %>
+                                    <%= UserData.weight_target %> kg.
                                 <% } %>
                             </span>
                         </p>
@@ -162,14 +212,13 @@
                         </p>
                         
                       </p>
+                      <p style="text-align:right;">
+                        <a href="/logout" class="btn btn-outline-danger" style="width: auto; min-width: 100px;">
+                            <i class="bi bi-box-arrow-right"></i> ออกจากระบบ
+                        </a>
+                    </p> 
                     </div>
-                </div>
-                <p class="py-5" style="text-align:left;" data-bs-toggle="modal" data-bs-target="#editprofile">
-                    <a href="#" class="text-gray link-underline-primary">แก้ไขข้อมูลผู้ใช้</a>
-                    <span class="" style="float:right;">
-                        <a href="/logout" class="link-danger">ออกจากระบบ</a>
-                    </span>
-                </p>
+                </div>              
             </div>
         </div>
 
@@ -214,78 +263,60 @@
     </div>
   </div>
 
-  <div class="modal fade" id="editprofile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="editprofile" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text-green" id="staticBackdropLabel">แก้ไขข้อมูลผู้ใช้</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="text-center">
-                <h1><i class="bi bi-person-circle display-1 text-green"></i></h1>
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">แก้ไขข้อมูลส่วนตัว</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="container"> 
-                <div class="row">
-                    <div class="text-green">
-                        <p>ชื่อผู้บัญชีผู้ใช้</p>
-                        <input type="text" id="username" class="w-100" />
-                    </div>
-                    <div class="text-green mt-3">
-                        <p>อีเมล</p>
-                        <input type="text" id="email" class="w-100"/>
-                    </div>
-                    <div class="text-green mt-3">
-                        <p>รหัสผ่าน</p>
-                        <input type="text" id="password" class="w-100"/>
-                    </div>
-                    <p class="text-green mt-3">เพศ</p>
-                        <div class="container mb-3"> 
-                            <div class="row">
-                                <div class="col text-center">
-                                    <input type="radio" class="btn-check" name="gender-bmr" value="male" id="gender-bmr-male" autocomplete="off">
-                                    <label class="btn btn-outline-primary w-100" for="gender-bmr-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+            <div class="modal-body">
+                <div class="text-center">
+                    <h1><i class="bi bi-person-circle display-1 text-green"></i></h1>
+                </div>
+                <form action="/user/edit" method="POST">
+                    <div class="container"> 
+                        <div class="row">
+                            <div class="text-green">
+                                <h4 class="text-green mt-4 fw-bolder">ข้อมูลส่วนตัว</h4>
+                                <div class="text-green mt-3">
+                                    <p>น้ำหนักตัว (kg.)</p>
+                                    <input type="text" id="weight" name="weight" class="w-100" required/>
                                 </div>
-                                <div class="col text-center">
-                                    <input type="radio" class="btn-check" name="gender-bmr" value="female" id="gender-bmr-female" autocomplete="off">
-                                    <label class="btn btn-pink w-100" for="gender-bmr-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                <div class="text-green mt-3">
+                                    <p>ส่วนสูง (cm.)</p>
+                                    <input type="text" id="height" name="height" class="w-100" required/>
+                                </div>
+                                <div class="text-green mt-3">
+                                    <p>อายุ (ปี)</p>
+                                    <input type="text" id="age" name="age" class="w-100" required/>
+                                </div>
+                                <p class="text-green mt-3">เพศ</p>
+                                <div class="container mb-3"> 
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <input type="radio" class="btn-check" name="gender" value="male" id="gender-bmr-male" autocomplete="off" required>
+                                            <label class="btn btn-outline-primary w-100" for="gender-bmr-male"><i class="bi bi-gender-male"></i> ผู้ชาย</label>
+                                        </div>
+                                        <div class="col text-center">
+                                            <input type="radio" class="btn-check" name="gender" value="female" id="gender-bmr-female" autocomplete="off" required>
+                                            <label class="btn btn-pink w-100" for="gender-bmr-female"><i class="bi bi-gender-female"></i> ผู้หญิง</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    <h4 class="text-green mt-4 fw-bolder">ข้อมูลส่วนตัว</h4>
-                    <div class="text-green mt-3">
-                        <p>น้ำหนักตัว (kg.)</p>
-                        <input type="text" id="weight" class="w-100"/>
                     </div>
-                    <div class="text-green mt-3">
-                        <p>ส่วนสูง (cm.)</p>
-                        <input type="text" id="height" class="w-100"/>
-                    </div>
-                    <div class="text-green mt-3">
-                        <p>อายุ (ปี)</p>
-                        <input type="text" id="age" class="w-100"/>
-                    </div>
-                    <div class="text-green mt-3">
-                        <p>ระดับการออกกำลังกาย</p>
-                        <select name="activity-level" class="form-select form-select-m mb-3" aria-label=".form-select-lg example">
-                            <option selected>เลือกกิจกรรมการออกกำลังกาย</option>
-                            <option value="sedentary">ออกกำลังกายน้อยหรือไม่ออกกำลังกายเลย</option>
-                            <option value="light">ออกกำลังกายเบาๆ 1-3 วันต่อสัปดาห์</option>
-                            <option value="moderate">ออกกำลังกายปานกลาง 3-5 วันต่อสัปดาห์</option>
-                            <option value="active">ออกกำลังกายหนักมาก 6-7 วันต่อสัปดาห์</option>
-                            <option value="veryActive">ฝึกซ้อมหนักทุกวันไม่หยุด</option>
-                        </select>
-                    </div>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                <button type="submit" class="btn btn-outline-green">บันทึกข้อมูล</button>
+                </form>
             </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
-            <button type="button" class="btn btn-outline-green" data-bs-target="#editsuccess" data-bs-toggle="modal" id="submit-profile">บันทึกข้อมูล</button>
-          </div>
-      </div>
     </div>
-  </div>
+</div>
+
 
   <div class="modal fade" id="editsuccess" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -305,6 +336,7 @@
       </div>
     </div>
   </div>
+
 
   
 
