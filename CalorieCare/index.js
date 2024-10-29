@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
+var router = express.Router();
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://test:1234@cluster0.7bf6f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
@@ -102,3 +103,10 @@ app.use((err, req, res, next) => {
 app.listen(4000, () => {
     console.log("App listening on port 4000");
 });
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('index', { title: 'Express' });
+  });
+  
+  module.exports = router;
