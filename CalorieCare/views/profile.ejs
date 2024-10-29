@@ -159,7 +159,7 @@
                                     <% } else if (UserData.target === 'GainWeight') { %>
                                         เพิ่มน้ำหนัก
                                     <% } else if (UserData.target === 'MaintainWeight') { %>
-                                        รักษาน้ำหนัก
+                                        ควบคุมน้ำหนัก
                                     <% } else { %>
                                         <%= UserData.target %> <!-- สำหรับค่าที่อาจจะไม่ได้คาดการณ์ -->
                                     <% } %>
@@ -276,7 +276,7 @@
                     <div class="container"> 
                         <div class="row">
                             <div class="text-green">
-                                <h4 class="text-green mt-4 fw-bolder">ข้อมูลส่วนตัว</h4>
+                                <h4 class="text-green mt-2 fw-bolder text-center">ข้อมูลส่วนตัว</h4>
                                 <div class="text-green mt-3">
                                     <p>น้ำหนักตัว (kg.)</p>
                                     <input type="text" id="weight" name="weight" class="w-100" required/>
@@ -307,7 +307,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ยกเลิก</button>
                 <button type="submit" class="btn btn-outline-green">บันทึกข้อมูล</button>
                 </form>
             </div>

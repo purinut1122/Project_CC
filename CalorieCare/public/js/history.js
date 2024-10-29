@@ -401,3 +401,40 @@ function getEvents() {
 }
 
 
+document.getElementById('foodLogForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // ป้องกันการส่งฟอร์มแบบปกติ
+
+  // สร้างข้อมูลที่จะส่งไปยังเซิร์ฟเวอร์
+  const menuItems = [
+      {
+          name: document.querySelector('.event-name').value,
+          calories: document.querySelector('.event-kcal').value,
+          quantity: document.querySelector('.event-quantity').value,
+      }
+  ];
+
+  // ส่งข้อมูลไปยังเซิร์ฟเวอร์
+  fetch('/user/addmenu', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ menuItems: menuItems })
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.message) {
+          alert(data.message); // แสดงข้อความจาก server
+      }
+
+      // เคลียร์ฟอร์มหลังจากบันทึกสำเร็จ
+      document.getElementById('foodLogForm').reset(); // รีเซ็ตฟอร์ม
+
+      // ถ้าบันทึกสำเร็จ ให้ทำการ redirect
+      if (data.success) {
+          window.location.href = '/home'; // หรือเปลี่ยนเส้นทางตามต้องการ
+      }
+  })
+  .catch(error => console.error('Error:', error));
+});
+

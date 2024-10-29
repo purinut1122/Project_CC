@@ -12,7 +12,7 @@
 
 .calendars {
   height: auto; /* ให้ปรับขนาดตามเนื้อหา */
-  width: 80%; /* กำหนดความกว้างที่คุณต้องการ เช่น 80% ของหน้าจอ */
+  width: auto; /* กำหนดความกว้างที่คุณต้องการ เช่น 80% ของหน้าจอ */
   max-width: 2000px; /* ตั้งค่าความกว้างสูงสุด เพื่อไม่ให้เกินขนาดที่กำหนด */
   margin: 0 auto; /* จัดให้อยู่ตรงกลางในแนวนอน */
   color: #fff;
@@ -23,7 +23,8 @@
   background-position: center;
   background-attachment: fixed;
   border-radius: 10px; /* เพิ่มขอบมนถ้าต้องการ */
-  
+  gap: 10px;
+  padding: 20px;
 }
 
 

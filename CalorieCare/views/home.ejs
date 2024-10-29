@@ -14,6 +14,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/styles.css" rel="stylesheet" />
+        <!-- Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <style>
             li {
                 display: block;
@@ -55,6 +57,13 @@
                 max-height: 50px; /* กำหนดความสูงสูงสุดเพื่อป้องกันการใหญ่เกินไป */
                 object-fit: contain; /* รักษาสัดส่วนรูปภาพ */
             }
+            .fixed-image {
+            max-width: 300px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            }
         </style>
     </head>
     <body>
@@ -90,11 +99,8 @@
     </div>
 </nav>
 
-        
-        
-
         <!-- Header-->
-        <div class="container py-2 px-4 px-lg-5 my-5">
+        <div class="container py-2 px-4 px-lg-5 my-3">
             <h3 class="display-6 fw-bolder" id="display-username">สวัสดีคุณ, <%= UserData.username %></h3>
             <p class="lead fw-normal text-black-50 ms-2" id="current-date"></p>
             <div class="d-flex justify-content-center">
@@ -120,302 +126,274 @@
                                     </div>
                                 </div>
                         </div>                
-                            <div class="text-end">
-                                <a href="#" class="btn btn-outline-green" style="width: 8rem;" data-bs-toggle="modal" data-bs-target="#editcal">
-                                    <i class="bi bi-pencil-square"></i> แก้ไข
-                                </a>
-                            </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row align-items-center mt-4">
+                <div class="col-12 col-md-7 text-md-end text-center">
+                    <h2 class="fw-bolder text-gray mb-0">อาหารที่ควรรับประทาน</h2>
+                </div>
+                <div class="col-12 col-md-5 text-md-end text-center mt-3 mt-md-0">
+                    <button type="button" class="btn btn-outline-green me-2" data-bs-toggle="modal" data-bs-target="#cart">
+                        <i class="fa-solid fa-bowl-food"></i> เปิดเมณู (<span class="total-count">0</span>)
+                    </button>
+                    <button class="clear-cart btn btn-outline-danger" onclick="clearCart()">
+                        <i class="fa-solid fa-ban"></i> ล้างรายการอาหาร
+                    </button>
+                </div>
+            </div>  
+
         </div>
+    
 
-        
-
-        <div class="text-center mt-5">
-            <h2 class="fw-bolder text-gray"> อาหารที่ควรรับประทาน </h2>
-        </div>
-
-        
-
-        <!-- Section 1 Breakfast-->
-        <section class="py-1">
-            <div class="container px-4 px-lg-5 mt-1">
-                <h4 class="fw-bolder text-gray"> อาหารมื้อเช้า </h4>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/หมูสะเต๊ะ.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">หมูสะเต๊ะ</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
+<!-- Section 1 Breakfast-->
+<section class="py-1">
+    <div class="container px-4 px-lg-5 mt-1">
+        <h4 class="fw-bolder text-gray"> อาหารมื้อเช้า </h4>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <% 
+            const breakfastMenuItems = [
+            { name: "หมูสะเต๊ะ(ไม้)", img: "image/หมูสะเต๊ะ.png", calories: 115 },
+            { name: "ข้าวต้มหมูสับ(ถ้วย)", img: "image/ข้าวต้มหมูสับ.png", calories: 228 },
+            { name: "ไข่กระทะ(จาน)", img: "image/ไข่กระทะ.png", calories: 635 },
+            { name: "หมูปิ้ง(ไม้)", img: "image/หมูปิ้ง.png", calories: 125 },
+            { name: "ขนมปังปิ้ง(ชิ้น)", img: "image/ขนมปังปิ้ง.png", calories: 150 },
+            { name: "โจ๊กหมู(ถ้วย)", img: "image/โจ๊กหมู.png", calories: 250 },
+            { name: "ข้าวเหนียวหมู(จาน)", img: "image/ข้าวเหนียวหมู.png", calories: 300 },
+            { name: "ไข่ต้ม(ฟอง)", img: "image/ไข่ต้ม.png", calories: 70 },
+            { name: "แซนด์วิชทูน่า(ชิ้น)", img: "image/แซนด์วิชทูน่า.png", calories: 220 },
+            { name: "ข้าวต้มปลา(ถ้วย)", img: "image/ข้าวต้มปลา.png", calories: 200 },
+            { name: "ข้าวมันไก่(จาน)", img: "image/ข้าวมันไก่.png", calories: 480 },
+            { name: "แพนเค้ก(ชิ้น)", img: "image/แพนเค้ก.png", calories: 350 },
+            { name: "ขนมจีนน้ำเงี้ยว(จาน)", img: "image/ขนมจีนน้ำเงี้ยว.png", calories: 400 },
+            { name: "ข้าวคลุกกะปิ(จาน)", img: "image/ข้าวคลุกกะปิ.png", calories: 550 },
+            { name: "ก๋วยเตี๋ยวเส้นเล็ก(ชาม)", img: "image/ก๋วยเตี๋ยวเส้นเล็ก.png", calories: 320 },
+            { name: "ข้าวไข่เจียว(จาน)", img: "image/ข้าวไข่เจียว.png", calories: 370 },
+            { name: "ขนมปังสังขยา(ชิ้น)", img: "image/ขนมปังสังขยา.png", calories: 230 },
+            { name: "ชาเย็น(แก้ว)", img: "image/ชาเย็น.png", calories: 130 },
+            { name: "กาแฟสด(แก้ว)", img: "image/กาแฟสด.png", calories: 50 },
+            { name: "น้ำเต้าหู้(แก้ว)", img: "image/น้ำเต้าหู้.png", calories: 80 },
+            { name: "ข้าวไข่ข้นแฮม(จาน)", img: "image/ข้าวไข่ข้นแฮม.png", calories: 450 },
+            { name: "ปาท่องโก๋(ชิ้น)", img: "image/ปาท่องโก๋.png", calories: 150 },
+            { name: "ข้าวต้มมัด(ชิ้น)", img: "image/ข้าวต้มมัด.png", calories: 180 },
+            { name: "ขนมเบื้อง(ชิ้น)", img: "image/ขนมเบื้อง.png", calories: 100 },
+            { name: "เครป(ชิ้น)", img: "image/เครป.png", calories: 250 },
+            { name: "สลัดผลไม้(ถ้วย)", img: "image/สลัดผลไม้.png", calories: 120 },
+            { name: "ซุปฟักทอง(ถ้วย)", img: "image/ซุปฟักทอง.png", calories: 160 },
+            { name: "ขนมถ้วย(ชิ้น)", img: "image/ขนมถ้วย.png", calories: 90 },
+            { name: "ข้าวต้มมะระ(ถ้วย)", img: "image/ข้าวต้มมะระ.png", calories: 220 },
+            { name: "ข้าวผัดกุนเชียง(จาน)", img: "image/ข้าวผัดกุนเชียง.png", calories: 500 },
+            { name: "ขนมปังแยมสตรอเบอรี(ชิ้น)", img: "image/ขนมปังแยมสตรอเบอรี.png", calories: 190 },
+            { name: "ข้าวผัดกะเพรา(จาน)", img: "image/ข้าวผัดกะเพรา.png", calories: 400 },
+            { name: "โจ๊กปลา(ถ้วย)", img: "image/โจ๊กปลา.png", calories: 240 },
+            { name: "ซุปไข่(ถ้วย)", img: "image/ซุปไข่.png", calories: 110 },
+            { name: "สลัดผัก(ถ้วย)", img: "image/สลัดผัก.png", calories: 80 },
+            { name: "แฮมเบอร์เกอร์(ชิ้น)", img: "image/แฮมเบอร์เกอร์.png", calories: 600 },
+            { name: "แซนด์วิชไข่(ชิ้น)", img: "image/แซนด์วิชไข่.png", calories: 250 },
+            { name: "ข้าวต้มกระดูกหมู(ถ้วย)", img: "image/ข้าวต้มกระดูกหมู.png", calories: 280 },
+            { name: "ขนมอบ(ชิ้น)", img: "image/ขนมอบ.png", calories: 180 },
+            { name: "พุดดิ้ง(ถ้วย)", img: "image/พุดดิ้ง.png", calories: 210 },
+        ];
+    
+                // สุ่มเมนูอาหาร
+                const shuffledMenu = breakfastMenuItems.sort(() => 0.5 - Math.random()).slice(0, 4);
+            %>
+            <% shuffledMenu.forEach(item => { %>
+                <div class="col mb-5">
+                    <div class="card h-100 border-green">
+                        <!-- Product image-->
+                        <img class="card-img-top rounded fixed-image" src="<%= item.img %>" alt="<%= item.name %>" />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center text-green">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder"><%= item.name %></h5>
+                                <!-- Product price-->
+                                <div>
+                                    แคลอรี่ : <%= item.calories %>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" data-bs-toggle="modal" data-bs-target="#addmenu">เพื่มอาหาร</a></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ข้าวต้มหมูสับ.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ข้าวต้มหมูสับ</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ไข่กระทะ.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ไข่กระทะ</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green ">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/หมูปิ้ง.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">หมูปิ้ง</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-green mt-auto add-to-cart" data-name="<%= item.name %>" data-price="<%= item.calories %>" href="#">เพิ่มอาหาร</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+        
 
         <!-- Section 2 อาหารมื้อกลางวัน -->
         <section class="py-1">
             <div class="container px-4 px-lg-5">
                 <h4 class="fw-bolder text-gray"> อาหารมื้อกลางวัน </h4>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ข้ามมันไก่ทอด.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ข้าวมันไก่ทอด</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
+                    <% 
+                    const lunchMenuItems = [
+                    { name: "ข้าวมันไก่ทอด(จาน)", img: "image/ข้ามมันไก่ทอด.png", calories: 695 },
+                    { name: "ข้าวมันไก่ผสม(จาน)", img: "image/ข้าวมันไก่ผสม.png", calories: 780 },
+                    { name: "ข้าวหน้าเป็ด+หมูกรอบ(จาน)", img: "image/ข้าวหน้าเป็ด+หมูกรอบ.png", calories: 1000 },
+                    { name: "ข้าวหน้าเป็ด(จาน)", img: "image/ข้าวหน้าเป็ด.png", calories: 495 },
+                    { name: "ข้าวผัดทะเล(จาน)", img: "image/ข้าวผัดทะเล.png", calories: 650 },
+                    { name: "ข้าวผัดกะเพราหมู(จาน)", img: "image/ข้าวผัดกะเพราหมู.png", calories: 600 },
+                    { name: "ข้าวต้มปลากะพง(ถ้วย)", img: "image/ข้าวต้มปลากะพง.png", calories: 220 },
+                    { name: "ข้าวหน้าเนื้อ(จาน)", img: "image/ข้าวหน้าเนื้อ.png", calories: 720 },
+                    { name: "ข้าวผัดปลาสลิด(จาน)", img: "image/ข้าวผัดปลาสลิด.png", calories: 450 },
+                    { name: "ข้าวผัดไข่(จาน)", img: "image/ข้าวผัดไข่.png", calories: 350 },
+                    { name: "ข้าวเหนียวหมูปิ้ง(จาน)", img: "image/ข้าวเหนียวหมูปิ้ง.png", calories: 520 },
+                    { name: "ข้าวกะเพราหมูสับ(จาน)", img: "image/ข้าวกะเพราหมูสับ.png", calories: 550 },
+                    { name: "ข้าวกะเพราหมูกรอบ(จาน)", img: "image/ข้าวกะเพราหมูกรอบ.png", calories: 680 },
+                    { name: "ข้าวราดแกงเขียวหวาน(จาน)", img: "image/ข้าวราดแกงเขียวหวาน.png", calories: 700 },
+                    { name: "ข้าวผัดปู(จาน)", img: "image/ข้าวผัดปู.png", calories: 500 },
+                    { name: "ข้าวหมูกรอบ(จาน)", img: "image/ข้าวหมูกรอบ.png", calories: 600 },
+                    { name: "ข้าวราดหน้าฮ่องกง(จาน)", img: "image/ข้าวราดหน้าฮ่องกง.png", calories: 550 },
+                    { name: "ข้าวไก่เทอริยากิ(จาน)", img: "image/ข้าวไก่เทอริยากิ.png", calories: 490 },
+                    { name: "ข้าวผัดน้ำพริก(จาน)", img: "image/ข้าวผัดน้ำพริก.png", calories: 380 },
+                    { name: "ข้าวไก่ทอด(จาน)", img: "image/ข้าวไก่ทอด.png", calories: 700 },
+                    { name: "ข้าวผัดอเมริกัน(จาน)", img: "image/ข้าวผัดอเมริกัน.png", calories: 650 },
+                    { name: "ข้าวแกงเผ็ด(จาน)", img: "image/ข้าวแกงเผ็ด.png", calories: 600 },
+                    { name: "ข้าวซอย(จาน)", img: "image/ข้าวซอย.png", calories: 580 },
+                    { name: "ข้าวหมูย่าง(จาน)", img: "image/ข้าวหมูย่าง.png", calories: 450 },
+                    { name: "ข้าวหมูสะเต๊ะ(จาน)", img: "image/ข้าวหมูสะเต๊ะ.png", calories: 500 },
+                    { name: "ข้าวกะเพราไก่(จาน)", img: "image/ข้าวกะเพราไก่.png", calories: 550 },
+                    { name: "ข้าวเหนียวส้มตำ(จาน)", img: "image/ข้าวเหนียวส้มตำ.png", calories: 350 },
+                    { name: "ข้าวไข่เจียว(จาน)", img: "image/ข้าวไข่เจียว.png", calories: 400 },
+                    { name: "ข้าวราดหน้าหมูสับ(จาน)", img: "image/ข้าวราดหน้าหมูสับ.png", calories: 480 },
+                    { name: "ข้าวผัดสับปะรด(จาน)", img: "image/ข้าวผัดสับปะรด.png", calories: 460 },
+                    { name: "ข้าวหมูสามชั้น(จาน)", img: "image/ข้าวหมูสามชั้น.png", calories: 540 },
+                    { name: "ข้าวแกงกะทิ(จาน)", img: "image/ข้าวแกงกะทิ.png", calories: 570 },
+                    { name: "ข้าวราดหน้าปลาสลิด(จาน)", img: "image/ข้าวราดหน้าปลาสลิด.png", calories: 490 },
+                    { name: "ข้าวต้มกระดูก(ถ้วย)", img: "image/ข้าวต้มกระดูก.png", calories: 300 },
+                    { name: "ข้าวผัดหนำเลี๊ยบ(จาน)", img: "image/ข้าวผัดหนำเลี๊ยบ.png", calories: 450 },
+                    { name: "ข้าวหน้าหมูทอด(จาน)", img: "image/ข้าวหน้าหมูทอด.png", calories: 600 },
+                    { name: "ข้าวผัดบุก(จาน)", img: "image/ข้าวผัดบุก.png", calories: 400 },
+                    { name: "ข้าวขาหมู(จาน)", img: "image/ข้าวขาหมู.png", calories: 700 },
+                    { name: "ข้าวไข่ข้น(จาน)", img: "image/ข้าวไข่ข้น.png", calories: 480 },
+                    { name: "ข้าวหมูทอดกระเทียม(จาน)", img: "image/ข้าวหมูทอดกระเทียม.png", calories: 525 },
+                ];
+                
+        
+                        // สุ่มเมนูอาหาร
+                        const shuffledLunchMenu = lunchMenuItems.sort(() => 0.5 - Math.random()).slice(0, 4);
+                    %>
+                    <% shuffledLunchMenu.forEach(item => { %>
+                        <div class="col mb-5">
+                            <div class="card h-100 border-green">
+                                <!-- Product image-->
+                                <img class="card-img-top rounded" src="<%= item.img %>" alt="<%= item.name %>" />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center text-green">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder"><%= item.name %></h5>
+                                        <!-- Product price-->
+                                        <div>
+                                            แคลอรี่ : <%= item.calories %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        <a class="btn btn-outline-green mt-auto add-to-cart" data-name="<%= item.name %>" data-price="<%= item.calories %>" href="#">เพิ่มอาหาร</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ข้าวมันไก่ผสม.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ข้าวมันไก่ผสม</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ข้าวหน้าเป็ด+หมูกรอบ.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ข้าวหน้าเป็ด+หมูกรอบ</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green ">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ข้าวหน้าเป็ด.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ข้าวหน้าเป็ด</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
 
+
         <!-- Section 3 อาหารมื้อเย็น -->
-        <section class="py-1">
-            <div class="container px-4 px-lg-5">
-                <h4 class="fw-bolder text-gray"> อาหารมื้อเย็น </h4>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ไข่ตุ๋นทรงเครื่อง.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ไข่ตุ๋นทรงเครื่อง</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
+<section class="py-1">
+    <div class="container px-4 px-lg-5">
+        <h4 class="fw-bolder text-gray"> อาหารมื้อเย็น </h4>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <% 
+            const dinnerMenuItems = [
+            { name: "ไข่ตุ๋นทรงเครื่อง(ถ้วย)", img: "image/ไข่ตุ๋นทรงเครื่อง.png", calories: 159 },
+            { name: "ยำไข่ต้มทรงเครื่อง(จาน)", img: "image/ยำไข่ต้ม.png", calories: 188 },
+            { name: "โยเกิร์ตผลไม้สด(ถ้วย)", img: "image/โยเกิร์ตผลไม้สด.png", calories: 150 },
+            { name: "สลัดโรลปลาทูน่า", img: "image/สลัดโรลปลาทูน่า.png", calories: 158 },
+            { name: "ต้มยำกุ้ง(ถ้วย)", img: "image/ต้มยำกุ้ง.png", calories: 200 },
+            { name: "ผัดไทย(จาน)", img: "image/ผัดไทย.png", calories: 350 },
+            { name: "ข้าวผัดกุ้ง(จาน)", img: "image/ข้าวผัดกุ้ง.png", calories: 600 },
+            { name: "ยำวุ้นเส้น(จาน)", img: "image/ยำวุ้นเส้น.png", calories: 250 },
+            { name: "ต้มยำปลากะพง(ถ้วย)", img: "image/ต้มยำปลากะพง.png", calories: 220 },
+            { name: "แกงส้ม(ถ้วย)", img: "image/แกงส้ม.png", calories: 180 },
+            { name: "สลัดผักน้ำสลัด(จาน)", img: "image/สลัดผักน้ำสลัด.png", calories: 120 },
+            { name: "ยำทูน่า(จาน)", img: "image/ยำทูน่า.png", calories: 220 },
+            { name: "ซุปเห็ด(ถ้วย)", img: "image/ซุปเห็ด.png", calories: 100 },
+            { name: "ข้าวผัดมะเขือเทศ(จาน)", img: "image/ข้าวผัดมะเขือเทศ.png", calories: 450 },
+            { name: "ข้าวราดหน้ากุ้ง(จาน)", img: "image/ข้าวราดหน้ากุ้ง.png", calories: 550 },
+            { name: "แกงเขียวหวานไก่(ถ้วย)", img: "image/แกงเขียวหวานไก่.png", calories: 700 },
+            { name: "สตูว์เนื้อ(ถ้วย)", img: "image/สตูว์เนื้อ.png", calories: 800 },
+            { name: "ข้าวหน้าเนื้อย่าง(จาน)", img: "image/ข้าวหน้าเนื้อย่าง.png", calories: 720 },
+            { name: "ข้าวหมูแดง(จาน)", img: "image/ข้าวหมูแดง.png", calories: 500 },
+            { name: "ไข่เจียวปู(จาน)", img: "image/ไข่เจียวปู.png", calories: 450 },
+            { name: "ข้าวต้มกุ้ง(ถ้วย)", img: "image/ข้าวต้มกุ้ง.png", calories: 250 },
+            { name: "ยำไข่เค็ม(จาน)", img: "image/ยำไข่เค็ม.png", calories: 180 },
+            { name: "ข้าวไข่ข้น(จาน)", img: "image/ข้าวไข่ข้น.png", calories: 480 },
+            { name: "ข้าวปลาเผา(จาน)", img: "image/ข้าวปลาเผา.png", calories: 300 },
+            { name: "แกงมัสมั่น(จาน)", img: "image/แกงมัสมั่น.png", calories: 620 },
+            { name: "ข้าวหน้าแกงกะทิ(จาน)", img: "image/ข้าวหน้าแกงกะทิ.png", calories: 550 },
+            { name: "ต้มยำกุ้งน้ำข้น(ถ้วย)", img: "image/ต้มยำกุ้งน้ำข้น.png", calories: 400 },
+            { name: "สลัดสเต๊ก(จาน)", img: "image/สลัดสเต๊ก.png", calories: 300 },
+            { name: "ข้าวต้มหมู(ถ้วย)", img: "image/ข้าวต้มหมู.png", calories: 230 },
+            { name: "ยำสาหร่าย(จาน)", img: "image/ยำสาหร่าย.png", calories: 150 },
+            { name: "ขนมจีนน้ำเงี้ยว(จาน)", img: "image/ขนมจีนน้ำเงี้ยว.png", calories: 450 },
+            { name: "ปลาทอดน้ำปลา(จาน)", img: "image/ปลาทอดน้ำปลา.png", calories: 300 },
+            { name: "ข้าวผัดอเมริกัน(จาน)", img: "image/ข้าวผัดอเมริกัน.png", calories: 650 },
+            { name: "แกงมัสมั่นเนื้อ(จาน)", img: "image/แกงมัสมั่นเนื้อ.png", calories: 700 },
+            { name: "ข้าวแกงกะทิ(จาน)", img: "image/ข้าวแกงกะทิ.png", calories: 570 },
+            { name: "ข้าวราดหน้าปลาสลิด(จาน)", img: "image/ข้าวราดหน้าปลาสลิด.png", calories: 490 },
+            { name: "ข้าวต้มกระดูก(ถ้วย)", img: "image/ข้าวต้มกระดูก.png", calories: 300 },
+            { name: "ปลาแซลมอนย่าง(จาน)", img: "image/ปลาแซลมอนย่าง.png", calories: 260 },
+            { name: "บะหมี่เกี๊ยวเป็ดย่าง(ชาม)", img: "image/บะหมี่เกี๊ยวเป็ดย่าง.png", calories: 415 },
+            { name: "มักกะโรนีผัดกุ้ง(จาน)", img: "image/มักกะโรนีผัดกุ้ง.png", calories: 420 },
+        ];
+
+                // สุ่มเมนูอาหาร
+                const shuffledDinnerMenu = dinnerMenuItems.sort(() => 0.5 - Math.random()).slice(0, 4);
+            %>
+            <% shuffledDinnerMenu.forEach(item => { %>
+                <div class="col mb-5">
+                    <div class="card h-100 border-green">
+                        <!-- Product image-->
+                        <img class="card-img-top rounded" src="<%= item.img %>" alt="<%= item.name %>" />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center text-green">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder"><%= item.name %></h5>
+                                <!-- Product price-->
+                                <div>
+                                    แคลอรี่ : <%= item.calories %>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/ยำไข่ต้ม.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ยำไข่ต้ม</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/โยเกิร์ตผลไม้สด.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">โยเกิร์ตผลไม้สด</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100 border-green ">
-                            <!-- Product image-->
-                            <img class="card-img-top rounded" src="image/สลัดโรลปลาทูน่า.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-green">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">สลัดโรลปลาทูน่า</h5>
-                                    <!-- Product price-->
-                                    <div>
-                                        แคลอรี่ : 9999
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-green mt-auto" href="#">เพื่มอาหาร</a></div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-green mt-auto add-to-cart" data-name="<%= item.name %>" data-price="<%= item.calories %>" href="#">เพิ่มอาหาร</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
 
     <!-- Modal -->
 <div class="modal fade" id="editcal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -522,6 +500,75 @@
         </div>
       </div>
 
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="exampleModalLabel">เมนูอาหาร</h5>
+                <button type="button" class="btn-close" style="color: white;" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/user/addmenu" method="post" onsubmit="saveMenu(); return false;">
+                <div class="modal-body">                  
+                    <table class="show-cart table">
+                        <!-- Display cart items here -->
+                    </table>
+                    <div class="h5">แคลอรี่รวม : <span class="total-cart">0</span> kcal.</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">ปิด</button>
+                    <button type="submit" class="btn btn-outline-green">บันทึกเมนูอาหาร</button> <!-- ใช้ type="submit" -->
+                </div>
+            </form>            
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal สำหรับบันทึกสำเร็จ -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-green">
+            <h5 class="modal-title text-white" id="exampleModalLabel">เพื่มอาหารที่ทานสำเร็จ</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="text-center">
+              <img src="image/Logo 1.png" alt="Bootstrap" width="250" height="250">
+              <p class="m-0">
+                  <h4 class="text-green">เพื่มอาหารที่ทานสำเร็จ</h4>
+                  <h6>คุณทำการเพื่มอาหารที่คุณทานสำเร็จ</h6>
+                  <img class="mt-3" src="image/checked.png" alt="Bootstrap" width="100" height="100"><br>
+                  <button class="btn btn-outline-green mt-3"><a href="/home" class="link-green" style="text-decoration: none;">กลับเข้าสู่หน้าหลัก</a></button>
+              </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+<!-- Modal สำหรับแสดงข้อผิดพลาด -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">เกิดข้อผิดพลาด</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= messages.error %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  
+
+
         <!-- Footer-->
         <footer class="py-5 bg-green">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; CalorieCare 2024</p></div>
@@ -529,7 +576,8 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/js/scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/js/home.js"></script>
         <script>
             // ฟังก์ชันเพื่อแสดงวันที่ปัจจุบันในรูปแบบเต็ม
             function displayCurrentDate() {
@@ -551,5 +599,20 @@
             // เรียกฟังก์ชันเมื่อหน้าโหลด
             document.addEventListener('DOMContentLoaded', displayCurrentDate);
         </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // ตรวจสอบว่ามีข้อความ error หรือไม่
+      var hasError = "<%= messages.error %>" !== "";
+  
+      // หากมีข้อความ error แสดง modal
+      if (hasError) {
+        var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
+      }
+    });
+  </script>
+  
+
     </body>
 </html>

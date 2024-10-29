@@ -1,19 +1,28 @@
-/*!
-* Start Bootstrap - Shop Homepage v5.0.6 (https://startbootstrap.com/template/shop-homepage)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
-
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Event listener for BMI calculation
-    document.querySelector("#btn-bmi").addEventListener("click", calculateBMI);
+    const bmiButton = document.querySelector("#btn-bmi");
+    if (bmiButton) {
+        bmiButton.addEventListener("click", calculateBMI);
+    } else {
+        console.error("BMI button not found!");
+    }
+
     // Event listener for BMR calculation
-    document.querySelector("#btn-bmr").addEventListener("click", calculateBMR);
+    const bmrButton = document.querySelector("#btn-bmr");
+    if (bmrButton) {
+        bmrButton.addEventListener("click", calculateBMR);
+    } else {
+        console.error("BMR button not found!");
+    }
+
     // Event listener for TDEE calculation
-    document.querySelector("#btn-tdee").addEventListener("click", calculateTDEE);
-};
+    const tdeeButton = document.querySelector("#btn-tdee");
+    if (tdeeButton) {
+        tdeeButton.addEventListener("click", calculateTDEE);
+    } else {
+        console.error("TDEE button not found!");
+    }
+});
 
 // Function for calculating BMI
 function calculateBMI() {
@@ -45,7 +54,7 @@ function calculateBMR() {
     let height = parseFloat(document.querySelector("#height-bmr").value);
     let weight = parseFloat(document.querySelector("#weight-bmr").value);
     let age = parseInt(document.querySelector("#age-bmr").value);
-    let gender = document.querySelector('input[name="gender-bmr"]:checked').value;
+    let gender = document.querySelector('input[name="gender-bmr"]:checked')?.value; // ใช้ optional chaining
     let result = document.querySelector("#result-bmr");
 
     if (isNaN(height) || height <= 0) {
@@ -54,6 +63,8 @@ function calculateBMR() {
         result.innerHTML = "กรุณาใส่น้ำหนัก!";
     } else if (isNaN(age) || age <= 0) {
         result.innerHTML = "กรุณาใส่อายุ!";
+    } else if (!gender) {
+        result.innerHTML = "กรุณาเลือกเพศ!";
     } else {
         let bmr;
         if (gender === "male") {
@@ -70,7 +81,7 @@ function calculateTDEE() {
     let height = parseFloat(document.querySelector("#height-tdee").value);
     let weight = parseFloat(document.querySelector("#weight-tdee").value);
     let age = parseInt(document.querySelector("#age-tdee").value);
-    let gender = document.querySelector('input[name="gender-tdee"]:checked').value;
+    let gender = document.querySelector('input[name="gender-tdee"]:checked')?.value; // ใช้ optional chaining
     let result = document.querySelector("#result-tdee");
 
     // Activity levels multiplier
@@ -90,6 +101,8 @@ function calculateTDEE() {
         result.innerHTML = "กรุณาใส่น้ำหนัก!";
     } else if (isNaN(age) || age <= 0) {
         result.innerHTML = "กรุณาใส่อายุ!";
+    } else if (!gender) {
+        result.innerHTML = "กรุณาเลือกเพศ!";
     } else {
         let bmr;
         if (gender === "male") {

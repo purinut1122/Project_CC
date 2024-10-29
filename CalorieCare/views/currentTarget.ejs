@@ -150,6 +150,61 @@
                 </div>
             </div>
         <% } %>
+
+        <% if (UserData.target === "MaintainWeight") { %>
+            <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
+                <div class="row g-0"> 
+                    <div class="col-lg-7 col-7">
+                        <div class="card-body">
+                            <h3 class="card-title text-start fw-bolder pt-3">ควบคุมน้ำหนัก</h3>
+                            <p class="card-text text-start text-green">
+                                <% if (UserData.target === "MaintainWeight") { %>
+                                    ควบคุมน้ำหนัก
+                                <% } else { %>
+                                    ไม่ระบุอัตราการควบคุมน้ำหนัก
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-5">
+                        <img src="image/balance.png" class="img-fluid rounded-start ms-3" style="position: relative; top: 10%; right: 0; width: 70px; height: 70px;">
+                        <br><br><br>
+                        <form action="/user/edittarget" method="POST" class="mb-3">
+                            <button type="submit" class="btn btn-outline-green" style="position: relative; left: 0; bottom: 10%; width: 70%;"><i class="fa-light fa-pen-to-square"></i> แก้ไข</i></button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-lg-8 col-8">
+                        <div class="card-body">
+                            <h3 class="card-title text-start fw-bolder pt-3">กิจกรรม</h3>
+                            <p class="card-text text-start text-green">
+                                <% if (UserData.activity === 'Sedentary') { %>
+                                    ออกกำลังกายน้อย
+                                <% } else if (UserData.activity === 'Light') { %>
+                                    ออกกำลังกายเบาๆ
+                                <% } else if (UserData.activity === 'Moderate') { %>
+                                    ออกกำลังกายปานกลาง
+                                <% } else if (UserData.activity === 'Active') { %>
+                                    ออกกำลังกายหนักมาก
+                                <% } else if (UserData.activity === 'VeryActive') { %>
+                                    ฝึกซ้อมหนักทุกวันไม่หยุด
+                                <% } else { %>
+                                    ไม่ระบุประเภทกิจกรรม
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-4">
+                        <br><br>
+                        <img src="image/stretching.png" class="img-fluid rounded-start ms-3" style="position: relative; bottom: 20%; right: 10%; width: 100px; height: 100px;">
+                    </div>
+                </div>
+            </div>
+        <% } %>
         
         <% if (UserData.target === "LoseWeight") { %>
             <div class="card border-secondary mb-3 col-lg g-start-2" style="max-width: 540px;">
