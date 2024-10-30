@@ -33,6 +33,12 @@ jobs:
           name: node-app
           path: .
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: './repo'
+          
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -62,4 +68,3 @@ jobs:
           app-name: 'CalorieCare'
           slot-name: 'Production'
           package: .
-          
